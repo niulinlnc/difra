@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Search View-->
+    <record model="ir.ui.view" id="claim_search_view">
+        <field name="name">Claim Search View</field>
+        <field name="model">claim</field>
+        <field name="arch" type="xml">
+            <search>
+                <!--Search Fields-->
+                <field name="name"/>
+                <field name="contact_id"/>
+                <field name="product_id"/>
+                <field name="lot_id"/>
+                <field name="tag_ids"/>
+                <!--Filters-->
+                <filter name="filter_state_new" string="New" domain="[('state', '=', 'new')]"/>
+                <filter name="filter_state_ready" string="Ready" domain="[('state', '=', 'ready')]"/>
+                <filter name="filter_state_pending" string="Pending" domain="[('state', '=', 'pending')]"/>
+                <filter name="filter_state_done" string="Done" domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter name="filter_archive" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter name="filter_responsible_notified" string="Responsible Notified" domain="[('responsible_notified', '=', True)]"/>
+                <separator/>
+                <filter name="filter_case_company" string="Company" domain="[('case', '=', 'company')]"/>
+                <filter name="filter_case_on_site" string="On Site" domain="[('case', '=', 'site')]"/>
+                <filter name="filter_case_phone" string="Phone" domain="[('case', '=', 'phone')]"/>
+                <separator />
+                <filter name="filter_type_breakdown" string="Breakdown" domain="[('breakdown', '=', True)]"/>
+                <filter name="filter_type_complaint" string="Complaint" domain="[('complaint', '=', True)]"/>
+                <filter name="filter_type_incident" string="Incident" domain="[('incident', '=', True)]"/>
+                <!--Group By-->
+                <filter name="groupby_case" string="Case" context="{'group_by': 'case'}"/>
+                <filter name="groupby_contact" string="Contact" context="{'group_by': 'contact_id'}"/>
+                <filter name="groupby_state" string="State" context="{'group_by': 'state'}"/>
+                <filter name="groupby_week" string="Week" context="{'group_by': 'create_date:week'}"/>
+                <filter name="groupby_month" string="Month" context="{'group_by': 'create_date:month'}"/>
+                <filter name="groupby_year" string="Year" context="{'group_by': 'create_date:year'}"/>
+            </search>
+        </field>
+    </record>
+    <!--Form View-->
+    <record model="ir.ui.view" id="claim_form_view">
+        <field name="name">Claim Form</field>
+        <field name="model">claim</field>
+        <field name="arch" type="xml">
+            <form string="Claim Form" attrs="{'edit': [('state', '!=', 'done')]}"><header>
+                    <!--Butons-->
+                    <button name="action_make_appointment" string="Make Appointment" class="oe_highlight" type="object" context="{'active_id': active_id}" states="new,ready,pending"/>
+                    <button type="object" name="action_create_repair" string="Create Repair" states="new,ready,pending" class="oe_highlight" attrs="{'invisible': ['|', ('repair_id', '!=', False)]}" groups="claim.claim_quality_responsible,claim.claim_as_responsible"/>
+                    <button type="object" name="action_notify_responsible" attrs="{'invisible': ['|', ('responsible_notified', '=', True)]}" string="Notify Responsible" states="new" class="oe_highlight" groups="claim.claim_user"/>
+                    <button type="object" name="action_notify_incident" string="Notify Incident" class="oe_highlight" attrs="{'invisible': ['|', ('incident', '=', False), ('incident_notified', '=', True)]}" groups="claim.claim_user"/>
+                    <button type="object" name="action_validate_as" class="oe_highlight" string="Validate" states="new" groups="claim.claim_as_responsible"/>
+                    <button type="object" name="action_wait_product" string="Wait Products" states="ready" class="oe_highlight" groups="claim.claim_quality_responsible" attrs="{'invisible': ['|', '|', ('case', '!=', 'company'), ('product_received', '=', True)]}"/>
+                    <button type="object" name="action_validate_quality" string="Validate" states="ready" class="oe_highlight" groups="claim.claim_quality_responsible"/>
+                    <button type="object" name="action_set_new" string="Set to New" states="cancel"/>
+                    <button type="object" name="action_print" string="Print"/>
+                    <button type="object" name="action_cancel" string="Cancel" states="new,ready,pending" groups="claim.claim_quality_responsible,claim.claim_as_responsible"/>
+                    <!--Status Bar-->
+                    <field name="state" widget="statusbar" statusbar_visible="new,ready,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_repair" string="Repair" class="oe_stat_button" icon="fa-gear" attrs="{'invisible':[('repair_id', '=', False)]}"/>
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}" modifiers="{}"/>
+                        </button>
+                    </div>
+                    <div style="background-color: #FA8072; padding: 5px; text-align: center; font-weight: 600; color: white; border-radius: 50px;" groups="claim.claim_as_responsible,claim.claim_quality_responsible" attrs="{'invisible': [('incident_justification', '!=', ''), ('complaint_justification', '!=', '')]}" colspan="4">
+                      Justifications are missing !
+                    </div>
+                   <group>
+                     <field name="case" widget="radio" options="{'horizontal': true}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                   </group>
+                    <!--Title-->
+                    <label for="name"/>
+                    <h1>
+                      <field name="name"/>
+                    </h1>
+                    <group>
+                      <group>
+                        <field name="contact_id" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="mobile" attrs="{'required': [('email', '=', False), ('phone', '=', False)], 'readonly': [('state', '=', 'done')]}"/>
+                        <field name="phone" attrs="{'required': [('mobile', '=', False), ('email', '=', False)], 'readonly': [('state', '=', 'done')]}"/>
+                        <field name="email" attrs="{'required': [('mobile', '=', False), ('phone', '=', False)], 'readonly': [('state', '=', 'done')]}"/>
+                        <field name="product_id" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="product_qty" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="lot_id" context="{'default_product_id': product_id,}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="tracking" invisible="1"/>
+                        <field name="trauma"/>
+                        <field name="trauma_explanation"/>
+                        <field name="breakdown" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="incident" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="complaint" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                      </group>
+                      <group>
+                        <field name="create_date" readonly="1"/>
+                        <field name="end_date"/>
+                        <field name="create_uid" readonly="1"/>
+                        <field name="as_responsible"/>
+                        <field name="quality_responsible"/>
+                        <field name="customer_satisfaction" widget="priority"/>
+                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True, 'no_create_edit': True}" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                        <field name="responsible_notified" invisible="1"/>
+                        <field name="incident_notified" invisible="1"/>
+                        <field name="product_received" invisible="1"/>
+                        <field name="repair_id" invisible="1"/>
+                        <field name="description" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                          <field name="realized_actions"/>
+                      </group>
+                    </group>
+                    <notebook>
+                        <page string="Breakdown" attrs="{'invisible': [('breakdown', '=', False)]}">
+                          <group>
+                            <group>
+                              <field name="display_breakdown"/>
+                              <field name="breakdown_last_maintenance" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_commissioning_year" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_when" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_description" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            </group>
+                            <group string="Breakdown Cause:">
+                              <field name="breakdown_fall" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_wrong_usage" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_overvoltage" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_miss_maintenance" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_other" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="breakdown_other_description" attrs="{'invisible': [('breakdown_other', '=', False)], 'readonly': [('state', '=', 'done')]}"/>
+                            </group>
+                          </group>
+                        </page>
+                        <page string="Incident" groups="claim.claim_quality_responsible,claim.claim_as_responsible">
+                          <group>
+                            <field name="display_incident" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="incident_justification" attrs="{'readonly': [('state', '=', 'done')], 'required': [('state', '!=', 'new')]}"/>
+                          </group>
+                        </page>
+                        <page string="Complaint" groups="claim.claim_quality_responsible,claim.claim_as_responsible">
+                          <group>
+                              <field name="display_complaint" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="complaint_justification" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                              <field name="complaint_non_investigated_justification" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                          </group>
+                        </page>
+                        <page string="Authority Competent" groups="claim.claim_quality_responsible,claim.claim_as_responsible">
+                          <group>
+                            <field name="authority_competent_reporting" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                            <field name="authority_competent_justification" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                          </group>
+                        </page>
+                        <page string="Appointments">
+                            <field name="appointment_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="start"/>
+                                    <field name="stop"/>
+                                    <field name="duration" widget="float_time"/>
+                                    <field name="location"/>
+                                    <field name="allday" invisible="True"/>
+                                    <field name="state" invisible="True"/>
+                                    <field name="message_needaction" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                          <group>
+                            <field name="note" attrs="{'readonly': [('state', '=', 'done')]}"/>
+                          </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree View-->
+    <record model="ir.ui.view" id="claim_tree_view">
+        <field name="name">Claims</field>
+        <field name="model">claim</field>
+        <field name="arch" type="xml">
+            <tree string="Claims">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="contact_id"/>
+                <field name="create_date"/>
+                <field name="case"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Window Actions-->
+    <record model="ir.actions.act_window" id="claim_open_in_progress_action">
+        <field name="name">In Progress Claims</field>
+        <field name="res_model">claim</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state', 'not in', ['cancel'])]</field>
+        <field name="context">{
+            'search_default_filter_state_new': 1,
+            'search_default_filter_state_ready': 1,
+            'search_default_filter_state_pending': 1
+        }</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="claim_open_done_action">
+        <field name="name">Done Claims</field>
+        <field name="res_model">claim</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state', 'in', ['done', 'cancel'])]</field>
+        <field name="context">{'search_default_filter_state_done': 1}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="claim_open_all_action">
+        <field name="name">All Claims</field>
+        <field name="res_model">claim</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Menu Items-->
+    <menuitem id="claim.claim_menu" name="Claims" sequence="0" parent="claim.main_menu"/>
+    <menuitem id="claim.claim_in_progress_menu" name="In Progress" parent="claim.claim_menu" action="claim_open_in_progress_action" sequence="0"/>
+    <menuitem id="claim.claim_done_menu" name="Done" parent="claim.claim_menu" action="claim_open_done_action" sequence="1"/>
+    <menuitem id="claim.claim_all_menu" name="All" parent="claim.claim_menu" action="claim_open_all_action" sequence="2"/>
+</odoo>

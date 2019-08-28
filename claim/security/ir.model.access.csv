@@ -1,0 +1,19 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+claim_user_claim,Claim User on Claim,claim.model_claim,claim.claim_user,1,1,1,0
+claim_as_responsible_claim,Claim AS Responsible on Claim,claim.model_claim,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_claim,Claim Quality Responsible on Claim,claim.model_claim,claim.claim_quality_responsible,1,1,1,1
+claim_user_claim_as_team,Claim User on AS Team,claim.model_claim_as_team,claim.claim_user,1,0,0,0
+claim_as_responsible_claim_as_team,Claim AS Responsible on AS Team,claim.model_claim_as_team,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_claim_as_team,Claim Quality Responsible on AS Team,claim.model_claim_as_team,claim.claim_quality_responsible,1,1,1,1
+claim_user_claim_tag,Claim User on Tags,claim.model_claim_tag,claim.claim_user,1,0,0,0
+claim_as_responsible_claim_tag,Claim AS Responsible on Tags,claim.model_claim_tag,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_claim_tag,Claim Quality Responsible on Tags,claim.model_claim_tag,claim.claim_quality_responsible,1,1,1,1
+claim_user_mrp_repair_default_test,Claim User on Default Tests,claim.model_mrp_repair_default_test,claim.claim_user,0,0,0,0
+claim_as_responsible_mrp_repair_default_test,Claim AS Responsible on Default Tests,claim.model_mrp_repair_default_test,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_mrp_repair_default_test,Claim Quality Responsible on Default Tests,claim.model_mrp_repair_default_test,claim.claim_quality_responsible,1,1,1,1
+claim_user_mrp_repair_test,Claim User on Test,claim.model_mrp_repair_test,claim.claim_user,1,1,1,1
+claim_as_responsible_mrp_repair_test,Claim AS Responsible on Test,claim.model_mrp_repair_test,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_mrp_repair_test,Claim Quality Responsible on Test,claim.model_mrp_repair_test,claim.claim_quality_responsible,1,1,1,1
+claim_user_mrp_repair,Claim User on Mrp Repair,claim.model_mrp_repair,claim.claim_user,1,1,0,0
+claim_as_responsible_mrp_repair,Claim AS Responsible on Mrp Repair,claim.model_mrp_repair,claim.claim_as_responsible,1,1,1,1
+claim_quality_responsible_mrp_repair,Claim Quality Responsible on Mrp Repair,claim.model_mrp_repair,claim.claim_quality_responsible,1,1,1,1

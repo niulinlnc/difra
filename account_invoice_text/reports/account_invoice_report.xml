@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_invoice_document_report_texts" inherit_id="account.report_invoice_document">
+        <!-- Header Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="before">
+            <t t-if="o.header_text">
+                <p t-raw="o.header_text" />
+            </t>
+        </xpath>
+
+        <!-- Footer Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="after">
+            <t t-if="o.footer_text">
+                <p t-raw="o.footer_text" />
+            </t>
+        </xpath>
+    </template>
+</odoo>

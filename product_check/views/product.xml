@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_tree_checked">
+            <field name="name">product.tree.checked</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view" />
+            <field name="arch" type="xml">
+            	<data>
+		    		<xpath expr="//field[@name='categ_id']" position="after">
+                    	<field name="checked" />
+                	</xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_form_checked">
+            <field name="name">product.form.checked</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+            	<data>
+		    		<xpath expr="//field[@name='default_code']" position="after">
+                    	<field name="checked" />
+                	</xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

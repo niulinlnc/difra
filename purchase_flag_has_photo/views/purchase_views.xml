@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_line_tree_has_photo" model="ir.ui.view">
+        <field name="name">purchase.order.line.tree.has.photo</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="has_photo"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_line_form2_has_photo" model="ir.ui.view">
+        <field name="name">purchase.order.line.form2.has.photo</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="has_photo"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_form_has_photo" model="ir.ui.view">
+        <field name="name">purchase.order.form.has.photo</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='product_id']" position="after">
+                <field name="has_photo"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group/field[@name='product_id']" position="after">
+                <field name="has_photo"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

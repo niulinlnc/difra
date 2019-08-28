@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="purchase_order_report_texts" inherit_id="purchase.report_purchaseorder_document">
+        <!-- Header Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="before">
+            <t t-if="o.header_text">
+                <p t-raw="o.header_text" />
+            </t>
+        </xpath>
+
+        <!-- Footer Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="after">
+            <t t-if="o.footer_text">
+                <p t-raw="o.footer_text" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="report_purchasequotation_document_report_texts" inherit_id="purchase.report_purchasequotation_document">
+        <!-- Header Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="before">
+            <t t-if="o.header_text">
+                <p t-raw="o.header_text" />
+            </t>
+        </xpath>
+
+        <!-- Footer Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="after">
+            <t t-if="o.footer_text">
+                <p t-raw="o.footer_text" />
+            </t>
+        </xpath>
+    </template>
+</odoo>

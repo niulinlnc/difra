@@ -1,0 +1,417 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* export_sage_50
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170621\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-18 07:33+0000\n"
+"PO-Revision-Date: 2017-08-18 07:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: export_sage_50
+#: model:ir.model.fields,help:export_sage_50.field_export_sage_50_export_file_state
+msgid " * The 'Draft' status is used when a new export is created but not yet filled.\n"
+" * The 'Completed' status is when an export has been filled and is ready for import.\n"
+""
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:367
+#, python-format
+msgid ") : Account is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:326
+#, python-format
+msgid ") : Date is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:330
+#, python-format
+msgid ") : Due Date is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:276
+#, python-format
+msgid ") : Fiscal Position is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:268
+#, python-format
+msgid ") : Name is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:318
+#, python-format
+msgid ") : Number is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:322
+#, python-format
+msgid ") : Number must contain numeric value to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:272
+#, python-format
+msgid ") : Reference is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:376
+#, python-format
+msgid ") : Sage Export Code is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:280
+#, python-format
+msgid ") : Sage Status is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:371
+#, python-format
+msgid ") : Short Code is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:334
+#, python-format
+msgid ") : Total Amount is required to export."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:371
+#, python-format
+msgid "Account ("
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+msgid "All Missing"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.action_export_sage_50_wizard_view
+msgid "Cancel"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.actions.act_window,help:export_sage_50.action_export_sage_50
+msgid "Click to create a new export for Sage 50."
+msgstr ""
+
+#. module: export_sage_50
+#: selection:export_sage_50.export_file,state:0
+msgid "Completed"
+msgstr ""
+
+#. module: export_sage_50
+#: selection:account.fiscal.position,sage_status:0
+msgid "Counterparty"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_create_uid
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_create_uid
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_create_date
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_create_date
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+msgid "Custom"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_date_from
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_date_from
+msgid "Date From"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_date_to
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_date_to
+msgid "Date To"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_display_name
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_display_name
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: export_sage_50
+#: selection:export_sage_50.export_file,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.action_export_sage_50_wizard_view
+msgid "Export"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_export_file_id
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_tree
+msgid "Export File"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_export_sage_50_export_file
+msgid "Export File For Sage 50"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_export_sage_50_export_file_wizard
+msgid "Export File For Sage 50 Wizard"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.actions.act_window,name:export_sage_50.action_export_sage_50
+msgid "Export Sage 50"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.actions.act_window,name:export_sage_50.action_export_sage_50_wizard
+#: model:ir.ui.view,arch_db:export_sage_50.action_export_sage_50_wizard_view
+msgid "Export Sage 50 Wizard"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_export_file
+msgid "Export file"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_export_file_name
+msgid "Export file name"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_filename
+msgid "Filename"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:280
+#, python-format
+msgid "Fiscal Position ("
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_id
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_id
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_id
+msgid "ID"
+msgstr ""
+
+#. module: export_sage_50
+#: selection:account.fiscal.position,sage_status:0
+msgid "Intracommunity"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:322
+#: code:addons/export_sage_50/models/export_sage_50.py:326
+#: code:addons/export_sage_50/models/export_sage_50.py:330
+#: code:addons/export_sage_50/models/export_sage_50.py:334
+#, python-format
+msgid "Invoice ("
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:318
+#, python-format
+msgid "Invoice (#"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_account_invoice_line
+msgid "Invoice Line"
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:367
+#, python-format
+msgid "Invoice Line (Invoice "
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_invoice_ids
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+msgid "Invoices"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_invoice_count
+msgid "Invoices Count"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_invoice_is_exported_to_sage_50
+msgid "Is Exported to Sage 50"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code___last_update
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file___last_update
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+msgid "Last Month"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.view_export_file_form
+msgid "Last Quarter"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_write_uid
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_write_uid
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_write_date
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_wizard_write_date
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_name
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_name
+msgid "Name"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.actions.act_window,help:export_sage_50.action_export_sage_50
+msgid "Odoo helps you easily export your invoices to Sage 50."
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:272
+#: code:addons/export_sage_50/models/export_sage_50.py:276
+#, python-format
+msgid "Partner ("
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:268
+#, python-format
+msgid "Partner (#"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.view_account_sage_code_form
+msgid "Sage Code"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.actions.act_window,name:export_sage_50.action_sage_code
+#: model:ir.ui.menu,name:export_sage_50.action_sage_settings_code
+#: model:ir.ui.view,arch_db:export_sage_50.view_account_sage_code_tree
+msgid "Sage Codes"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_sage_code_code
+#: model:ir.model.fields,field_description:export_sage_50.field_account_tax_sage_code
+msgid "Sage Export Code"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.menu,name:export_sage_50.menu_sage_settings
+msgid "Sage Export Settings"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.menu,name:export_sage_50.menu_export_sage_50
+msgid "Sage Exports"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_account_fiscal_position_sage_status
+msgid "Sage Fiscal Status"
+msgstr ""
+
+#. module: export_sage_50
+#: selection:account.fiscal.position,sage_status:0
+msgid "Standard"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,field_description:export_sage_50.field_export_sage_50_export_file_state
+msgid "Status"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_account_tax
+msgid "Tax"
+msgstr ""
+
+#. module: export_sage_50
+#: code:addons/export_sage_50/models/export_sage_50.py:376
+#, python-format
+msgid "Tax ("
+msgstr ""
+
+#. module: export_sage_50
+#: selection:account.fiscal.position,sage_status:0
+msgid "Third Countries"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model.fields,help:export_sage_50.field_export_sage_50_export_file_export_file
+msgid "This field holds the export file for Sage 50."
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.model,name:export_sage_50.model_account_sage_code
+msgid "account.sage.code"
+msgstr ""
+
+#. module: export_sage_50
+#: model:ir.ui.view,arch_db:export_sage_50.action_export_sage_50_wizard_view
+msgid "or"
+msgstr ""
+

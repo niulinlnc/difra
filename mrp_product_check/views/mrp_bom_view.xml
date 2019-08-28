@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="mrp_bom_form_view_product_checked">
+        <field name="name">mrp_bom_form_view_product_checked</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- In BOM Lines tree -->
+                <xpath expr="//field[@name='bom_line_ids']//tree" position="inside">
+                    <field name="product_checked"/>
+                </xpath>
+                <xpath expr="//field[@name='bom_line_ids']//tree" position="attributes">
+                    <attribute name="decoration-danger">product_checked==False</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

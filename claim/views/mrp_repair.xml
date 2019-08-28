@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Form View-->
+    <record model="ir.ui.view" id="repair_form_view">
+        <field name="name">Repair</field>
+        <field name="model">mrp.repair</field>
+        <field name="inherit_id" ref="mrp_repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+            <!-- MRP Repair template modifications -->
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="repair_type"/>
+                <field name="template_id" attrs="{'invisible': [('repair_type', '=', 'template')]}"
+                       domain="[('repair_type', '=', 'template')]"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="invisible">[('repair_type', '=', 'template')]</attribute>
+            </xpath>
+            <!-- Change required fields if template -->
+            <xpath expr="//field[@name='product_id']" position="replace">
+                <field name="product_id" domain="[('type', 'in', ['product', 'consu'])]"
+                       attrs="{'required': [('repair_type', '!=', 'template')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='product_qty']" position="replace">
+                <field name="product_qty" attrs="{'required': [('repair_type', '!=', 'template')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='product_uom']" position="replace">
+                <field name="product_uom" attrs="{'required': [('repair_type', '!=', 'template')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='lot_id']" position="replace">
+                <field name="lot_id" domain="[('product_id', '=', product_id)]"
+                       context="{'default_product_id': product_id}" groups="stock.group_production_lot"
+                       attrs="{'required': [('repair_type', '!=', 'template'), ('tracking', '!=', 'none')], 'readonly': [('state', '=', 'done')]}"/>
+            </xpath>
+            <!-- Add info for the claim -->
+            <xpath expr="//field[@name='guarantee_limit']" position="after">
+                <field name="create_date" readonly="1"/>
+                <field name="claim_id"/>
+                <field name="assigned_to" widget="many2many_tags"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="delivery_address"/>
+                <field name="customer_reference"/>
+                <field name="case"/>
+                <field name="is_shipped" invisible="1"/>
+                <field name="is_delivered" invisible="1"/>
+                <field name="len_appointment_ids" invisible="1"/>
+                <field name="picking_in_created" invisible="1"/>
+                <field name="description"/>
+            </xpath>
+            <xpath expr="//field[@name='address_id']" position="replace">
+                <field name="address_id" invisible="1"/>
+            </xpath>
+            <!-- Header text -->
+            <xpath expr="//field[@name='operations']" position="before">
+                <group colspan="4">
+                    <field name="header_text" nolabel="1" widget="html" placeholder="Type here a header text ..."/>
+                </group>
+            </xpath>
+            <!-- Footer text -->
+            <xpath expr="//field[@name='operations']" position="after">
+                <group colspan="4">
+                    <field name="footer_text" nolabel="1" widget="html" placeholder="Type here a footer text ..."/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[3]" position="before"> <!-- Page Operations -->
+                <page string="Dates">
+                    <group>
+                        <group>
+                            <field name="start_repair_date"/>
+                            <field name="start_repair_user_id"/>
+                            <field name="end_repair_date"/>
+                            <field name="end_repair_user_id"/>
+                        </group>
+                        <group>
+                            <field name="validation_date"/>
+                            <field name="validation_user_id"/>
+                            <field name="send_article"/>
+                            <field name="send_article_date" attrs="{'invisible': [('send_article', '=', False)]}"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Test">
+                    <field name="test_ids">
+                        <tree string="Tests" editable="bottom">
+                            <field name="name"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Appointments">
+                    <field name="appointment_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="start"/>
+                            <field name="stop"/>
+                            <field name="duration" widget="float_time"/>
+                            <field name="location"/>
+                            <field name="allday" invisible="True"/>
+                            <field name="state" invisible="True"/>
+                            <field name="message_needaction" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button type="object" name="action_view_picking" class="oe_stat_button" icon="fa-truck"
+                        attrs="{'invisible':['|',('picking_ids','=',[])]}">
+                    <field name="picking_count" widget="statinfo" string="Shipment/Delivery"/>
+                    <field name="picking_ids" invisible="1"/>
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_repair_start']" position="replace">
+                <button name="action_repair_start"
+                        attrs="{'invisible': ['|', ('is_shipped', '=', False), '&amp;', ('state','!=','confirmed'), '!', '&amp;', ('state','=','ready'), ('invoice_method','=','b4repair')]}"
+                        type="object" string="Start Repair" class="oe_highlight"/>
+                <button name="action_repair_validate" states="done" type="object" string="Validate"
+                        class="oe_highlight"/>
+                <button name="action_view_picking" string="Receive Products" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|', ('picking_count', '=', 0), ('is_shipped', '=', True)]}"/>
+                <button name="action_make_appointment" string="Make Appointment" class="oe_highlight"
+                        type="object" context="{'active_id': active_id}" states="draft,confirmed,ready"/>
+                <button name="action_make_products_back" string="Return Products" type="object"
+                        attrs="{'invisible': ['|', '|', ('case', '=', 'company'), ('picking_in_created', '=', True), ('state', '=', 'validated')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='location_id']" position="replace">
+                <field name="location_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='location_dest_id']" position="replace">
+                <field name="location_dest_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Tree View-->
+    <record model="ir.ui.view" id="repair_tree_view">
+        <field name="name">Repairs</field>
+        <field name="model">mrp.repair</field>
+        <field name="arch" type="xml">
+            <tree string="Repairs">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="case"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Search View-->
+    <record model="ir.ui.view" id="repair_search_view">
+        <field name="name">Repair Search View</field>
+        <field name="model">mrp.repair</field>
+        <field name="inherit_id" ref="mrp_repair.view_repair_order_form_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="replace">
+                <search>
+                    <!--Search Criteria-->
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                    <field name="claim_id"/>
+                    <field name="customer_reference"/>
+
+                    <!--Filters-->
+                    <filter name="filter_case_company" string="On Company" domain="[('case', '=', 'company')]"/>
+                    <filter name="filter_case_site" string="On Site" domain="[('case', '=', 'site')]"/>
+                    <filter name="filter_case_phone" string="On Phone" domain="[('case', '=', 'phone')]"/>
+                    <filter name="filter_template" string="Templates" domain="[('repair_type', '=', 'template')]"/>
+                    <separator/>
+                    <filter name="filter_state_cancelled" string="Cancelled" domain="[('state', '=', 'cancel')]"/>
+                    <filter name="filter_state_quotation" string="Quotation" domain="[('state', '=', 'draft')]"/>
+                    <filter name="filter_state_confirmed" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+                    <filter name="filter_state_ready" string="Ready to Repair" domain="[('state', '=', 'ready')]"/>
+                    <filter name="filter_state_under_repair" string="Under Repair"
+                            domain="[('state', '=', 'under_repair')]"/>
+                    <filter name="filter_state_repaired" string="Repaired" domain="[('state', '=', 'done')]"/>
+                    <filter name="filter_state_validated" string="Validated" domain="[('state', '=', 'validated')]"/>
+                    <filter name="filter_state_2binvoiced" string="To be invoiced"
+                            domain="[('state', '=', '2binvoiced')]"/>
+                    <separator/>
+                    <filter string="Late Activities" name="activities_overdue"
+                            domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                            help="Show all records which has next action date is before today"/>
+                    <filter string="Today Activities" name="activities_today"
+                            domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Future Activities" name="activities_upcoming_all"
+                            domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))                         ]"/>
+
+                    <!--Group By-->
+                    <filter name="groupby_partner_id" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="groupby_product_id" string="Product" context="{'group_by': 'product_id'}"/>
+                    <filter name="groupby_state" string="State" context="{'group_by': 'state'}"/>
+                </search>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Window Actions-->
+    <record model="ir.actions.act_window" id="repair_open_company_action">
+        <field name="name">In Company Repairs</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template'), ('state', 'not in', ['done', 'validated', 'cancel'])]
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_open_site_action">
+        <field name="name">On Site Repairs</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template'), ('state', 'not in', ['done', 'validated', 'cancel'])]
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_open_phone_action">
+        <field name="name">On Phone Repairs</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template'), ('state', 'not in', ['done','validated', 'cancel'])]
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_open_to_validate_action">
+        <field name="name">Repairs to validate</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template'), ('state', '=', 'done')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_open_validated_action">
+        <field name="name">Repairs validated</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template'), ('state', '=', 'validated')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_open_all_action">
+        <field name="name">All Repairs</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '!=', 'template')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="repair_template">
+        <field name="name">Repair templates</field>
+        <field name="res_model">mrp.repair</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_type', '=', 'template')]</field>
+    </record>
+
+    <!--Menu Items-->
+    <menuitem id="claim.repair_menu" name="Repairs" sequence="1" parent="claim.main_menu"/>
+    <menuitem id="claim.repair_menu_repair" name="Repairs" sequence="1" parent="claim.repair_menu"
+              action="repair_open_all_action"/>
+    <menuitem id="claim.repair_menu_template" name="Templates" sequence="5" parent="claim.repair_menu"
+              action="repair_template"/>
+    <!--<menuitem id="claim.repairs_in_progress" name="In Progress" sequence="0" parent="claim.repair_menu"/>-->
+    <!--<menuitem id="claim.repair_company" name="In company" parent="claim.repairs_in_progress" sequence="0" action="repair_open_company_action"/>-->
+    <!--<menuitem id="claim.repair_site" name="On site" parent="claim.repairs_in_progress" sequence="1" action="repair_open_site_action"/>-->
+    <!--<menuitem id="claim.repair_phone" name="On Phone" parent="claim.repairs_in_progress" sequence="2" action="repair_open_phone_action"/>-->
+    <!--<menuitem id="claim.repair_to_validate" name="To validate" parent="claim.repair_menu" sequence="1" action="repair_open_to_validate_action"/>-->
+    <!--<menuitem id="claim.repair_done" name="Done" parent="claim.repair_menu" sequence="2" action="repair_open_validated_action"/>-->
+    <!--<menuitem id="claim.repair_all" name="All" parent="claim.repair_menu" sequence="3" action="repair_open_all_action"/>-->
+</odoo>

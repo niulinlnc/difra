@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_renting_improvements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-08 13:02+0000\n"
+"PO-Revision-Date: 2019-08-08 13:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "&amp;nbsp;-&amp;nbsp;Demo"
+msgstr "&amp;nbsp;-&amp;nbsp;Démo"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "&amp;nbsp;-&amp;nbsp;Loan"
+msgstr "&amp;nbsp;-&amp;nbsp;Prêt"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_banner_add_renting_information
+msgid "<strong>Delivery Mode</strong>"
+msgstr "<strong>Mode de livraison</strong>"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "<strong>Delivery:</strong>"
+msgstr "<strong>Livraison:</strong>"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_banner_add_renting_information
+msgid "<strong>Description</strong>"
+msgstr "<strong>Description</strong>"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.difra_contact_in_header
+msgid "<strong>Difra contact:</strong>"
+msgstr "<strong>Contact Difra :</strong>"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "<strong>Recovery:</strong>"
+msgstr "<strong>Reprise:</strong>"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "Delivery Date:"
+msgstr "Date de Livraison:"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_rent_delivery_mode
+msgid "Delivery Mode"
+msgstr "Mode de Livraison"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "Delivery Slip"
+msgstr "Note d'Envoi"
+
+#. module: stock_renting_improvements
+#: selection:stock.picking,rent_type:0
+msgid "Demonstration"
+msgstr "Démonstration"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.stock_picking_add_renting_information_form_view
+msgid "Demonstration/Loan"
+msgstr "Démonstration/Prêt"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_rent_description
+msgid "Description"
+msgstr "Description"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "Difra name and Signature:"
+msgstr "Difra name and Signature:"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_is_renting
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_type_is_renting
+msgid "Is Renting"
+msgstr "Est une mise en location"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "Name and Signature Customer:"
+msgstr "Nom et Signature Client:"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_rent_notes
+msgid "Notes"
+msgstr "Notes"
+
+#. module: stock_renting_improvements
+#: selection:stock.picking,rent_type:0
+msgid "Put on loan"
+msgstr "Mise en Prêt"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
+msgid "Recovery Date:"
+msgstr "Date de Reprise:"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_type_renting_note
+msgid "Renting Note"
+msgstr "Remarque pour Locations"
+
+#. module: stock_renting_improvements
+#: model:ir.model,name:stock_renting_improvements.model_stock_picking_type
+msgid "The operation type determines the picking view"
+msgstr "The operation type determines the picking view"
+
+#. module: stock_renting_improvements
+#: model:ir.model,name:stock_renting_improvements.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
+
+#. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_rent_type
+msgid "Type"
+msgstr "Type"
+

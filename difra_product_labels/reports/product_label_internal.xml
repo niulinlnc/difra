@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="difra_picking_complete_label_internal_report"
+            string="Difra Stock Move Label IN (Picking-Complete)"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            file="difra_product_label_internal"
+            name="difra_product_labels.difra_picking_complete_label_internal"
+            paperformat="difra_product_labels.difra_product_paperformat"
+		/>
+
+    <report
+            id="difra_picking_single_label_internal_report"
+            string="Difra Stock Move Label IN (Picking-Single)"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            file="difra_product_label_internal"
+            name="difra_product_labels.difra_picking_single_label_internal"
+            paperformat="difra_product_labels.difra_product_paperformat"
+		/>
+
+    <report
+            id="difra_move_complete_label_internal_report"
+            string="Difra Stock Move Label IN (Move-Complete)"
+            model="stock.move"
+            report_type="qweb-pdf"
+            file="difra_product_label_internal"
+            name="difra_product_labels.difra_move_complete_label_internal"
+            paperformat="difra_product_labels.difra_product_paperformat"
+		/>
+
+    <report
+            id="difra_move_single_label_internal_report"
+            string="Difra Stock Move Label IN (Move-Single)"
+            model="stock.move"
+            report_type="qweb-pdf"
+            file="difra_product_label_internal"
+            name="difra_product_labels.difra_move_single_label_internal"
+            paperformat="difra_product_labels.difra_product_paperformat"
+		/>
+
+    <!-- Deliveries labels report for 1 line -->
+        <template id="difra_single_line_internal">
+            <t t-name="difra_product_labels.difra_single_line_internal">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <p>
+                            Product #: <span t-esc="product_id.default_code"/><br/>
+                            Location: <span t-esc="product_id.usual_stock_location_info" /><br />
+                            Name: <span t-esc="product_id.name"/><br/>
+                            <t t-if="lot_id">
+                                Lot #: <span t-esc="lot_id.name"/><img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('Code128', lot_id.name, 190, 30)"/><br/>
+                            </t>
+                            <!--<t t-if="product_id.barcode">
+                                Barcode:
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('Code128', product_id.barcode, 300, 30)"/><br/>
+                            </t>
+                            -->
+                        </p>
+                    </div>
+                </t>
+            </t>
+    </template>
+
+    <template id="difra_picking_complete_label_internal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-foreach="o.move_lines" t-as="move">
+                    <t t-foreach="move.move_line_ids" t-as="move_line">
+                        <t t-foreach="int(move_line.qty_done)" t-as="qty">
+                            <t t-set="product_id" t-value="move.product_id"/>
+                            <t t-set="picking_id" t-value="move.picking_id"/>
+                            <t t-set="lot_id" t-value="move_line.lot_id"/>
+
+                            <t t-call="difra_product_labels.difra_single_line_internal" />
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="difra_picking_single_label_internal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+              <t t-foreach="o.move_lines" t-as="move">
+                  <t t-set="product_id" t-value="move.product_id"/>
+                  <t t-set="picking_id" t-value="move.picking_id"/>
+                  <!-- NO Lot here cause we only print one label for the line -->
+
+                  <t t-call="difra_product_labels.difra_single_line_internal" />
+              </t>
+            </t>
+          </t>
+    </template>
+
+    <template id="difra_move_complete_label_internal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-foreach="o.move_line_ids" t-as="move_line">
+                    <t t-foreach="int(move_line.qty_done)" t-as="qty">
+                        <t t-set="product_id" t-value="o.product_id"/>
+                        <t t-set="picking_id" t-value="o.picking_id"/>
+                        <t t-set="lot_id" t-value="move_line.lot_id"/>
+
+                        <t t-call="difra_product_labels.difra_single_line_internal"/>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="difra_move_single_label_internal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="product_id" t-value="o.product_id"/>
+                <t t-set="picking_id" t-value="o.picking_id"/>
+                <!-- NO Lot here cause we only print one label for the line -->
+
+                <t t-call="difra_product_labels.difra_single_line_internal" />
+            </t>
+        </t>
+    </template>
+</odoo>

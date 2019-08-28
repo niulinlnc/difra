@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="stock_picking_add_renting_information_form_view">
+        <field name="name">stock_picking_add_renting_information_form_view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra']" position="after">
+                <page string="Demonstration/Loan" attrs="{'invisible': [('is_renting', '=', False)]}">
+                    <group>
+                        <field name="is_renting" invisible="1"/>
+                        <field name="rent_type"/>
+                        <field name="rent_delivery_mode"/>
+                        <field name="rent_description" />
+                        <field name="rent_notes" widget="html"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

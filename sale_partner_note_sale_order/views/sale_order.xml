@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_form_comment">
+	    	<field name="name">partner.form.comment</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form" />
+		    <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//notebook" position="inside">
+                        <page name="sale_order_comment" string="Comment for Sale Order">
+                            <field name="sale_order_comment" placeholder="Comment to show on sale order form..."/>
+                        </page>
+		    		</xpath>
+				</data>
+		    </field>
+		</record>
+
+		<record model="ir.ui.view" id="sale_order_partner_comment_form">
+	    	<field name="name">sale.order.partner.comment.form</field>
+		    <field name="model">sale.order</field>
+		    <field name="inherit_id" ref="sale.view_order_form" />
+		    <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//field[@name='partner_id']" position="after">
+                            <div style="
+                                        background-color: #fdec63;
+                                        padding: 10px;
+                                        margin: 2px;
+                                        text-align: center;
+                                        font-weight: 600;
+                                        color: gray;
+                                        border-radius: 50px;"
+                                 attrs="{'invisible':[('partner_sale_order_comment', '=', False)]}"
+                                 colspan="2">
+                                <field name="partner_sale_order_comment" nolabel="1" readonly="1"/>
+                            </div>
+		    		</xpath>
+				</data>
+		    </field>
+		</record>
+	</data>
+</odoo>

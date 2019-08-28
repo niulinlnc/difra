@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="purchase_order_line_domain">
+            <field name="name">purchase.order.line.domain</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='order_line']//tree//field[@name='product_id']" position="attributes">
+                        <attribute name="domain">
+                        [
+                            '|',
+                                ('seller_ids.name', '=', parent.partner_id),
+                                ('seller_ids.name.child_ids', '=', parent.partner_id)
+                        ]
+                        </attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

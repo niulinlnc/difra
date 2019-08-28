@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record model="ir.ui.view" id="product_template_only_form_view_rich_description">
+	        <field name="name">product_template_only_form_view_rich_description</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+	        <field name="arch" type="xml">  
+				<data>
+		    		<xpath expr="//page[@name='notes']" position="inside">
+                        <group name="rich_description">
+                            <separator string="Rich description" colspan="4"/>
+                            <field name="rich_description" colspan="4" nolabel="1" placeholder="Rich description for prints, web and so on." modifiers="{}"/>
+                        </group>
+		    		</xpath>
+				</data>
+	        </field>
+	    </record>
+	</data>
+</odoo>

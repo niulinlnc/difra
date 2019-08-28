@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Add the JS to the man backend view -->
+        <template id="assets_backend" name="web_task_color_assets_backend" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/calendar_event_tag_color/static/src/js/web_event_color.js"></script>
+            </xpath>
+        </template>
+
+        <record model="ir.ui.view" id="view_calendar_event_calendar_color">
+            <field name="name">calendar.event.calendar.color</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+            <field name="arch" type="xml">
+                <xpath expr="(//calendar)" position="inside">
+                    <field name="hex_value"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Added mode in event form -->
+        <record model="ir.ui.view" id="calendar_event_with_tag_form">
+			<field name="name">calendar_event_with_tag_form</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="(//field[@name='categ_ids'])" position="replace">
+                    <field name="categ_ids" string="Tag"/>
+                </xpath>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="calendar_event_with_tag_form_popup">
+			<field name="name">calendar_event_with_tag_form_popup</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar.view_calendar_event_form_popup"/>
+			<field name="arch" type="xml">
+                <xpath expr="(//field[@name='categ_ids'])" position="replace">
+                    <field name="categ_ids" string="Tag"/>
+                </xpath>
+                <xpath expr="//group/group[last()]" position="after">
+			<group>
+			    <field name="description" />
+			</group>
+                </xpath>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="calendar_event_tags_form">
+            <field name="name">calendar_event_tags_form</field>
+            <field name="model">calendar.event.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- <header>
+                        <button string="Deactivate Event Type" type="object" name="deactivate" />
+                    </header> -->
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="color" widget="color"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="calendar_event_tags_tree">
+            <field name="name">calendar_event_tags_tree</field>
+            <field name="model">calendar.event.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="color" widget="color"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="calendar_event_tags_action">
+            <field name="name">Event Tag</field>
+            <field name="res_model">calendar.event.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Modes Menu -->
+        <menuitem id="calendar_menu" name="Events" parent="calendar.mail_menu_calendar"
+                  sequence="10" action="calendar.action_calendar_event"/>
+
+        <menuitem id="calendar_settings_menu" name="Settings" parent="calendar.mail_menu_calendar"
+                  sequence="20" action=""/>
+
+        <menuitem id="calendar_event_tags_menu" name="Event Tag" parent="calendar_settings_menu"
+                  sequence="20" action="calendar_event_tags_action"/>
+    </data>
+</odoo>

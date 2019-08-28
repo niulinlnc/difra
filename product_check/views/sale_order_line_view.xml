@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sale_view_order_form_product_checked">
+        <field name="name">sale_view_order_form_product_checked</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- In SOL form -->
+                <xpath expr="//field[@name='order_line']//form//field[@name='product_id']" position="after">
+                    <div style="
+                                        background-color: #FA8072;
+                                        padding: 5px;
+                                        text-align: center;
+                                        font-weight: 600;
+                                        color: white;
+                                        border-radius: 50px;" attrs="{'invisible':[('product_checked', '=', True)]}"
+                         colspan="2">
+                        <field name="product_checked" nolabel="1" invisible="1"/>
+                        <label string="Non checked Product"/>
+                    </div>
+                </xpath>
+                <!-- In SOL tree -->
+                <xpath expr="//field[@name='order_line']//tree" position="inside">
+                    <field name="product_checked" nolabel="1" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//tree" position="attributes">
+                    <attribute name="decoration-danger">product_checked==False</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

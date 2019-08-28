@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="difra_invoice_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//span[@t-field='o.number']" position="replace" />
+        <xpath expr="//div[@class='row mt32 mb32']" position="replace">
+            <div class="row mt32 mb32" id="informations" style="border: 1px solid black;">
+                <div class="col-xs-2" t-if="o.name">
+                    <strong>Invoice number:</strong>
+                    <p t-field="o.number"/>
+                </div>
+                <div class="col-xs-2" t-if="o.name">
+                    <strong>Description:</strong>
+                    <p t-field="o.name"/>
+                </div>
+                <div class="col-xs-2" t-if="o.date_invoice">
+                    <strong>Invoice Date:</strong>
+                    <p t-field="o.date_invoice"/>
+                </div>
+                <div class="col-xs-2" t-if="o.date_due and o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">
+                    <strong>Due Date:</strong>
+                    <p t-field="o.date_due"/>
+                </div>
+                <div class="col-xs-2" t-if="o.origin">
+                    <strong>Source:</strong>
+                    <p t-field="o.origin"/>
+                </div>
+                <div class="col-xs-2" t-if="o.partner_id.ref">
+                    <strong>Customer Code:</strong>
+                    <p t-field="o.partner_id.ref"/>
+                </div>
+                <div name="reference" class="col-xs-2" t-if="o.reference">
+                    <strong>Reference:</strong>
+                    <p t-field="o.reference"/>
+                </div>
+            </div>
+        </xpath>
+
+        <!-- Print only a smart number of decimales for the QTy -->
+        <xpath expr="//span[@t-field='l.quantity']" position="replace">
+            <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) == '0'">
+                <span t-esc="int(l.quantity)"/>  
+            </t>
+            <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) != '0'">
+                <span t-esc="round(l.quantity, 1)"/>  
+            </t>
+            <t t-if="len(str(l.quantity).split('.')[1]) == 2">
+                <span t-esc="round(l.quantity, 2)"/>  
+            </t>
+            <t t-if="len(str(l.quantity).split('.')[1]) == 3">
+                <span t-esc="round(l.quantity, 3)"/>  
+            </t>
+            <t t-if="len(str(l.quantity).split('.')[1]) == 4">
+                <span t-esc="round(l.quantity, 4)"/>  
+            </t>
+        </xpath>
+
+        <!-- Line Price unit -->
+        <xpath expr="//span[@t-field='l.price_unit']" position="replace">
+            <span t-field="l.price_unit" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <!-- Line Price subtotal -->
+        <xpath expr="//span[@t-field='l.price_subtotal']" position="replace">
+            <span t-field="l.price_subtotal" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <!-- Remove empty lines -->
+        <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']" position="replace" />
+
+        <!-- Doc Price total -->
+        <xpath expr="//span[@t-field='o.amount_untaxed']" position="replace">
+            <span t-field="o.amount_untaxed" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <!-- Taxes -->
+        <xpath expr="//t[@t-foreach='o._get_tax_amount_by_group()']//tr//t[1]//td[1]//t[@t-esc='amount_by_group[4]']" position="replace">
+          <t t-esc="amount_by_group[2]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+        <xpath expr="//t[@t-foreach='o._get_tax_amount_by_group()']//tr//t[1]//td[2]//span[@t-esc='amount_by_group[3]']" position="replace">
+          <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+        <xpath expr="//t[@t-foreach='o._get_tax_amount_by_group()']//tr//t[2]//td[2]//span[@t-esc='amount_by_group[3]']" position="replace">
+          <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <!-- Doc total -->
+        <xpath expr="//span[@t-field='o.amount_total']" position="replace">
+            <span t-field="o.amount_total" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <xpath expr="(//div[@class='row'])[last()]" position="after">
+            <p style="page-break-after:always;"></p>
+            <div class="row">
+                <div id="difra_special conditions" style="margin: 5px;">
+                    <div class="col-xs-12">
+                        <h4>TERMS OF SALES</h4>
+                        <p>
+                            <ol>
+                                <li>
+                                    Our invoices are payable at the address of the seller, clear, in cash, without reduction, unless otherwise specified at the time of order form. Our drafts or receipts do not bring either novation or dispensation to this clause.
+                                </li>
+                                <li>
+                                    Any unpaid invoice when due, will by rights and without warning nor instructed carry a 8 % interest and will be increased by a fixed compensation equal to 12 % of the amount due, with a 50,00-€ minimum.
+                                </li>
+                                <li>
+                                    The delivered goods remain the exclusive property of the seller until the full payment of all the debts which result from the agreement(convention) of sale for the buyer, in case of not payment in their term, the goods can be taken back by the seller.
+                                </li>
+                                <li>
+                                    In case of contesting, the courts of the district of the seller will be only competent.
+                                </li>
+                                <li>
+                                    The goods, even sent free, travel at the risks and the dangers of the addressee.
+                                </li>
+                                <li>
+                                    Delivery deadline: the delivery deadlines are given for information purposes, without commitment from us.
+                                </li>
+                                <li>
+                                    Any complaint, to be valid, has to be made by letter in writing, within eight days of delivery.
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

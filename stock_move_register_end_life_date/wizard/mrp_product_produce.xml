@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_product_produce_add_end_life_date" model="ir.ui.view">
+            <field name="MRP Product Produce Add End of Life Date"/>
+            <field name="model">mrp.product.produce</field>
+            <field name="inherit_id" ref="mrp.view_mrp_product_produce_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='lot_id']" position="after">
+                    <field name="life_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_product_produce_line_add_end_life_date" model="ir.ui.view">
+            <field name="MRP Product Produce Add End of Life Date"/>
+            <field name="model">mrp.product.produce</field>
+            <field name="inherit_id" ref="mrp.view_mrp_product_produce_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='lot_id']" position="after">
+                    <field name="life_date"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

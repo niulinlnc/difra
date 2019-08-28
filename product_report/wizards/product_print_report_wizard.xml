@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_print_report_language_selector" model="ir.ui.view">
+        <field name="name">Print Product Report</field>
+        <field name="model">product.report.print.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Product Report">
+                <group>
+                    <field name="product_tmpl_id" readonly="True" string="Product"/>
+                    <field name="lang"/>
+                </group>
+                <footer>
+                    <button name="get_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_print_language_selection_wizard" model="ir.actions.act_window">
+        <field name="name">Print Product Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.report.print.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="product_print_report_language_selector"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

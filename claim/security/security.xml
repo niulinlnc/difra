@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Groups-->
+    <record id="claim_quality_responsible" model="res.groups">
+        <field name="name">Quality Responsible</field>
+        <field name="category_id" ref="base.module_category_claim"/>
+    </record>
+
+    <record id="claim_as_responsible" model="res.groups">
+        <field name="name">AS Responsible</field>
+        <field name="category_id" ref="base.module_category_claim"/>
+    </record>
+
+    <record id="claim_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="base.module_category_claim"/>
+    </record>
+</odoo>

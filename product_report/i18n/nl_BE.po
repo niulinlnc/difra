@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20180713\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-27 09:56+0000\n"
+"PO-Revision-Date: 2018-09-27 11:58+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl_BE\n"
+"X-Generator: Poedit 2.0.9\n"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.report_product_template_document
+#: model:ir.ui.view,arch_db:product_report.report_product_template_sale_order
+msgid "Alternative products:"
+msgstr "Alternatieve producten:"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.view_order_line_form_join
+msgid "Attach Report"
+msgstr "Attach Report"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.product_print_report_language_selector
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.report_product_template_document
+#: model:ir.ui.view,arch_db:product_report.report_product_template_sale_order
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.report_product_template_document
+#: model:ir.ui.view,arch_db:product_report.report_product_template_sale_order
+msgid "Description:"
+msgstr "Omschrijving:"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_display_name
+#: model:ir.model.fields,field_description:product_report.field_report_product_report_report_product_template_display_name
+msgid "Display Name"
+msgstr "Schermnaam"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_id
+#: model:ir.model.fields,field_description:product_report.field_report_product_report_report_product_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_sale_order_line_join_product_report
+msgid "Join Product Report"
+msgstr "Join Product Report"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_lang
+msgid "Language"
+msgstr "Taal"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard___last_update
+#: model:ir.model.fields,field_description:product_report.field_report_product_report_report_product_template___last_update
+msgid "Last Modified on"
+msgstr "Laatst Aangepast op"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: product_report
+#: code:addons/product_report/reports/product_report.py:36
+#, python-format
+msgid "Please enter a language"
+msgstr "Please enter a language"
+
+#. module: product_report
+#: code:addons/product_report/reports/product_report.py:39
+#, python-format
+msgid "Please enter a product"
+msgstr "Please enter a product"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.product_print_report_language_selector
+#: model:ir.ui.view,arch_db:product_report.product_template_only_form_view_print_report
+msgid "Print"
+msgstr "Afdrukken"
+
+#. module: product_report
+#: model:ir.actions.act_window,name:product_report.action_print_language_selection_wizard
+#: model:ir.ui.view,arch_db:product_report.product_print_report_language_selector
+msgid "Print Product Report"
+msgstr "Print Product Report"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.product_print_report_language_selector
+msgid "Product"
+msgstr "Product"
+
+#. module: product_report
+#: model:ir.actions.report,name:product_report.report_product
+msgid "Product Report"
+msgstr "Product Report"
+
+#. module: product_report
+#: model:ir.model,name:product_report.model_product_report_print_wizard
+msgid "Product Report Wizard"
+msgstr "Product Report Wizard"
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.report_product_template_document
+#: model:ir.ui.view,arch_db:product_report.report_product_template_sale_order
+msgid "Ref."
+msgstr "Ref."
+
+#. module: product_report
+#: model:ir.ui.view,arch_db:product_report.report_product_template_document
+#: model:ir.ui.view,arch_db:product_report.report_product_template_sale_order
+msgid "Reference:"
+msgstr "Referentie:"
+
+#. module: product_report
+#: model:ir.model,name:product_report.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Verkooporderregel"
+
+#. module: product_report
+#: model:ir.model.fields,field_description:product_report.field_product_report_print_wizard_product_tmpl_id
+msgid "Template"
+msgstr "Sjabloon"
+
+#. module: product_report
+#: model:ir.model,name:product_report.model_report_product_report_report_product_template
+msgid "report.product_report.report_product_template"
+msgstr "report.product_report.report_product_template"

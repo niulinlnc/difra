@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_account_sage_code_tree" model="ir.ui.view">
+            <field name="name">view_account_sage_code_tree</field>
+            <field name="model">account.sage.code</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Sage Codes">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_account_sage_code_form" model="ir.ui.view">
+            <field name="name">view_account_sage_code_form</field>
+            <field name="model">account.sage.code</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Sage Code">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="code" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

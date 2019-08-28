@@ -1,0 +1,123 @@
+b {
+    color: #9fc0f4;
+    text-transform: uppercase;
+}
+
+th.light_blue_cell {
+    border: solid 2px white;
+    background-color: #9fc0f4;
+    padding: 4px;
+    text-align: left;
+}
+
+th.dark_blue_cell {
+    border: solid 2px white;
+    background-color: #305497;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+    padding: 4px;
+}
+
+#product_title {
+    color: #305497;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+td.image_cell {
+    padding: 5px
+    vertical-align: top;
+}
+
+#product_image {
+    display: block;
+    margin: 15px auto 15px auto;
+    text-align: center;
+}
+
+.product_main_image {
+    display: inline-block;
+    max-height: 300px;
+    max-width: 95%;
+    margin: auto;
+    margin: 0 5px 0 5px;
+}
+
+td.product_info_and_alternatives {
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+table.suggested {
+    width: 100%;
+    font-size: 12px;
+    border-spacing: 10px;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th.suggested_cols {
+    background-color: #9fc0f4;
+    text-align: center;
+    padding: 2px;
+}
+
+table.suggested td, table.suggested th {
+    border-left: 3px solid white;
+}
+
+td.suggested_row {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+#product_multiple_images {
+    width: 100%;
+    margin: auto;
+}
+
+.product_multi_image {
+    max-height: 120px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+
+table.suggested tr:first-child th {
+    border-top: 0;
+}
+
+table.suggested tr:last-child {
+    border-bottom: 0;
+}
+
+table.suggested tr td:first-child,
+table.suggested tr th:first-child {
+  border-left: 0;
+}
+
+table.suggested tr td:last-child,
+table.suggested tr th:last-child {
+  border-right: 0;
+}
+
+table.suggested tr td {
+  border-bottom: solid 1px black;
+  text-align: left;
+}
+
+#website_description {
+    page-break-inside: auto;
+    color: black;
+    display: block;
+}
+
+section {
+    page-break-inside: auto;
+}
+

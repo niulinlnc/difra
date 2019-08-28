@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_cost_history_tree" model="ir.ui.view">
+            <field name="name">view_product_cost_history_tree</field>
+            <field name="model">product.cost.history</field>
+            <field name="arch" type="xml">
+                <tree string="Cost History">
+                    <field name="create_date" />
+                    <field name="cost" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_cost_history_form" model="ir.ui.view">
+            <field name="name">view_product_cost_history_form</field>
+            <field name="model">product.cost.history</field>
+            <field name="arch" type="xml">
+                <form string="Cost History">
+                    <sheet>
+                        <group>
+                            <field name="create_date" />
+                        </group>
+                        <group>
+                            <field name="cost" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

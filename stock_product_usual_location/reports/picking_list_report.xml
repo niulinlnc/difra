@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="stock_product_usual_location.report_picking" inherit_id="stock.report_picking">
+            <xpath expr="//span[@t-esc='ml.location_id.display_name']" position="after">
+                <t t-if="move.product_id.usual_stock_location_info">
+                    (<span style="text-decoration: underline;" t-field="move.product_id.usual_stock_location_info" />)
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

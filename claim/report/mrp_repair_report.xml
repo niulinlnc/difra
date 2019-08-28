@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_mrprepairorder_claim" inherit_id="mrp_repair.report_mrprepairorder">
+        <!-- Related claim Name -->
+        <xpath expr="//div[@class='row mt32 mb32']" position="inside">
+            <div t-if="o.claim_id" class="col-xs-3">
+                <strong>Related claim:</strong>
+                <p t-field="o.claim_id.name"/>
+            </div>
+        </xpath>
+        <!--- Customer reference -->
+        <xpath expr="//div[@class='row mt32 mb32']" position="inside">
+            <div t-if="o.customer_reference" class="col-xs-3">
+                <strong>Customer reference:</strong>
+                <p t-field="o.customer_reference"/>
+            </div>
+        </xpath>
+        <!-- Header Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="before">
+            <t t-if="o.header_text">
+                <p t-raw="o.header_text" />
+            </t>
+        </xpath>
+        <!-- Footer Text -->
+        <xpath expr="//table[@class='table table-condensed']" position="after">
+            <t t-if="o.footer_text">
+                <p t-raw="o.footer_text" />
+            </t>
+        </xpath>
+    </template>
+</odoo>

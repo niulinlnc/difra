@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="claim_as_team_tree_view">
+        <field name="name">Claim AS Team Tree View</field>
+        <field name="model">claim.as_team</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="as_responsible_id"/>
+                <field name="quality_responsible_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="claim_as_team_form_view">
+        <field name="name">Claim AS Team Form View</field>
+        <field name="model">claim.as_team</field>
+        <field name="arch" type="xml">
+            <form string="AS Team Form View">
+                <sheet>
+                    <label for="name"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="as_responsible_id"/>
+                        <field name="quality_responsible_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Members">
+                            <field name="member_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="partner_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="claim_open_as_team_tree_action">
+        <field name="name">AS Team</field>
+        <field name="res_model">claim.as_team</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="claim.as_team" name="AS Teams" parent="claim.config_menu" action="claim_open_as_team_tree_action"
+              sequence="0"/>
+</odoo>

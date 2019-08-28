@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_order_line_partner_invoice_shipping
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-23 14:32+0000\n"
+"PO-Revision-Date: 2019-05-23 14:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_line_partner_invoice_shipping
+#: model:ir.model.fields,field_description:sale_order_line_partner_invoice_shipping.field_sale_order_line_partner_shipping_id
+msgid "Delivery Address"
+msgstr "Adresse de Livraison"
+
+#. module: sale_order_line_partner_invoice_shipping
+#: model:ir.model.fields,help:sale_order_line_partner_invoice_shipping.field_sale_order_line_partner_shipping_id
+msgid "Delivery address for current sales order."
+msgstr "Adresse de livraison du bon de commande en cours."
+
+#. module: sale_order_line_partner_invoice_shipping
+#: model:ir.model.fields,field_description:sale_order_line_partner_invoice_shipping.field_sale_order_line_partner_invoice_id
+msgid "Invoice Address"
+msgstr "Adresse de facturation"
+
+#. module: sale_order_line_partner_invoice_shipping
+#: model:ir.model.fields,help:sale_order_line_partner_invoice_shipping.field_sale_order_line_partner_invoice_id
+msgid "Invoice address for current sales order."
+msgstr "Adresse de facturation pour le bon de commandes actuel"
+
+#. module: sale_order_line_partner_invoice_shipping
+#: model:ir.model,name:sale_order_line_partner_invoice_shipping.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+

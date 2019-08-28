@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_full_description
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20180201\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-29 08:22+0000\n"
+"PO-Revision-Date: 2018-03-29 10:23+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#. module: product_full_description
+#: model:ir.model,name:product_full_description.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_full_description
+#: model:ir.model.fields,field_description:product_full_description.field_product_product_rich_description
+#: model:ir.model.fields,field_description:product_full_description.field_product_template_rich_description
+msgid "Rich Description"
+msgstr "Description riche"
+
+#. module: product_full_description
+#: model:ir.ui.view,arch_db:product_full_description.product_template_only_form_view_rich_description
+msgid "Rich description"
+msgstr "Description riche"
+
+#. module: product_full_description
+#: model:ir.ui.view,arch_db:product_full_description.product_template_only_form_view_rich_description
+msgid "Rich description for prints, web and so on."
+msgstr "Description riche pour imprimés, web et autres."

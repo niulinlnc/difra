@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="mrp_repair_default_test_open_action">
+        <field name="name">Intervention Default Tests</field>
+        <field name="res_model">mrp_repair.default_test</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="claim.mrp_repair_default_test" parent="claim.config_menu" name="Intervention Default Test" sequence="2" action="mrp_repair_default_test_open_action"/>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record model="ir.ui.view" id="quotation_partner_tree_checked">
+	        <field name="name">sale.order.partner.tree.checked</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+	        <field name="arch" type="xml">  
+				<data>
+		    		<xpath expr="//field[@name='partner_id']" position="after">
+		    			<field name="partner_checked"/>
+		    		</xpath>
+				</data>
+	        </field>
+	    </record>
+
+        <record model="ir.ui.view" id="sale_order_partner_tree_hecked">
+	        <field name="name">sale.order.partner.tree.checked</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_tree"/>
+	        <field name="arch" type="xml">  
+				<data>
+		    		<xpath expr="//field[@name='partner_id']" position="after">
+		    			<field name="partner_checked"/>
+		    		</xpath>
+				</data>
+	        </field>
+	    </record>
+
+		<record model="ir.ui.view" id="sale_order_partner_form_checked">
+	    	<field name="name">sale.order.partner.form.checked</field>
+		    <field name="model">sale.order</field>
+		    <field name="inherit_id" ref="sale.view_order_form" />
+		    <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//field[@name='partner_id']" position="after">
+                            <div style="
+                                        background-color: #FA8072;
+                                        padding: 5px;
+                                        text-align: center;
+                                        font-weight: 600;
+                                        color: white;
+                                        border-radius: 50px;" attrs="{'invisible':[('partner_checked', '=', True)]}" colspan="2">
+                                <field name="partner_checked" nolabel="1" invisible="1"/>
+                                <label   string="Non checked Partner" />
+                            </div>
+		    		</xpath>
+				</data>
+		    </field>
+		</record>
+	</data>
+</odoo>
