@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="sale_order_products_delivered_tree_view">
+	        <field name="name">sale.order.products.delivered.tree.view</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_tree"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="partner_shipping_id"/>
+					<field name="client_order_ref"/>
+					<field name="products_delivered"/>
+				</xpath>
+	        </field>
+	    </record>
+        <record model="ir.ui.view" id="quotation_partner_shipping_tree_view">
+	        <field name="name">quotation.parnet.shipping.tree.view</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="partner_shipping_id"/>
+				</xpath>
+	        </field>
+	    </record>
+
+		<record model="ir.ui.view" id="sale_order_partner_shipping_search_view">
+			<field name="name">sale.order.partner.shipping.search.view</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_sales_order_filter"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="partner_shipping_id" operator="child_of" string="Customer"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="sale_order_products_delivered_form_view">
+	    	<field name="name">sale.order.products.delivered.form.view</field>
+		    <field name="model">sale.order</field>
+		    <field name="inherit_id" ref="sale.view_order_form"/>
+		    <field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_shipping_id']" position="after">
+					<field name="products_delivered"/>
+				</xpath>
+		    </field>
+		</record>
+</odoo>
