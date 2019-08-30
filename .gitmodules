@@ -1,0 +1,3 @@
+[submodule "private_difra"]
+	path = private_difra
+	url = https://fwyaime@gitlab.com/abakus-it/odoo-customers/difra.git
