@@ -1,0 +1,9 @@
+[submodule "difra"]
+	path = difra
+	url = git@gitlab.com:abakus-it/odoo-customers/difra.git
+[submodule "odoo-purchased"]
+	path = odoo-purchased
+	url = git@gitlab.com:abakus-it/odoo-purchased.git
+[submodule "account_export"]
+	path = account_export
+	url = git@gitlab.com:abakus-it/odoo-private/account_export.git
