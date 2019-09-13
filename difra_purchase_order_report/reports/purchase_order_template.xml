@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="difra_purchase_order_inherit" inherit_id="purchase.report_purchaseorder_document">
+        <!--Remove Shipping Address-->
+        <xpath expr="(//div[@class='col-xs-6'])[1]" position="replace">
+            <div class="col-xs-6"/>
+        </xpath>
+
+        <!-- Make Address font size taller -->
+        <xpath expr="//div[@t-field='o.partner_id']" position="replace">
+            <h5 t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+        </xpath>
+
+        <!-- Remove reference (o.name) in title for PO -->
+        <xpath expr="(//h2[@t-if])[1]" position="replace">
+            <h2 t-if="o.state != 'draft'">Purchase Order</h2>
+        </xpath>
+
+        <!-- Remove reference (o.name) in title for RFQ -->
+        <xpath expr="(//h2[@t-if])[last()]" position="replace">
+            <h2 t-if="o.state == 'draft'">Request for Quotation</h2>
+        </xpath>
+
+        <!-- Add frame around informations -->
+        <xpath expr="//div[@class='row mt32 mb32']" position="attributes">
+            <attribute name="id">informations</attribute>
+        </xpath>
+
+        <!-- Format date whitout hour -->
+        <!-- Order Date -->
+        <xpath expr="//p[@t-field='o.date_order']" position="attributes">
+            <attribute name="t-field-options">{&quot;format&quot;: &quot;dd/MM/yyyy&quot;}</attribute>
+        </xpath>
+        <!-- date_planned -->
+        <xpath expr="//span[@t-field='line.date_planned']" position="attributes">
+            <attribute name="t-field-options">{&quot;format&quot;: &quot;dd/MM/yyyy&quot;}</attribute>
+        </xpath>
+
+        <!-- Set only 2 decimals for prices fields -->
+        <!-- Unit Price -->
+        <xpath expr="//span[@t-field='line.price_unit']" position="attributes">
+            <attribute name="t-options">{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}</attribute>
+        </xpath>
+        <!-- Price Subtotal -->
+        <xpath expr="//span[@t-field='line.price_subtotal']" position="replace">
+            <span t-field="line.price_subtotal" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+        <!-- Amount untaxed -->
+        <xpath expr="//span[@t-field='o.amount_untaxed']" position="replace">
+            <span t-field="o.amount_untaxed" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+        <!-- Amount Taw -->
+        <xpath expr="//span[@t-field='o.amount_tax']" position="replace">
+            <span t-field="o.amount_tax" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+        <!-- Amount Total -->
+        <xpath expr="//span[@t-field='o.amount_total']" position="replace">
+            <span t-field="o.amount_total" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        </xpath>
+
+        <!-- Print only a smart number of decimales for the QTy -->
+        <xpath expr="//span[@t-field='line.product_qty']" position="replace">
+            <t t-if="len(str(line.product_qty).split('.')[1]) == 1 and (str(line.product_qty).split('.')[1]) == '0'">
+                <span t-esc="int(line.product_qty)"/>
+            </t>
+            <t t-if="len(str(line.product_qty).split('.')[1]) == 1 and (str(line.product_qty).split('.')[1]) != '0'">
+                <span t-esc="round(line.product_qty, 1)"/>
+            </t>
+            <t t-if="len(str(line.product_qty).split('.')[1]) == 2">
+                <span t-esc="round(line.product_qty, 2)"/>
+            </t>
+            <t t-if="len(str(line.product_qty).split('.')[1]) == 3">
+                <span t-esc="round(line.product_qty, 3)"/>
+            </t>
+            <t t-if="len(str(line.product_qty).split('.')[1]) == 4">
+                <span t-esc="round(line.product_qty, 4)"/>
+            </t>
+        </xpath>
+
+        <!-- Remove VAT from address -->
+        <xpath expr="//p[@t-if='o.partner_id.vat']" position="replace"/>
+
+        <!-- Add VAT in informations -->
+        <xpath expr="//div[@t-if='o.date_order']" position="after">
+            <div t-if="o.partner_id.vat" class="col-xs-3">
+                <strong><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>:</strong>
+                <p t-field="o.partner_id.vat"/>
+            </div>
+        </xpath>
+
+        <!-- change Our Order Reference Name -->
+        <xpath expr="//div[@t-if='o.name']" position="replace">
+          <div t-if="o.name" class="col-xs-3">
+              <strong>Document No.:</strong>
+              <p t-field="o.name"/>
+          </div>
+        </xpath>
+
+        <!--Make Column Quantity Larger -->
+        <xpath expr="//th[@class='text-right'][1]" position="replace">
+            <th class="text-right"><string>Quantity</string></th>
+        </xpath>
+
+        <!-- Change Amount to Amount excl. VAT -->
+        <xpath expr="//th[@class='text-right'][last()]" position="replace">
+            <th class="text-right"><string>Amount excl. VAT</string></th>
+        </xpath>
+
+        <!--Change Taxes to VAT-->
+        <xpath expr="//table[@class='table table-condensed'][last()]/tr[2]/td[1]" position="replace">
+            <td>VAT</td>
+        </xpath>
+
+        <!--Change Unit Price to U.P.-->
+        <xpath expr="//th[@class='text-right'][2]" position="replace">
+            <th class="text-right"><strong>U.P.</strong></th>
+        </xpath>
+
+        <!--Replace by same thing to have correct translation-->
+        <xpath expr="//thead/tr/th[2]" position="replace">
+            <th><strong>Taxes</strong></th>
+        </xpath>
+    </template>
+
+    <template id="difra_purchase_quotation_inherit" inherit_id="purchase.report_purchasequotation_document">
+        <!--Remove Shipping Address-->
+        <xpath expr="(//div[@class='col-xs-6'])[1]" position="replace">
+            <div class="col-xs-6"/>
+        </xpath>
+
+        <!-- Remove reference (o.name) in title for RFQ -->
+        <xpath expr="//h2" position="replace">
+            <h2>Request for Quotation</h2>
+        </xpath>
+
+        <!-- Remove date planned -->
+        <xpath expr="//span[@t-field='order_line.date_planned']" position="replace"/>
+        <xpath expr="//td[@class='text-center']" position="replace"/>
+        <xpath expr="//th[@class='text-center']" position="replace"/>
+
+        <!-- Print only a smart number of decimales for the QTy -->
+        <xpath expr="//span[@t-field='order_line.product_qty']" position="replace">
+            <t t-if="len(str(order_line.product_qty).split('.')[1]) == 1 and (str(order_line.product_qty).split('.')[1]) == '0'">
+                <span t-esc="int(order_line.product_qty)"/>
+            </t>
+            <t t-if="len(str(order_line.product_qty).split('.')[1]) == 1 and (str(order_line.product_qty).split('.')[1]) != '0'">
+                <span t-esc="round(order_line.product_qty, 1)"/>
+            </t>
+            <t t-if="len(str(order_line.product_qty).split('.')[1]) == 2">
+                <span t-esc="round(order_line.product_qty, 2)"/>
+            </t>
+            <t t-if="len(str(order_line.product_qty).split('.')[1]) == 3">
+                <span t-esc="round(order_line.product_qty, 3)"/>
+            </t>
+            <t t-if="len(str(order_line.product_qty).split('.')[1]) == 4">
+                <span t-esc="round(order_line.product_qty, 4)"/>
+            </t>
+        </xpath>
+
+        <!--Remove VAT from address-->
+        <xpath expr="//p[@t-if='o.partner_id.vat']" position="replace">
+        </xpath>
+
+        <!-- Make font size taller for address -->
+        <xpath expr="//div[@t-field='o.partner_id']" position="replace">
+            <h5 t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+        </xpath>
+    </template>
+
+    <template id="difra_purchase_quotation_add_informations" inherit_id="purchase_order_external_reference.report_purchasequotation_document_partner_external_ref">
+        <!--Add purchase order reference-->
+         <xpath expr="//div[@t-if='o.partner_ref_external']" position="before">
+            <div class="col-xs-3">
+                <strong>Document No.:</strong>
+                <p t-field="o.name"/>
+            </div>
+        </xpath>
+
+         <!--Add date order-->
+        <xpath expr="//div[@t-if='o.partner_ref_external']" position="after">
+            <div class="col-xs-3">
+                <strong>Date:</strong>
+                <p t-field="o.date_order" t-field-options="{'format': 'dd/MM/yyyy'}"/>
+            </div>
+            <!-- Add VAT -->
+            <div t-if="o.partner_id.vat" class="col-xs-3">
+                <strong><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>:</strong>
+                <p t-field="o.partner_id.vat"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

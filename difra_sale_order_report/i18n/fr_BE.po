@@ -1,0 +1,158 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* difra_sale_order_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-10 10:40+0000\n"
+"PO-Revision-Date: 2019-09-10 10:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<span>Pro-Forma Invoice</span>"
+msgstr "<span>Facture Pro-Forma</span>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<strong><span>Document No.:</span></strong>"
+msgstr "<strong><span>Document N°:</span></strong>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<strong>Difra contact:</strong>"
+msgstr "<strong>Contact Difra :</strong>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<strong>Invoicing address:</strong>"
+msgstr "<strong>Adresse de facturation :</strong>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<strong>Invoicing and shipping address:</strong>"
+msgstr "<strong>Adresse de livraison et facturation :</strong>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Adresse de livraison :</strong>"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Amount Tax Excl."
+msgstr "Total Hors Taxes"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Any complaint, to be valid, has to be made by letter in writing, within eight days of delivery."
+msgstr "Tout réclamation, pour être valable, doit se faire par écrit, dans la huitaine de la livraison."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Any unpaid invoice when due, will by rights and without warning nor instructed carry a 8 % interest and will be increased by a fixed compensation equal to 12 % of the amount due, with a 50,00-€ minimum."
+msgstr "Toute facture non payée à l'échéance, portera de plein droit et sans sommation ni mise en demeure un intérêt de 8% et sera augmentée d'une indemnité forfaitaire égale à 12% du montant dû, avec un minimum de 50,00 €."
+
+#. module: difra_sale_order_report
+#: model:ir.model,name:difra_sale_order_report.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Delivery deadline: the delivery deadlines are given for information purposes, without commitment from us."
+msgstr "Délai de livraison : les délais de livraison sont donnés à titre indicatif, sans engagement de notre part."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Description"
+msgstr "Description"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Disc.(%)"
+msgstr "Rem.(%)"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "In case of contesting, the courts of the district of the seller will be only competent."
+msgstr "En cas de contestation, les tribunaux de la circonscription du vendeur seront seul compétents."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Order"
+msgstr "Commande"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Our invoices are payable at the address of the seller, clear, in cash, without reduction, unless otherwise specified at the time of order form. Our drafts or receipts do not bring either novation or dispensation to this clause."
+msgstr "Nos factures sont payables à l'adresse du vendeur, nette, au comptant, sans escompte, sauf indication contraire au moment de la commande. Nos traîtes ou quittances n'apportent ni novation ni dérogation à cette clause."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: difra_sale_order_report
+#: model:ir.model,name:difra_sale_order_report.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Modèle de Devis"
+
+#. module: difra_sale_order_report
+#: model:ir.model,name:difra_sale_order_report.model_sale_order_template_line
+msgid "Quotation Template Line"
+msgstr "Ligne de Modèle de Devis"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_view_company_form
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: difra_sale_order_report
+#: model:ir.model.fields,field_description:difra_sale_order_report.field_res_company_reports_logo
+msgid "Reports Logo"
+msgstr "Logo du header des rapports"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "TERMS OF SALES"
+msgstr "CONDITIONS GENERALES DE VENTE"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "The delivered goods remain the exclusive property of the seller until the full payment of all the debts which result from the agreement(convention) of sale for the buyer, in case of not payment in their term, the goods can be taken back by the seller."
+msgstr "Les marchandises livrées demeurent la propritété exclusive du vendeur jusqu'au plein acquittement de toutes les créances qui résultent de la convention de vente pour l'acheteur, en cas de\n"
+"non paiement à leur échéance, les marchandises peuvent être reprises par le vendeur."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "The goods, even sent free, travel at the risks and the dangers of the addressee."
+msgstr "Les marchandises, même expédiées franco voyagent aux risques et périls du destinataire. Pour être valable, toute réclamation doit se faire par écrit, sous huit jours de la livraison."
+
+#. module: difra_sale_order_report
+#: model:ir.ui.view,arch_db:difra_sale_order_report.difra_sale_order_inherit
+msgid "U.P."
+msgstr "P.U."
+

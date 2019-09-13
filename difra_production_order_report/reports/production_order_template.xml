@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="difra_production_order_inherit" inherit_id="mrp.report_mrporder">
+        <xpath expr="//th[@class='text-right']" position="replace">
+            <th>Usual stock location</th>
+            <th>Qty Needed</th>
+            <th>Qty Reserved</th>
+            <th>Qty Missing</th>
+            <th>Qty in Stock</th>
+            <th>Unit of Measure</th>
+        </xpath>
+        <xpath expr="//tr[@t-as='line']" position="replace">
+            <tr t-foreach="o.move_raw_ids" t-as="line">
+                    <td><span t-field="line.product_id"/></td>
+                    <td><span t-if="line.product_id.usual_stock_location_info" t-field="line.product_id.usual_stock_location_info"/></td>
+                    <td><span t-field="line.product_uom_qty"/></td>
+                    <td><span t-field="line.reserved_availability"/></td>
+                    <td><span t-esc="'%.4f'%(float(line.product_uom_qty - line.reserved_availability))" /></td>
+                    <td t-if="line.product_id.type == 'product'"><span t-field="line.product_id.qty_available"/></td>
+                    <td t-if="line.product_id.type != 'product'">Consu</td>
+                    <td><span t-if="line.product_uom.name" t-field="line.product_uom.name"/></td>
+                </tr>
+        </xpath>
+    </template>
+</odoo>

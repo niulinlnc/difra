@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* difra_account_invoice_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 14:30+0000\n"
+"PO-Revision-Date: 2019-06-13 16:32+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl_BE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>Klant code:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Omschrijving:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>Vervaldatum:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Factuurdatum:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Invoice number:</strong>"
+msgstr "<strong>Factuur nr.</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referentie:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Bron:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "Any complaint, to be valid, has to be made by letter in writing, within eight days of delivery."
+msgstr "Om geldig te zijn moeten alle klachten ons schrijftelijk bereiken binnen de acht dagen na levering."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "Any unpaid invoice when due, will by rights and without warning nor instructed carry a 8 % interest and will be increased by a fixed compensation equal to 12 % of the amount due, with a 50,00-€ minimum."
+msgstr "Iedere op haar vervaldag ontbetaald gebleven factuur zal van rechtswege en zonder aanmaning of ingebrekestelling een intrest van 8% opleveren, en wordt verhoogd met een forfaitaire vergoeding gelijk aan 12% van het verschuldigd bedrag, met een minimum van 50,00 €."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "Delivery deadline: the delivery deadlines are given for information purposes, without commitment from us."
+msgstr "Leveringstermijn : de opgegeven leveringstermijnen zijn louter indicatief, zonder verplichting van onzentwege."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "In case of contesting, the courts of the district of the seller will be only competent."
+msgstr "Voor alle betwistingen zijn alleen bevoegd de rechtbanken van het district van de verkoper."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "Our invoices are payable at the address of the seller, clear, in cash, without reduction, unless otherwise specified at the time of order form. Our drafts or receipts do not bring either novation or dispensation to this clause."
+msgstr "Onze facturen zijn betaalbaar aan het adres van de verkoper, netto, kontant, zonder korting, behoudens andersluidende overeenkomst bij de bestelling. Onze wissels of kwitanties brengen noch schuldvordering, noch afwijking mede aan deze clausule."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "TERMS OF SALES"
+msgstr "ALGEMENE VERKOOPSVOORWAARDEN"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "The delivered goods remain the exclusive property of the seller until the full payment of all the debts which result from the agreement(convention) of sale for the buyer, in case of not payment in their term, the goods can be taken back by the seller."
+msgstr "Tot aan de volledige voldoening van alle vorderingen, welke voor de koper uit de verkoopsovereenkomst voortvloeien, blijven de geleverde goederen het uitsluitend eigendom van de verkoper en kunnen deze in geval van niet-tijdige betaling door de verkoper worden teruggevorderd."
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "The goods, even sent free, travel at the risks and the dangers of the addressee."
+msgstr "De goederen, zelfs verzonden, reizen op risico van de geadresseerde. Om geldig te zijn, dient elke klacht schriftelijk gedaan binnen de acht dagen van de aflevering."

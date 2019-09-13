@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* difra_product_labels
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-11 07:33+0000\n"
+"PO-Revision-Date: 2019-07-11 09:34+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl_BE\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.difra_single_line_internal
+msgid ""
+"<br/>\n"
+"                            Location:"
+msgstr ""
+"<br/>\n"
+"                            Plaats :"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.difra_single_line_internal
+msgid ""
+"<br/>\n"
+"                            Name:"
+msgstr ""
+"<br/>\n"
+"                            Product :"
+
+#. module: difra_product_labels
+#: model:ir.actions.report,name:difra_product_labels.difra_move_complete_label_external_report
+#: model:ir.actions.report,name:difra_product_labels.difra_move_complete_label_internal_report
+msgid "Difra Stock Move Label IN (Move-Complete)"
+msgstr "Difra Stock Move Label IN (Move-Complete)"
+
+#. module: difra_product_labels
+#: model:ir.actions.report,name:difra_product_labels.difra_move_single_label_external_report
+#: model:ir.actions.report,name:difra_product_labels.difra_move_single_label_internal_report
+msgid "Difra Stock Move Label IN (Move-Single)"
+msgstr "Difra Stock Move Label IN (Move-Single)"
+
+#. module: difra_product_labels
+#: model:ir.actions.report,name:difra_product_labels.difra_picking_complete_label_external_report
+#: model:ir.actions.report,name:difra_product_labels.difra_picking_complete_label_internal_report
+msgid "Difra Stock Move Label IN (Picking-Complete)"
+msgstr "Difra Stock Move Label IN (Picking-Complete)"
+
+#. module: difra_product_labels
+#: model:ir.actions.report,name:difra_product_labels.difra_picking_single_label_external_report
+#: model:ir.actions.report,name:difra_product_labels.difra_picking_single_label_internal_report
+msgid "Difra Stock Move Label IN (Picking-Single)"
+msgstr "Difra Stock Move Label IN (Picking-Single)"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.difra_single_line_internal
+msgid "Lot #:"
+msgstr "Lotnummer :"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.view_picking_form_labels_button
+msgid "Print 1 Label per line"
+msgstr "Print 1 Label per line"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.view_picking_form_labels_button
+msgid "Print ALL Labels"
+msgstr "Print ALL Labels"
+
+#. module: difra_product_labels
+#: model:ir.ui.view,arch_db:difra_product_labels.difra_single_line_internal
+msgid "Product #:"
+msgstr "Productnummer :"
