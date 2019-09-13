@@ -162,8 +162,8 @@
                         </p>
                     </div>
                     <div class="col-9">
-                        <p>Authority Notified Justification:
-                            <span t-field="doc.authority_notified_justification"/>
+                        <p>Authority Competent Justification:
+                            <span t-field="doc.authority_competent_justification"/>
                         </p>
                     </div>
                 </div>
