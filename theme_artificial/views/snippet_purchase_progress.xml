@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template name="Purchse Progress" id="snippet_purchase_progress">
+
+			<section class="banner-static-top-purchase mt32 mb32">
+				<div class="container">
+					<div class="banner-top-title">
+						<h2>Purchase progress</h2>
+
+					</div>
+					<div class="banner-top-content">
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-sms-12">
+								<div class="banner-content banner-top1">
+									<h2>Step 1</h2>
+									<p>Slect Your Items</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-sms-12">
+								<div class="banner-content banner-top2">
+									<h2>Step 2</h2>
+									<p>Add To Cart</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-sms-12">
+								<div class="banner-content banner-top3">
+									<h2>Step 3</h2>
+									<p>Check Out Items</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-sms-12">
+								<div class="banner-content banner-top4">
+									<h2>Step 4</h2>
+									<p>Take Your Items</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</template>
+</odoo>
+	

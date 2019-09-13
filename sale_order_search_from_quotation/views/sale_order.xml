@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="sale_order_add_search_from_quotation">
+	        <field name="name">sale.order.add_search_from_quotation</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="origin"/>
+				</xpath>
+	        </field>
+	    </record>
+        <record model="ir.ui.view" id="sale_order_remove_groups_on_origin_field">
+	        <field name="name">sale.order.remove.groups.on.origin.field</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_form"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//field[@name='origin']" position="replace">
+					<field name="origin"/>
+				</xpath>
+	        </field>
+	    </record>
+</odoo>

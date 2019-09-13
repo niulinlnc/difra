@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="mrp_bom_with_sub_bom_info_form_view">
+        <field name="name">mrp_bom_with_sub_bom_info_form_view</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bom_line_ids']//tree//field[@name='product_contains_bom']" position="after">
+                <button string="" icon="fa-arrows" name="expand_bom" type="object" help="Expand this sub-BoM here" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

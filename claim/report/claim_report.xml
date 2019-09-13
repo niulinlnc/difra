@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="pdf_report_claim_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context({'lang': doc.contact_id.lang})"/>
+            <div class="page">
+                <div class="oe_structure"/>
+                <h1>Claim Nr.
+                    <t t-esc="doc.name"/>
+                </h1>
+                <div class="row">
+                    <div class="col-6">
+                        <span>Case:
+                            <span t-field="doc.case"/>
+                        </span>
+                        <p>Contact:
+                            <span t-field="doc.contact_id"/>
+                        </p>
+                        <p t-if="doc.email">Email:
+                            <span t-field="doc.email"/>
+                        </p>
+                        <p t-if="doc.phone">Phone:
+                            <span t-field="doc.phone"/>
+                        </p>
+                        <p t-if="doc.mobile">Mobile:
+                            <span t-field="doc.mobile"/>
+                        </p>
+                        <p t-if="doc.contact_id.street">Address:
+                            <span t-field="doc.contact_id.street"/>
+                        </p>
+                        <p t-if="doc.site_address">Site Address:
+                            <span t-field="doc.site_address"/>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p>Product:
+                            <span t-field="doc.product_id"/>
+                        </p>
+                        <p>Product Quantity:
+                            <span t-field="doc.product_qty"/>
+                        </p>
+                        <p t-if="doc.lot_id">Lot:
+                            <span t-field="doc.lot_id"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p t-if="doc.create_date">Create Date:
+                            <span t-field="doc.create_date"/>
+                        </p>
+                        <p t-if="doc.create_uid">Create By:
+                            <span t-field="doc.create_uid"/>
+                        </p>
+                        <p t-if="doc.end_date">End Date:
+                            <span t-field="doc.end_date"/>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p t-if="doc.as_responsible">AS Responsible:
+                            <span t-field="doc.as_responsible"/>
+                        </p>
+                        <p t-if="doc.quality_responsible">Quality Responsible:
+                            <span t-field="doc.quality_responsible"/>
+                        </p>
+                        <p>Customer Satisfaction:
+                            <span t-field="doc.customer_satisfaction"/>
+                        </p>
+                        <p t-if="doc.description">Claim Description:
+                            <span t-field="doc.description"/>
+                        </p>
+                    </div>
+                </div>
+                <div t-if="doc.breakdown" class="row">
+                    <hr/>
+                    <h4>Breakdown:</h4>
+                    <p t-if="doc.breakdown_last_maintenance">Last Maintenance Date:
+                        <span t-field="doc.breakdown_last_maintenance"/>
+                    </p>
+                    <p t-if="doc.breakdown_commissioning_year">Commissioning Year:
+                        <span t-field="doc.breakdown_commissioning_year"/>
+                    </p>
+                    <p t-if="doc.breakdown_when">Breakdown When:
+                        <span t-field="doc.breakdown_when"/>
+                    </p>
+                    <p t-if="doc.breakdown_description">Description:
+                        <span t-field="doc.breakdown_description"/>
+                    </p>
+                    <h5>Breakdown Cause:</h5>
+                    <table>
+                        <tr>
+                            <th>Fall</th>
+                            <th>Wrong Usage</th>
+                            <th>Overvoltage</th>
+                            <th>Miss maintenance</th>
+                            <th>Other</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span t-if="doc.breakdown_fall">Yes</span>
+                                <span t-else="">No</span>
+                            </td>
+                            <td>
+                                <span t-if="doc.breakdown_wrong_usage">Yes</span>
+                                <span t-else="">No</span>
+                            </td>
+                            <td>
+                                <span t-if="doc.breakdown_overvoltage">Yes</span>
+                                <span t-else="">No</span>
+                            </td>
+                            <td>
+                                <span t-if="doc.breakdown_miss_maintenance">Yes</span>
+                                <span t-else="">No</span>
+                            </td>
+                            <td>
+                                <span t-if="doc.breakdown_other">Yes</span>
+                                <span t-else="">No</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <p t-if="doc.breakdown_other_description">Other Description:
+                        <span t-field="doc.breakdown_other_description"/>
+                    </p>
+                </div>
+                <hr/>
+                <div class="row">
+                    <h4>Incident:</h4>
+                    <div class="col-3">
+                        <p>Incident:
+                            <span t-if="doc.incident">Yes</span>
+                            <span t-else="">No</span>
+                        </p>
+                    </div>
+                    <div class="col-9">
+                        <p>Incident Justification:
+                            <span t-field="doc.incident_justification"/>
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <h4>Complaint:</h4>
+                    <div class="col-3">
+                        <p>Complaint:
+                            <span t-if="doc.complaint">Yes</span>
+                            <span t-else="">No</span>
+                        </p>
+                    </div>
+                    <div class="col-9">
+                        <p>Complaint Justification:
+                            <span t-field="doc.complaint_justification"/>
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <h4>Authority Notified:</h4>
+                    <div class="col-3">
+                        <p>Authority Notified:
+                            <span t-if="doc.complaint">Yes</span>
+                            <span t-else="">No</span>
+                        </p>
+                    </div>
+                    <div class="col-9">
+                        <p>Authority Notified Justification:
+                            <span t-field="doc.authority_notified_justification"/>
+                        </p>
+                    </div>
+                </div>
+                <div t-if="doc.note">
+                    <hr/>
+                    <p>Notes:
+                        <span t-field="doc.note"/>
+                    </p>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="pdf_report_claim">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="claim.pdf_report_claim_document" t-lang="doc.contact_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="claim_pdf_report"
+            model="claim"
+            string="Claim"
+            report_type="qweb-pdf"
+            name="claim.pdf_report_claim"
+            file="claim.pdf_report_claim"
+            print_report_name="'Claim - ' + object.name"
+    />
+</odoo>

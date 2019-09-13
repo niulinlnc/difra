@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="stock.location" id="claim.stock_location_repair">
+            <field name="name">Repair</field>
+            <field name="location_id" ref="stock.stock_location_warehouse"/>
+            <field name="usage">internal</field>
+        </record>
+
+        <record model="stock.location" id="stock.stock_location_stock">
+            <field name="name">Stock</field>
+            <field name="location_id" ref="stock.stock_location_warehouse"/>
+            <field name="usage">internal</field>
+        </record>
+
+        <record model="stock.picking.type" id="claim.stock_picking_type_repair_OUT">
+            <field name="name">Repair OUT</field>
+            <field name="sequence_id" ref="claim.repair_out_sequence"/>
+            <field name="code">outgoing</field>
+            <field name="default_location_src_id" ref="claim.stock_location_repair"/>
+            <field name="default_location_dest_id" ref="stock.stock_location_customers"/>
+        </record>
+
+        <record model="stock.picking.type" id="claim.stock_picking_type_repair_IN">
+            <field name="name">Repair IN</field>
+            <field name="sequence_id" ref="claim.repair_in_sequence"/>
+            <field name="return_picking_type_id" ref="claim.stock_picking_type_repair_OUT"/>
+            <field name="code">outgoing</field>
+            <field name="default_location_src_id" ref="stock.stock_location_customers"/>
+            <field name="default_location_dest_id" ref="claim.stock_location_repair"/>
+        </record>
+    </data>
+</odoo>

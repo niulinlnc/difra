@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="notify_incident_mail_template" model="mail.template">
+        <field name="name">Claim Notify Incident Mail Template</field>
+        <field name="model_id" ref="claim.model_claim" />
+        <field name="email_from">${(object.create_uid.email or object.company_id.email or 'noreply@localhost')|safe}</field>
+        <field name="email_to">${object.team_id.quality_responsible_id.email};${object.team_id.as_responsible_id.email}</field>
+        <field name="subject">${object.name}: Incident</field>
+        <field name="body_html"><![CDATA[
+                <p>Dear,</p>
+                <br />
+                <p>An incident has been notified by ${object.create_uid.name} on claim <strong>${object.name}</strong></p>
+                <br />
+                <p>The concerned product is: <strong>${object.product_id.name}</strong></p>
+                <p>Sold to: <strong>${object.contact_id.name}</strong></p>
+
+                <p style="font-size: 11px;">Message automatically sent by Odoo</p>
+            ]]></field>
+    </record>
+    <record id="notify_as_responsible_mail_template" model="mail.template">
+        <field name="name">Claim Notify AS Responsible Mail Template</field>
+        <field name="model_id" ref="claim.model_claim" />
+        <field name="email_from">${(object.create_uid.email or object.company_id.email or 'noreply@localhost')|safe}</field>
+        <field name="email_to">${object.team_id.as_responsible_id.email}</field>
+        <field name="subject">Complete ${object.name}</field>
+        <field name="body_html"><![CDATA[
+                <p>Dear ${(object.as_responsible.name or '')},</p>
+                <p>The claim <strong>${object.name}</strong> has been completed by ${object.create_uid.name}.</p>
+
+                View claim <a href="${object.generate_url()[0]}">here</a>.
+
+                <p style="font-size: 11px;">Message automatically sent by Odoo</p>
+            ]]></field>
+    </record>
+    <record id="notify_claim_ready" model="mail.template">
+        <field name="name">Claim Notify Claim Is Ready Mail Template</field>
+        <field name="model_id" ref="claim.model_claim" />
+        <field name="email_from">${(object.create_uid.email or object.company_id.email or 'noreply@localhost')|safe}</field>
+        <field name="email_to">${object.team_id.quality_responsible_id.email}</field>
+        <field name="subject">Claim ${object.name} is ready</field>
+        <field name="body_html"><![CDATA[
+                <p>Dear ${(object.quality_responsible.name or '')},</p>
+                <p>The claim <strong>${object.name}</strong> has been validated by ${object.as_responsible.name}.</p>
+
+                View claim <a href="${object.generate_url()[0]}">here</a>.
+
+                <p style="font-size: 11px;">Message automatically sent by Odoo</p>
+            ]]></field>
+    </record>
+</odoo>

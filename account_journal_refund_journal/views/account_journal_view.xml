@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_account_journal_form_refund">
+        <field name="name">view_account_journal_form_refund</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <!-- Add header text -->
+            <xpath expr="//field[@name='refund_sequence']" position="before">
+                <field name="refund_journal_id" attrs="{'invisible': [('type', 'not in', ['sale', 'purchase'])]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

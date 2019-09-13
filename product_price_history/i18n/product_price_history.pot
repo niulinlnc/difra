@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_price_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170621\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-28 06:52+0000\n"
+"PO-Revision-Date: 2017-07-28 06:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_price_history
+#: model:ir.ui.view,arch_db:product_price_history.product_normal_form_view_price_history_button
+msgid "Price History"
+msgstr ""
+
+#. module: product_price_history
+#: model:ir.model.fields,field_description:product_price_history.field_product_template_price_history_count
+msgid "Price History Count"
+msgstr ""
+
+#. module: product_price_history
+#: model:ir.actions.act_window,name:product_price_history.product_normal_form_view_price_history_button_action
+#: model:ir.ui.view,arch_db:product_price_history.view_product_price_history_tree
+msgid "Product Price History"
+msgstr ""
+
+#. module: product_price_history
+#: model:ir.model,name:product_price_history.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: product_price_history
+#: model:ir.actions.act_window,name:product_price_history.product_normal_form_view_price_history_menu_button_action
+#: model:ir.ui.menu,name:product_price_history.menu_purchase_product_price_history
+msgid "Products Price History"
+msgstr ""
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template id="theme_artificial_product_item" inherit_id="website_sale.products_item">
+			<xpath expr="//section" position="attributes">
+				<attribute name="id">product-name</attribute>
+			</xpath>
+			<xpath expr="//section/h5" position="replace">
+				<div style="height:49px;overflow:hidden;">
+							<h6>
+								<strong>
+								
+									 <a itemprop="name" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" t-field="product.name" />
+								</strong>
+							</h6>
+						</div>
+			</xpath>
+		</template>
+		 <!-- Product Template Pager -->
+	 <template id="pager_inherit" inherit_id="website.pager">
+            <xpath expr="//li[1]/a" position="replace">
+                   	<a
+						t-att-href=" pager['page_previous']['url'] if pager['page']['num'] != 1 else ''">
+						<i class="fa fa-angle-left fa-lg"></i>
+					</a>
+            </xpath>
+            
+            <xpath expr="//li[2]/a" position="replace">
+                    <a
+                        t-att-href="pager['page_next']['url'] if pager['page']['num'] != pager['page_count'] else ''">
+                        <i class="fa fa-angle-right fa-lg"></i>
+
+                    </a>
+            </xpath>
+        </template>
+        
+     <template id="disable_search_box_products" inherit_id="website_sale.products">
+            <xpath expr="//t[@t-call='website_sale.search']" position="replace">
+            </xpath>
+            <!-- <xpath expr="//t[@t-call='website_sale.pricelist_list']" position="replace">
+            </xpath> -->
+        </template>
+</odoo>

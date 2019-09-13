@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="stock_picking_origin_claim_form_view">
+        <field name="name">stock.picking.origin.claim</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="replace">
+                <field name="origin" placeholder="e.g. PO0032" attrs="{'invisible': [('origin_claim', '!=', False)]}"/>
+                <field name="origin_claim" attrs="{'invisible': [('origin_claim', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="repair_id" invisible="1"/>
+                <field name="product_id" invisible="1"/>
+                <field name="delivery_address" attrs="{'invisible': [('repair_id', '=', False)]}"/>
+                <field name="customer_reference" attrs="{'invisible': [('repair_id', '=', False)]}"/>
+                <field name="description" attrs="{'invisible': [('repair_id', '=', False)]}"/>
+                <field name="product_repaired" attrs="{'invisible': [('repair_id', '=', False)]}"/>
+                <field name="lot_id" attrs="{'invisible': [('repair_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

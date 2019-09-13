@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="stock_renting_improvements.delivery_slip_add_renting_information" inherit_id="stock.report_delivery_document">
+            <xpath expr="//h2" position="replace">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2>
+                            Delivery Slip
+
+                            <t t-if="o.is_renting">
+                                <span t-if="o.rent_type == 'loan'">&amp;nbsp;-&amp;nbsp;Loan</span>
+                                <span t-if="o.rent_type == 'demo'">&amp;nbsp;-&amp;nbsp;Demo</span>
+                            </t>
+                        </h2>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//table[@class='table table-condensed mt48'][last()]" position="after">
+              <t t-if="o.is_renting">
+                <div class="row" t-if="o.rent_notes">
+                  <div class="col-xs-12">
+                      <p t-raw="o.rent_notes" />
+                  </div>
+                </div>
+                <div class="row mt48">
+                  <div class="col-xs-6">
+                    <strong>Delivery:</strong>
+                  </div>
+                  <div class="col-xs-6">
+                    <strong>Recovery:</strong>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    Delivery Date: <span t-if="o.scheduled_date" t-field="o.scheduled_date" t-field-options="{'format': 'dd/MM/yyyy'}"/>
+                  </div>
+                  <div class="col-xs-6">
+                    Recovery Date:
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    Name and Signature Customer: <span t-field="o.partner_id"/>
+                  </div>
+                  <div class="col-xs-6">
+                    Difra name and Signature:
+                  </div>
+                </div>
+              </t>
+            </xpath>
+    </template>
+
+    <template id="stock_renting_improvements.difra_contact_in_header" inherit_id="difra_delivery_slip_report.difra_delivery_slip_inherit">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="o.date_done" class="col-xs-3">
+                <strong>Difra contact:</strong>
+                <p t-field="o.create_uid" />
+            </div>
+        </xpath>
+    </template>
+
+    <template id="stock_renting_improvements.delivery_slip_banner_add_renting_information" inherit_id="difra_delivery_slip_report.difra_delivery_slip_inherit">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="o.rent_delivery_mode" class="col-xs-3">
+                <strong>Delivery Mode</strong>
+                <p t-field="o.rent_delivery_mode"/>
+            </div>
+            <div t-if="o.rent_description" class="col-xs-3">
+                <strong>Description</strong>
+                <p t-field="o.rent_description"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="invoice_form_texts">
+        <field name="name">invoice_form_texts</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <!-- Add header text -->
+            <xpath expr="//field[@name='invoice_line_ids']" position="before">
+                <group colspan="4">
+                    <field name="header_text" nolabel="1" widget="html" placeholder="Type here a header text ..."/>
+                </group>
+            </xpath>
+            <!-- Add footer text -->
+            <xpath expr="//field[@name='invoice_line_ids']" position="after">
+                <group colspan="4">
+                    <field name="footer_text" nolabel="1" widget="html" placeholder="Type here a footer text ..."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

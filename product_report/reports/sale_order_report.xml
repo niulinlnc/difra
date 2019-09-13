@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale.report_saleorder_document_product_reports" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='page']" position="after">
+            <t t-call="product_report.report_product_template_sale_order" t-lang="doc.partner_id.lang"/>
+        </xpath>
+    </template>
+</odoo>

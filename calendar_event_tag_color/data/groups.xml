@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="event_manager_group" model="res.groups">
+            <field name="name">Event Manager</field>
+            <field name="comment">Event Manager Group</field>
+            <field name="category_id" ref="base.module_category_extra"/>
+        </record>
+    </data>
+</odoo>

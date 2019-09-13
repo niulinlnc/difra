@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_product_template_document">
+        <t t-set="doc" t-value="doc.with_context({'lang': selected_lang})"/>
+        <t t-set="header_title1" t-value="doc.name"/>
+        <link href="/product_report/static/src/css/style.css" rel="stylesheet"/>
+        <t t-name="product_report.report_product_template">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <table class="head_category">
+                        <tr>
+                            <th width="35%" class="light_blue_cell" colspan="2">
+                                <div id="product_title">
+                                    <span t-field="doc.name"/>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="image_cell">
+                                <t t-if="doc.image">
+                                    <div id="product_image">
+                                        <span t-field="doc.image" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" class="product_main_image"/>
+                                    </div>
+                                </t>
+                            </td>
+                            <td class="product_info_and_alternatives">
+                                <h4>Reference: <span t-field="doc.default_code"/></h4>
+                                <h4>Description:</h4>
+                                <p>
+                                    <span t-field="doc.description_sale"/>
+                                </p>
+                                <t t-if="len(doc.alternative_product_ids) > 0">
+                                    <h4>Alternative products:</h4>
+                                    <table class="suggested">
+                                        <tr>
+                                            <th width="75px" class="suggested_cols">Ref.</th>
+                                            <th class="suggested_cols">Description</th>
+                                        </tr>
+                                        <t t-foreach="doc.alternative_product_ids" t-as="alternative">
+                                            <tr>
+                                                <td class="suggested_row">
+                                                    <span t-field="alternative.default_code"/>
+                                                </td>
+                                                <td class="suggested_row">
+                                                    <span t-field="alternative.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </t>
+                                <div id="product_multiple_images">
+                                    <t t-foreach="doc.product_image_ids" t-as="image">
+                                        <img t-att-src="'data:image/png;base64,%s' % image.image" height="100%" class="product_multi_image"/>
+                                    </t>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="website_description">
+                        <span style="word-wrap:break-word;" t-field="doc.website_description"/>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Used from Product Print -->
+    <template id="report_product_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="product_report.report_product_template_document" t-lang="selected_lang"/>
+            </t>
+        </t>
+    </template>
+
+    <!-- Used from SO Print -->
+    <template id="report_product_template_sale_order">
+        <t t-foreach="docs" t-as="doc">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+            <link href="/product_report/static/src/css/style.css" rel="stylesheet"/>
+            <t t-foreach="doc.order_line" t-as="line">
+                <t t-if="line.join_product_report == True">
+                    <p style="page-break-before:always;"> </p>
+                    <t t-call="web.html_container">
+                        <div class="page">
+                            <table class="head_category">
+                                <tr>
+                                    <th width="35%" class="light_blue_cell" colspan="2">
+                                        <div id="product_title">
+                                            <span t-field="line.product_id.name"/>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="image_cell">
+                                        <t t-if="line.product_id.image">
+                                            <div id="product_image">
+                                                <span t-field="line.product_id.image" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded product_main_image&quot;}"/>
+                                            </div>
+                                        </t>
+                                    </td>
+                                    <td class="product_info_and_alternatives">
+                                        <h4>Reference: <span t-field="line.product_id.default_code"/></h4>
+                                        <t t-if="line.product_id.description_sale">
+                                            <h4>Description:</h4>
+                                            <p>
+                                                <span t-field="line.product_id.description_sale"/>
+                                            </p>
+                                        </t>
+                                        <t t-if="len(line.product_id.alternative_product_ids) > 0">
+                                            <h4>Alternative products:</h4>
+                                            <table class="suggested">
+                                                <tr>
+                                                    <th width="75px" class="suggested_cols">Ref.</th>
+                                                    <th class="suggested_cols">Description</th>
+                                                </tr>
+                                                <t t-foreach="line.product_id.alternative_product_ids" t-as="alternative">
+                                                    <tr>
+                                                        <td class="suggested_row">
+                                                            <span t-field="alternative.default_code"/>
+                                                        </td>
+                                                        <td class="suggested_row">
+                                                            <span t-field="alternative.name"/>
+                                                            <span t-field="alternative.description_sale"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </table>
+                                        </t>
+                                        <div id="product_multiple_images">
+                                            <t t-foreach="line.product_id.product_image_ids" t-as="image">
+                                                <img t-att-src="'data:image/png;base64,%s' % image.image" height="100%" class="product_multi_image"/>
+                                            </t>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="website_description">
+                                <span style="word-wrap:break-word;" t-field="line.product_id.website_description"/>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="report_product"
+            string="Product Report"
+            model="product.template"
+            report_type="qweb-pdf"
+            file="product_report.report_product"
+            name="product_report.report_product_template"
+            paperformat="base.paperformat_euro"
+    />
+</odoo>

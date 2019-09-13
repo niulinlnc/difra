@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+		<!-- Category Menu -->
+		<template id="website_product_categ_menu_and_banner_73lines.website_category_menu"  inherit_id="website.layout" customize_show="False" active="False"
+              name="Show Category Menu"></template>
+		<!--Nav Bar Left -->
+		<template id="left_nav_bar" inherit_id="website.layout">
+			<xpath
+				expr="//div[@class='collapse navbar-collapse navbar-top-collapse']/ul[1]"
+				position="attributes">
+				<attribute name="class">nav navbar-nav</attribute>
+			</xpath>
+		</template>
+		
+			<!-- Mid Header Template -->
+        <template id="mid_header_inherit" inherit_id="website_header_layout_73lines.mid_header">
+                <xpath expr="//div[@id='mid-header-top-left']" position="attributes">
+                    <attribute name="class">col-md-6 col-sm-6 mt8 mb8</attribute>
+                </xpath>
+                <xpath expr="//div[@id='mid-header-top-center']" position="attributes">
+                    <attribute name="class">col-md-1 col-sm-1</attribute>
+                </xpath>
+                <xpath expr="//div[@id='mid-header-top-right']" position="attributes">
+                    <attribute name="class">col-md-3 col-sm-5 col-xs-12  pull-right</attribute>
+                    <attribute name="style">line-height:3;</attribute>
+                </xpath>
+                
+                <xpath expr="//div[@id='mid-header-bottom-left']" position="attributes">
+                    <attribute name="class">col-md-4 col-sm-12 mt32 mb32</attribute>
+                </xpath>
+                
+                <xpath expr="//div[@id='mid-header-bottom-center']" position="attributes">
+                    <attribute name="class">col-md-5 col-sm-8 mt32 mb32</attribute>
+                </xpath>
+                
+                <xpath expr="//div[@id='mid-header-bottom-right']" position="attributes">
+                    <attribute name="class">col-md-3 col-sm-4 mt32 mb32</attribute>
+                </xpath>
+                
+               
+        </template>
+		
+		<!-- User Access -->
+		<template id="website_header_layout_73lines.website_user_access_mid_header"
+			inherit_id="website_header_layout_73lines.mid_header" 	name="Header Layout User ShortCut Options">
+			<xpath expr="//div[@id='mid-header-bottom-center']" position="inside">
+				<div class="col-md-12 col-sm-12">
+					<div class="text-center" id="user_access">
+						<t t-if="website.user_id != user_id">
+							<div class="col-md-3 col-sm-3  pad0" id="user_name">
+								<b>
+									<span
+										t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name" />
+								</b>
+							</div>
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_logout">
+								<a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout
+								</a>
+							</div>
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_account">
+								<a href="/my/home">Account</a>
+							</div>
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_wishlist">
+								
+							</div>
+						</t>
+						<t t-if="website.user_id == user_id">
+							
+
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_sign_in"
+								groups="base.group_public">
+								
+							</div>
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_register">
+								
+							</div>
+							<div class="col-md-3 col-sm-3 pad05 display-header" id="user_account">
+								<a href="/my/home">Account</a>
+							</div>
+
+						</t>
+					</div>
+				</div>
+			</xpath>
+		</template>
+		<!-- Company Info -->
+        <template
+            id="website_header_layout_73lines.website_user_company_contact_mid_header"
+            inherit_id="website_header_layout_73lines.mid_header" name="Mid Header Company Contact">
+            <xpath
+                expr="//div[@id='mid-header-top']/div/div/div[@id='mid-header-top-left']"
+                position="inside">
+					<div class="col-md-12 col-sm-12" id="compnay_details">
+
+					<div class="col-md-4 col-sm-4 hidden-sm pad0">
+						<span class="fa fa-phone-square"></span>
+						<span t-field="res_company.phone"></span>
+					</div>
+					<div class="col-md-8 col-sm-12 pad0">
+						<span class="fa fa-envelope"></span>
+						<span t-field="res_company.email"></span>
+					</div>
+				</div>
+					
+            </xpath>
+            <xpath
+                expr="//div[@id='mid-header-top']/div/div/div[@id='mid-header-top-center']"
+                position="inside">
+            </xpath>
+            <xpath
+                expr="//div[@id='mid-header-top']/div/div/div[@id='mid-header-top-right']"
+                position="inside">
+            </xpath>
+        </template>
+        
+		<!-- Language -->
+		<template id="website_header_layout_73lines.website_language_flag_mid_header"
+			inherit_id="website_header_layout_73lines.mid_header" name="Show Language Flag"
+              active="True" customize_show="True" priority="70">
+			<xpath expr="//div[@id='mid-header-top-right']" position="inside">
+				<div class="col-md-4 col-sm-4 col-xs-4" id="language_flag">
+					<div>
+						<t t-call="website_language_flag_73lines.language_flags"/>
+					</div>
+				</div>
+			</xpath>
+		</template>
+		
+		<!-- Price LIst -->
+
+		<template id="website_header_layout_73lines.website_pricelist_list_mid_header"
+			inherit_id="website_header_layout_73lines.mid_header" name="Show Pricelist"
+			active="True" customize_show="True" priority="90">
+			<xpath expr="//div[@id='mid-header-top-right']" position="inside">
+				<div class="col-md-4 col-sm-2" id="currency">
+					<t t-call="website_sale.pricelist_list" />
+				</div>
+			</xpath>
+		</template>
+		
+
+
+		<!-- Shop Cart -->
+		 <template id="theme_artificial_add_cart"
+			inherit_id="website_header_layout_73lines.mid_header" name="Shopping Cart">
+			<xpath expr="//div[@id='mid-header-bottom-right']" position="inside">
+				<div class="text-center" id="sale_cart" style="line-height:5;">
+					<t t-call="website_header_layout_73lines.website_mid_header_add_to_cart"/>
+				</div>
+			</xpath>
+		</template>
+
+
+		 <template id="theme_artificial_add_to_cart" inherit_id="website_header_layout_73lines.website_mid_header_add_to_cart">
+            <xpath expr="//t/div" position="replace">
+                <span t-att-class="'' if website_sale_order and website_sale_order.cart_quantity 
+                        else ''" >
+                    <a href="/shop/cart" class="mid_header_shopping_cart" data-toggle="tooltip" title="My Cart">
+                        Shopping Cart
+                        <span t-attf-class="my_cart_quantity label label-primary"
+                            t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" />
+                    </a>
+                </span>
+            </xpath>
+        </template>
+        
+		<!-- Sale Search Box -->
+		<template id="theme_artificial_search"
+			inherit_id="website_header_layout_73lines.mid_header" name="Search View">
+			<xpath expr="//div[@id='mid-header-bottom-center']" position="inside">
+				<div class="col-md-12 col-sm-12" id="sale_search">
+                            <t t-call="website_sale.search" />
+				</div>
+			</xpath>
+		</template>
+
+		<template name="Search hidden fields" id="website_sale.search">
+            <form action="/shop" method="get" t-att-class="search_class">
+                <t t-if="attrib_values">
+                    <t t-foreach="attrib_values" t-as="a">
+                        <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
+                    </t>
+                </t>
+                <t t-call="website.website_search_box" />
+            </form>
+        </template>
+        
+        <template id="theme_artificial_sign_in" inherit_id="website_header_layout_73lines.website_sign_in_mid_header">
+            <xpath expr="//div[@id='user_sign_in']/a" position="replace">
+                <a href="/web/login">Sign in</a>
+            </xpath>
+        </template>
+        
+        <template id="theme_artificial_register" inherit_id="website_header_layout_73lines.website_register_mid_header">
+            <xpath expr="//div[@id='user_register']/a" position="replace">
+                <a href="/web/signup">Register</a>
+            </xpath>
+        </template>
+        
+        <template id="theme_artificial_whishlist" inherit_id="website_header_layout_73lines.website_wishlist_mid_header">
+            <xpath expr="//div[@id='user_wishlist']/a" position="replace">
+                <a t-attf-href="/my/wish-list" role="menuitem" data-toggle="tooltip" title="WishList">
+                    Whishlist
+                </a>
+            </xpath>
+        </template>
+        
+        <template id="theme_artificial_logo" inherit_id="website_header_layout_73lines.website_logo_show_mid_header">
+        <xpath expr="//a[@class='navbar-brand logo']" position="attributes">
+            <attribute name="class"></attribute>
+            
+        </xpath>
+    
+    </template>
+</odoo>

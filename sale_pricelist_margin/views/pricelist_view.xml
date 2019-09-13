@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_pricelist_item_margin_form_view" model="ir.ui.view">
+            <field name="name">product.pricelist.item.margin.form.view</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@col='6']" position="replace">
+                    <group col="4" attrs="{'invisible':[('compute_price', '!=', 'formula')]}">
+                        <field name="base" colspan="4"/>
+
+                        <label string="New Price ="/>
+                        <div class="o_row">
+                            <span attrs="{'invisible':[('base', '!=', 'list_price')]}">Sale Price  </span>
+                            <span attrs="{'invisible':[('base', '!=', 'standard_price')]}">Cost Price  </span>
+                            <span attrs="{'invisible':[('base', '!=', 'pricelist')]}">Other Pricelist  </span>
+                            <field name="margin_discount_operation"/> <!-- Added in this module -->
+                        </div>
+                        <div class="o_row">
+                            <label string="Margin" attrs="{'invisible':[('margin_discount_operation', '!=', 'plus')]}"/>
+                            <label string="Discount" attrs="{'invisible':[('margin_discount_operation', '!=', 'minus')]}"/>
+                        </div>
+                        <div class="o_row">
+                            <field name="price_discount" nolabel="1"/>
+                            <span>%</span>
+                        </div>
+                        <label string=" + " for="price_surcharge"/>
+                        <field name="price_surcharge" nolabel="1"/>
+                    </group>
+                    <group col="4" attrs="{'invisible':[('compute_price', '!=', 'formula')]}">
+
+                        <field name="price_round" string="Rounding Method"/>
+                        <field name="price_min_margin" string="Min. Margin"/>
+                        <field name="price_max_margin" string="Max. Margin"/>
+
+                        <field name="base_pricelist_id" attrs="{'invisible':[('base', '!=', 'pricelist')],'required': [('base','=', 'pricelist')], 'readonly': [('base','!=', 'pricelist')]}"/>
+                    </group>
+                </xpath>
+                <!--<xpath expr="//field[@name='percent_price']/parent::div" position="after">
+                    <div attrs="{'invisible':[('compute_price', '!=', 'margin')]}">
+                        <field class="oe_inline" name="margin_price" nolabel="1"/>%%
+                        <label for="margin_mode" string="applied on" />
+                        <field name="margin_mode" attrs="{'required': [('compute_price', '=', 'margin')]}" />
+                    </div>
+                </xpath>
+-->
+            </field>
+        </record>
+    </data>
+</odoo>

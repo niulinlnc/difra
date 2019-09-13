@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_template_search_description">
+            <field name="name">product.template.search.description</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view" />
+            <field name="arch" type="xml">
+            	<data>
+		    		<xpath expr="//search" position="inside">
+                    	<field name="description" string="Description" filter_domain="['|', '|', '|', '|', '|', ('description','ilike',self),('description_picking','ilike',self), ('description_pickingin','ilike',self), ('description_pickingout','ilike',self), ('description_purchase','ilike',self), ('description_sale','ilike',self)]"/>
+                	</xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_product_search_description">
+            <field name="name">product.product.search.description</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view" />
+            <field name="arch" type="xml">
+            	<data>
+		    		<xpath expr="//search" position="inside">
+                    	<field name="description" string="Description" filter_domain="['|', '|', '|', '|', '|', ('description','ilike',self),('description_picking','ilike',self), ('description_pickingin','ilike',self), ('description_pickingout','ilike',self), ('description_purchase','ilike',self), ('description_sale','ilike',self)]"/>
+                	</xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

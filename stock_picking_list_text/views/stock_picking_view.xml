@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_picking_form_texts">
+        <field name="name">view_picking_form_texts</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <!-- Add header text -->
+            <xpath expr="//field[@name='move_lines']" position="before">
+                <group colspan="4">
+                    <field name="header_text" nolabel="1" widget="html" placeholder="Type here a header text ..."/>
+                </group>
+            </xpath>
+            <!-- Add footer text -->
+            <xpath expr="//field[@name='move_lines']" position="after">
+                <group colspan="4">
+                    <field name="footer_text" nolabel="1" widget="html" placeholder="Type here a footer text ..."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

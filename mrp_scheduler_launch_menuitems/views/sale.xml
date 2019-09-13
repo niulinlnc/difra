@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="sale.stock_operations_menu" name="Stock Operations" parent="sale.sale_menu_root"/>
+    <menuitem id="sale.run_scheduler_menu" name="Run Scheduler" parent="sale.stock_operations_menu" action="stock.action_procurement_compute"/>
+</odoo>

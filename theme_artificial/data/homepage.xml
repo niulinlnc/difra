@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<template name="Homepage" id="website.homepage" page="True">
+			<t t-call="website.layout">
+				<div id="wrap" class="oe_structure oe_empty">
+
+
+					<div id="myCarousel1454476124746" class="carousel slide s_banner oe_custom_bg"
+						data-interval="10000" style=" overflow: hidden;">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel1454476124746" data-slide-to="0"
+								class="active"></li>
+							<li data-target="#myCarousel1454476124746" data-slide-to="1"
+								class=""></li>
+
+						</ol>
+
+
+						<div class="carousel-inner">
+							<div class="item oe_img_bg oe_custom_bg active">
+
+								<img class="img img-responsive" src="/theme_artificial/static/image/banner2.jpg"
+									style="position:relative;width:100%;" />
+								<div class="container">
+									<div class="row content hidden-xs">
+
+										<div class="nivo-caption">
+											<div class="timethai"
+												style=" 
+									position:absolute;
+									top:0;
+									left:0;
+									background-color:rgba(152, 122, 116, 0.82);
+									height:5px;
+									-webkit-animation: myfirst 5000ms ease-in-out;
+									-moz-animation: myfirst 5000ms ease-in-out;
+									-ms-animation: myfirst 5000ms ease-in-out;
+									animation: myfirst 5000ms ease-in-out;">
+											</div>
+											<div class="banner7-content slider-2">
+												<div class="bannerslideshow ">
+													<h1 class="title1">
+														<span>Samsung Smart TV</span>
+													</h1>
+													<h2 class="title2">
+														<span>48" Full HD Curve TV</span>
+													</h2>
+													<div class="banner7-readmore">
+														<a href="#" title="Read more">Read more</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<br />
+									</div>
+								</div>
+							</div>
+
+
+							<div class="item oe_img_bg oe_custom_bg">
+
+								<img class="img img-responsive" src="/theme_artificial/static/image/banner1.jpg"
+									style="position:relative;width:100%;" />
+
+								<div class="container">
+									<div class="row content hidden-xs">
+
+										<div class="nivo-caption">
+											<div class="timethai"
+												style=" 
+													position:absolute;
+													top:0;
+													left:0;
+													background-color:rgba(152, 122, 116, 0.82);
+													height:5px;
+													-webkit-animation: myfirst 5000ms ease-in-out;
+													-moz-animation: myfirst 5000ms ease-in-out;
+													-ms-animation: myfirst 5000ms ease-in-out;
+													animation: myfirst 5000ms ease-in-out;">
+											</div>
+											<div class="banner7-content slider-2">
+												<div class="bannerslideshow ">
+													<h1 class="title1">
+														<span>DSLR Camera Digital</span>
+													</h1>
+													<h2 class="title2">
+														<span>NIKON D40x</span>
+													</h2>
+													<div class="banner7-readmore">
+														<a href="#" title="Read more">Read more</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<br />
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<section class="s_one_carousel_one_image mt32 mb32">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-xs-12 col-sm-12">
+									<div class="col-md-6 col-sm-8 col-xs-12">
+										<div class="oe_structure">
+											<div class="container">
+												<div class="row">
+													<div class="banner-static">
+														<div class="box-banner">
+															<div class="col col-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_small_1.jpg" />
+																</a>
+															</div>
+															<div class="col col1-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_small_2.jpg" />
+																</a>
+															</div>
+
+														</div>
+														<div class="box1-banner">
+															<div class="col col2-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_big.jpg" />
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-4 col-xs-12 section-mini-carousel">
+										<div class="oe_structure">
+											<section class="s_product_carousel carousel_mini section-border">
+												<div class="container">
+													<div
+														class="js_get_objects product_carousel price_hidden user_rating_hidden wishlist_hidden"
+														data-loading="true"
+														data-template="snippet_product_carousel_73lines.product_list_template_mini"
+														data-object_name="product.template" data-custom_controller="1"
+														data-filter_by_filter_id="18" data-objects_limit="10"
+														data-objects_in_row="2" data-objects_in_slide="3" />
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="banner-static-top-purchase mt32 mb32">
+						<div class="container">
+							<div class="banner-top-title">
+								<h2>Purchase progress</h2>
+
+							</div>
+							<div class="banner-top-content">
+								<div class="row">
+									<div class="col-md-3 col-sm-6 col-sms-12">
+										<div class="banner-content banner-top1">
+											<h2>Step 1</h2>
+											<p>Select Your Items</p>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-sms-12">
+										<div class="banner-content banner-top2">
+											<h2>Step 2</h2>
+											<p>Add To Cart</p>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-sms-12">
+										<div class="banner-content banner-top3">
+											<h2>Step 3</h2>
+											<p>Check Out Items</p>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-sms-12">
+										<div class="banner-content banner-top4">
+											<h2>Step 4</h2>
+											<p>Take Your Items</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					 <section class="s_product_carousel big_carousel mt32 mb32">
+						<div class="container">
+							<div class="js_get_objects product_carousel wishlist_hidden"
+								data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+								data-object_name="product.template" data-custom_controller="1"
+								data-filter_by_filter_id="15" data-objects_limit="8"
+								data-objects_in_row="1" data-objects_in_slide="4" />
+						</div>
+					</section>
+
+
+
+					
+
+					<section class="two_banner-center mt32 mb32">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-sms-12 mb8">
+									<div class="box box1">
+										<a href="#">
+											<img class="img-responsive" alt=""
+												src="/theme_artificial/static/image/two_image_1.jpg" />
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-sms-12">
+									<div class="box box2">
+										<a href="#">
+											<img class="img-responsive" alt=""
+												src="/theme_artificial/static/image/two_image_2.jpg" />
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					
+
+					<section class="s_product_carousel big_carousel mt32 mb32">
+						<div class="container">
+							<div class="js_get_objects product_carousel wishlist_hidden"
+								data-loading="true"
+								data-template="snippet_product_carousel_73lines.product_list_template"
+								data-object_name="product.template" data-custom_controller="1"
+								data-filter_by_filter_id="19" data-objects_limit="8"
+								data-objects_in_row="1" data-objects_in_slide="4" />
+						</div>
+					</section>
+
+
+					<section class="banner-static-top-purchase mt32 two_product_carousel">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-sm-12 col-xs-12">
+									<div class="oe_structure">
+										<div class="banner-top-title">
+											<h2>Weekly Featured</h2>
+
+										</div>
+
+										<div class="panel with-nav-tabs">
+											<div class="panel-heading">
+												<ul class="nav  nav-tabs" role="tab">
+													<li class="active mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab1">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/camera_tab.png"
+																	alt="Electronics" />
+																<span class="catthumb_hover">Electronics</span>
+															</a>
+														</div>
+													</li>
+													<li class="mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab2">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/shoes_tab.png" alt="Sports Outdoors" />
+																<span class="catthumb_hover">Sports Outdoors</span>
+															</a>
+														</div>
+													</li>
+													<li class="mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab3">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/tablet_tab.png"
+																	alt="Smartphone Tablets" />
+																<span class="catthumb_hover">Smartphone Tablets</span>
+															</a>
+														</div>
+													</li>
+
+												</ul>
+											</div>
+
+
+											<div class="panel-body">
+												<div class="tabcontent" style="border: none;">
+													<div class="tab-pane fade in active " id="tab1">
+														<div class="oe_structure">
+															 <section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="18" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+														</div>
+													</div>
+													<div class="tab-pane fade in" id="tab2">
+														<div class="oe_structure">
+															<section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="15" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+														</div>
+													</div>
+													<div class="tab-pane fade in" id="tab3">
+														<div class="oe_structure">
+															<section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="16" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="col-md-6 col-sm-12 best-offer">
+									<div class="oe_structure">
+										<div class="banner-top-title">
+											<h2>Best Offers</h2>
+
+										</div>
+										<div class="panel with-nav-tabs">
+											<div class="panel-heading">
+												<ul class="nav nav-tabs" role="tab">
+													<li class="active mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab4">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/camera_tab.png"
+																	alt="Electronics" />
+																<span class="catthumb_hover">Automative motorcycle</span>
+															</a>
+														</div>
+													</li>
+													<li class="mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab5">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/shoes_tab.png" alt="Sports Outdoors" />
+																<span class="catthumb_hover">Healthy Beauty </span>
+															</a>
+														</div>
+													</li>
+													<li class="mb8">
+														<div class="">
+															<a data-toggle="tab" href="#tab6">
+																<img class="catthumb_hover"
+																	src="/theme_artificial/static/image/tablet_tab.png"
+																	alt="Smartphone Tablets" />
+																<span class="catthumb_hover">Bags Shoes</span>
+															</a>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="panel-body">
+												<div class="tabcontent" style="border: none;">
+													<div class="tab-pane fade in active" id="tab4">
+														<div class="oe_structure">
+
+															<section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="16" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+
+														</div>
+													</div>
+													<div class="tab-pane fade in" id="tab5">
+														<div class="oe_structure">
+
+															<section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="18" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+
+
+														</div>
+													</div>
+													<div class="tab-pane fade in" id="tab6">
+														<div class="oe_structure">
+
+															<section class="s_product_carousel big_carousel mt8 mb8">
+																	<div class="container">
+																		<div class="js_get_objects product_carousel wishlist_hidden headline_hidden"
+																			data-loading="true" data-template="snippet_product_carousel_73lines.product_list_template"
+																			data-object_name="product.template" data-custom_controller="1"
+																			data-filter_by_filter_id="15" data-objects_limit="8"
+																			data-objects_in_row="1" data-objects_in_slide="2" />
+																	</div>
+																</section>
+
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="s_brand_carousel mb32 big_carousel">
+						<div class="container">
+							<div class="js_get_objects" data-loading="true"
+								data-template="snippet_product_brand_carousel_73lines.brand_list_template_header"
+								data-object_name="product.brand" data-filter_by_filter_id="NaN"
+								data-objects_limit="8" data-objects_in_row="1"
+								data-objects_in_slide="5" />
+						</div>
+					</section>
+
+					<section class="mt32 mb32">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 col-sm-8">
+									<div class="oe_structure">
+										 <section class="s_blog_carousel big_carousel">
+											<div class="container">
+												<div class="js_get_objects" data-loading="true"
+													data-template="snippet_blog_carousel_73lines.blog_list_template"
+													data-object_name="blog.post" data-custom_controller="1"
+													data-filter_by_filter_id="12" data-objects_limit="4"
+													data-objects_in_row="1" data-objects_in_slide="2" />
+											</div>
+										</section>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 banner-static-top-purchase mt8 mb8">
+									<div class="oe_structure">
+										<div class="banner-top-title">
+											<h2>Testimonials</h2>
+
+										</div>
+
+										<div id="myCarousel1454649806336" class="carousel slide s_banner oe_custom_bg"
+											data-interval="10000" style="height: 393px; margin-top: 22px;">
+											<div class="carousel-inner">
+												<div class="item oe_img_bg oe_custom_bg active">
+													<div class="container">
+														<div class="testimonial-slidebar">
+															<div class="testimonials">
+																<div class="content">
+																	<div class="testimonial-content-avatar">
+																		<img class="img-img-responsive"
+																			src="/theme_artificial/static/image/testimonial1.png"
+																			alt="test" height="120" width="120" />
+																	</div>
+																</div>
+
+																<div class="post-by">
+																	<span class="testimonial-author">Jon Harvey</span>
+
+																	<a href="#">
+																		Lorem ipsum dolor sit amet, consectetuer
+																		adipiscing elit,
+																		sed diam nonummy nibh euismod
+																		tincidunt
+																	</a>
+																</div>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="item oe_img_bg oe_custom_bg">
+													<div class="container">
+														<div class="testimonial-slidebar">
+															<div class="testimonials">
+																<div class="content">
+																	<div class="testimonial-content-avatar">
+																		<img class="img-img-responsive"
+																			src="/theme_artificial/static/image/testimonial1.png"
+																			alt="test" height="120" width="120" />
+																	</div>
+																</div>
+
+																<div class="post-by">
+																	<span class="testimonial-author">jonh Retallick</span>
+
+																	<a href="#">
+																		Lorem ipsum dolor sit amet, consectetuer
+																		adipiscing elit,
+																		sed diam nonummy nibh euismod
+																		tincidunt
+																	</a>
+																</div>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="carousel-control left" data-target="#myCarousel1454649806336"
+												data-slide="prev" style="width: 10%" data-cke-saved-href="#myCarousel1454649806336">
+												<i class="fa fa-chevron-left" />
+											</div>
+											<div class="carousel-control right" data-target="#myCarousel1454649806336"
+												data-slide="next" style="width: 10%" data-cke-saved-href="#myCarousel1454649806336">
+												<i class="fa fa-chevron-right" />
+											</div>
+
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</t>
+		</template>
+	</data>
+</odoo>

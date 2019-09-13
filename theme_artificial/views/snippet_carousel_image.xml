@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template name="Image and Mini Carousel" id="snippet_carousel_image">
+		
+			<section class="s_one_carousel_one_image mt32 mb32">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-xs-12 col-sm-12">
+									<div class="col-md-6 col-sm-8 col-xs-12">
+										<div class="oe_structure">
+											<div class="container">
+												<div class="row">
+													<div class="banner-static">
+														<div class="box-banner">
+															<div class="col col-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_small_1.jpg" />
+																</a>
+															</div>
+															<div class="col col1-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_small_2.jpg" />
+																</a>
+															</div>
+
+														</div>
+														<div class="box1-banner">
+															<div class="col col2-banner ">
+																<a href="#">
+																	<img class="img-responsive" alt=""
+																		src="/theme_artificial/static/image/block_big.jpg" />
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-4 col-xs-12 section-mini-carousel">
+										<div class="oe_structure">
+											<section class="s_product_carousel carousel_mini section-border">
+												<div class="container">
+													<div class="js_get_objects" data-loading="true"
+														data-template="snippet_product_carousel_73lines.product_list_template_mini"
+														data-object_name="product.template"
+														data-custom_controller="1" data-filter_by_filter_id="21"
+														data-objects_limit="8" data-objects_in_row="2"
+														data-objects_in_slide="3" />
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+		
+		</template>
+</odoo>

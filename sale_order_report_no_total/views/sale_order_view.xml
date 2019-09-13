@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="sale_order_form_show_total_report">
+        <field name="name">sale_order_form_show_total_report</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Add header text -->
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="show_total_in_report" class="oe_inline" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

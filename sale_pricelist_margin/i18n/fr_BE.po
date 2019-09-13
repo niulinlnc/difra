@@ -1,0 +1,104 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_pricelist_margin
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20180201\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 10:07+0000\n"
+"PO-Revision-Date: 2018-05-03 12:12+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.0.7\n"
+
+#. module: sale_pricelist_margin
+#: code:addons/sale_pricelist_margin/models/product_pricelist_item.py:42
+#, python-format
+msgid "%s %% discount"
+msgstr "%s %% remise"
+
+#. module: sale_pricelist_margin
+#: code:addons/sale_pricelist_margin/models/product_pricelist_item.py:47
+#, python-format
+msgid "%s %% discount (-) and %s surcharge"
+msgstr "%s %% remise (-) et %s surcharge"
+
+#. module: sale_pricelist_margin
+#: code:addons/sale_pricelist_margin/models/product_pricelist_item.py:45
+#, python-format
+msgid "%s %% margin (+) and %s surcharge"
+msgstr "%s %% marge (+) et %s surcharge"
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid ""
+"<span attrs=\"{'invisible':[('base', '!=', 'list_price')]}\">Sale Price  </span>\n"
+"                            <span attrs=\"{'invisible':[('base', '!=', 'standard_price')]}\">Cost Price  </span>\n"
+"                            <span attrs=\"{'invisible':[('base', '!=', 'pricelist')]}\">Other Pricelist  </span>"
+msgstr ""
+"<span attrs=\"{'invisible':[('base', '!=', 'list_price')]}\">Prix de vente  </span>\n"
+"                            <span attrs=\"{'invisible':[('base', '!=', 'standard_price')]}\">Prix d'achat  </span>\n"
+"                            <span attrs=\"{'invisible':[('base', '!=', 'pricelist')]}\">Autre liste  </span>"
+
+#. module: sale_pricelist_margin
+#: code:addons/sale_pricelist_margin/models/product_pricelist_item.py:37
+#, python-format
+msgid "All Products"
+msgstr "Tous les produits"
+
+#. module: sale_pricelist_margin
+#: code:addons/sale_pricelist_margin/models/product_pricelist_item.py:31
+#, python-format
+msgid "Category: %s"
+msgstr "Categorie : %s"
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "Discount"
+msgstr "Discount"
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "Margin"
+msgstr "Marge"
+
+#. module: sale_pricelist_margin
+#: model:ir.model.fields,field_description:sale_pricelist_margin.field_product_pricelist_item_margin_discount_operation
+msgid "Margin discount operation"
+msgstr "Opération"
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "Max. Margin"
+msgstr "Marge maxi."
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "Min. Margin"
+msgstr "Marge min."
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "New Price ="
+msgstr "Nouveau prix ="
+
+#. module: sale_pricelist_margin
+#: model:ir.model,name:sale_pricelist_margin.model_product_pricelist
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: sale_pricelist_margin
+#: model:ir.model,name:sale_pricelist_margin.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Élément de la liste de prix"
+
+#. module: sale_pricelist_margin
+#: model:ir.ui.view,arch_db:sale_pricelist_margin.product_pricelist_item_margin_form_view
+msgid "Rounding Method"
+msgstr "Méthode d'arrondi"

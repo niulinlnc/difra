@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_cost_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170621\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-28 07:30+0000\n"
+"PO-Revision-Date: 2017-07-28 07:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_cost
+msgid "Cost"
+msgstr "Coût"
+
+#. module: product_cost_history
+#: model:ir.ui.view,arch_db:product_cost_history.product_normal_form_view_cost_history_button
+#: model:ir.ui.view,arch_db:product_cost_history.view_product_cost_history_form
+#: model:ir.ui.view,arch_db:product_cost_history.view_product_cost_history_tree
+msgid "Cost History"
+msgstr "Historique Coût"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_template_cost_history_count
+msgid "Cost History Count"
+msgstr "Taille Historique Coût"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: product_cost_history
+#: model:ir.model.fields,field_description:product_cost_history.field_product_cost_history_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: product_cost_history
+#: model:ir.actions.act_window,name:product_cost_history.product_template_cost_history_action
+#: model:ir.model,name:product_cost_history.model_product_cost_history
+msgid "Product Cost History"
+msgstr "Historique Coût Article"
+
+#. module: product_cost_history
+#: model:ir.model,name:product_cost_history.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: product_cost_history
+#: model:ir.actions.act_window,name:product_cost_history.product_template_cost_history_menubutton_action
+#: model:ir.ui.menu,name:product_cost_history.menu_purchase_product_price_history
+msgid "Products Cost History"
+msgstr "Historique Coût Articles"
+
+#. module: product_cost_history
+#: model:ir.model,name:product_cost_history.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+

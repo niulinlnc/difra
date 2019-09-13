@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_partner_contact_with_salesmen_form" model="ir.ui.view">
+            <field name="name">sale.partner.contact.with.salesmen.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="(//form//form//field[@name='function'])" position="after">
+                    <field name="user_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

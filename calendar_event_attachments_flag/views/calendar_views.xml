@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_calendar_event_calendar_attachments">
+			<field name="name">view_calendar_event_calendar_attachments</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+			<field name="arch" type="xml">
+                <xpath expr="(//field[@name='partner_ids'])" position="after">
+                    <field name="attachments_count_text" />
+                </xpath>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="view_calendar_event_form_attachments">
+			<field name="name">view_calendar_event_form_attachments</field>
+			<field name="model">calendar.event</field>
+			<field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="(//field[@name='partner_ids'])" position="after">
+                    <field name="attachments_count_text" />
+                </xpath>
+			</field>
+		</record>
+    </data>
+</odoo>

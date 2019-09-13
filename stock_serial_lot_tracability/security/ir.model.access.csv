@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tracability_wizard,access.tracability.wizard,model_stock_serial_lot_trace_wizard,stock.group_stock_user,1,1,1,1

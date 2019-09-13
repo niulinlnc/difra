@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Trace a serial/lot"
+            id="menu_trace_serial_lot" parent="stock.menu_stock_warehouse_mgmt"
+                  sequence="5" action="action_stock_serial_lot_trace_wizard" />
+    </data>
+</odoo>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+		<!-- Mini carousel -->
+				
+		<template id="theme_artificial_mini_header" inherit_id="snippet_product_carousel_73lines.product_list_template_mini">
+			<xpath expr="//div[@class='headline']" position="replace">
+				<div class="headline-mini">
+				<h2 t-esc="title"></h2>
+			</div>
+			</xpath>
+		
+		</template>
+
+		<template id="theme_artificial_mini_carousel" inherit_id="snippet_product_carousel_73lines.new_products_item_mini">
+			<xpath expr="//div[@itemscope='itemscope']" position="attributes">
+				<attribute name="class">single-product</attribute>
+			</xpath>
+			<xpath expr="//div[@class='mini-info']" position="replace">
+					<section style="height:100px;overflow: hidden;">
+							<h5>
+								<strong>
+									<a itemprop="name" t-att-href="'/shop/product/%s' % slug(product)"
+										t-field="product.name" />
+								</strong>
+							</h5>
+						</section>
+			</xpath>
+			
+			<xpath expr="//section" position="after">
+				 <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+                         class="product_price easy-shortcuts-price" t-if="product.product_variant_ids">
+                        <b>
+                            <t t-if="(compute_currency(product.lst_price) - product.price) &gt; 0.1">
+                                <del class="text-danger mr8" style="white-space: nowrap;"
+                                     t-field="product.lst_price"
+                                     t-field-options='{"widget": "monetary",
+                                     "from_currency": "product.company_id.currency_id",
+                                     "display_currency": "website.currency_id"}' />
+                            </t>
+                            <span t-field="product.price" style="white-space: nowrap;"
+                                  t-field-options='{"widget": "monetary",
+                                  "display_currency": "website.currency_id"}'>
+                            </span>
+                            <span itemprop="price" style="display:none;" t-esc="product.price" />
+                            <span itemprop="priceCurrency" style="display:none;"
+                                  t-esc="website.currency_id.name" />
+                        </b>
+                    </div>
+			</xpath>
+		
+		</template>
+		
+	<template id="theme_artificial_main_carousel" inherit_id="snippet_product_carousel_73lines.new_products_item">
+		<xpath expr="//div[@itemscope='itemscope']" position="attributes">
+				<attribute name="class">single-product</attribute>
+		</xpath>
+		<xpath expr="//section" position="attributes">
+			<attribute name="id">product-name-carousel</attribute>
+			<attribute name="style">height:57px;overflow:hidden;background:#F9F9F9;padding:0px 0px;</attribute>
+		</xpath>
+		<xpath expr="//section/h5" position="replace">
+				<h3>
+							<strong>
+								<center>
+									<a itemprop="name" t-att-href="'/shop/product/%s' % slug(product)"
+										t-field="product.name" />
+								</center>
+							</strong>
+						</h3>
+		</xpath>
+		
+		<xpath expr="//div[@class='product_price easy-shortcuts-price']" position="replace"></xpath>
+		<xpath expr="//div[@class='text-left easy-shortcuts-user-rating']" position="replace"></xpath>
+		<xpath expr="//section" position="after">
+			<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+                         class="product_price easy-shortcuts-price text-center" t-if="product.product_variant_ids" style="background:#F9F9F9;padding:0px 0px;">
+                        <b>
+                            <t t-if="(compute_currency(product.lst_price) - product.website_price ) &gt; 0.1  and website.get_current_pricelist().discount_policy=='without_discount'">
+                                <del class="text-danger mr8" style="white-space: nowrap;"
+                                     t-esc="compute_currency(product.website_public_price)"
+                                     t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                            </t>
+
+                            <span t-esc="product.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                            <span itemprop="price" style="display:none;" t-esc="product.price" />
+                            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                        </b>
+                    </div>
+		
+		</xpath>
+		
+		<xpath expr="//div[@class='product_price easy-shortcuts-price text-center']" position="before">
+				<div class="text-center product-rating easy-shortcuts-user-rating" style="background:#F9F9F9;padding:1px 0px;">
+							<div class="ratting-line">
+								<t t-call="rating.rating_card">
+									<t t-set="rating_stat" t-value="get_rating_stat(product)" />
+									<t t-set="max_rate" t-value="5" />
+									<t t-set="min_rate" t-value="1" />
+								</t>
+							</div>
+						</div>
+		
+		</xpath>
+	 </template>
+	
+	 <template id="snippet_product_carousel_73lines.new_products_add_to_cart" inherit_id="theme_artificial.theme_artificial_main_carousel"
+              name="Product Carousel Add to Cart">
+        <xpath expr="//div[contains(@class, 'product_price easy-shortcuts-price text-center')]" position="inside">
+            <input name="product_id" t-att-value="product.product_variant_ids[0].id" type="hidden"/>
+            <t t-if="len(product.product_variant_ids) == 1">
+               <center >  <button type="submit" id="add_to_cart1" class="btn  easy-shortcuts-add-to-cart" formaction="/shop/cart/update_continue"
+                        data-toggle="tooltip" title="Add to Cart">
+                    ADD TO CART
+                </button></center>
+            </t>
+            <t t-if="len(product.product_variant_ids) &gt; 1">
+               <center >  <a id="add_to_cart1" class="btn  easy-shortcuts-add-to-cart" t-att-href="'/shop/product/%s' % slug(product)">
+                    ADD TO CART
+                </a></center>
+            </t>
+        </xpath>
+    </template>
+</odoo>
+		
+	

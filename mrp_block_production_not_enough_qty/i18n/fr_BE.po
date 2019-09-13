@@ -1,0 +1,34 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_block_production_not_enough_qty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-04 09:35+0000\n"
+"PO-Revision-Date: 2019-09-04 11:36+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: mrp_block_production_not_enough_qty
+#: model:ir.ui.view,arch_db:mrp_block_production_not_enough_qty.mrp_production_change_produce_button_behavior_form_view
+msgid "Produce"
+msgstr "Fabriquer"
+
+#. module: mrp_block_production_not_enough_qty
+#: model:ir.model,name:mrp_block_production_not_enough_qty.model_mrp_product_produce
+msgid "Record Production"
+msgstr "Enregistrer la production"
+
+#. module: mrp_block_production_not_enough_qty
+#: code:addons/mrp_block_production_not_enough_qty/wizard/mrp_product_produce.py:16
+#, python-format
+msgid "You need to fill 'Done' quantities before recording the production."
+msgstr "Vous devez remplir les quantités 'faites' pour pouvoir enregistrer la production."

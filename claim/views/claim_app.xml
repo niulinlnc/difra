@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="claim.main_menu" web_icon="claim,static/description/icon.png" name="Claim"/>
+    <menuitem id="claim.config_menu" name="Configuration" parent="claim.main_menu" sequence="3"/>
+</odoo>

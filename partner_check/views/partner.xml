@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record model="ir.ui.view" id="partner_tree_checked">
+	        <field name="name">partner.tree.checked</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_partner_tree"/>
+	        <field name="arch" type="xml">  
+				<data>
+		    		<xpath expr="//field[@name='email']" position="after">
+		    			<field name="checked" />
+		    		</xpath>
+				</data>
+	        </field>
+	    </record>
+
+		<record model="ir.ui.view" id="partner_form_checked">
+	    	<field name="name">partner.form.checked</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="base.view_partner_form" />
+		    <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//field[@name='type']" position="before">
+		    			<field name="checked" />
+		    		</xpath>
+				</data>
+		    </field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="stock_scrap_add_group_by_search_view">
+        <field name="name">stock_scrap_add_group_by_search_view</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <filter name="group_by_tag_id" string="Tag" context="{'group_by':'tag_id'}"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="stock_scrap_add_tags_form_view">
+        <field name="name">stock_scrap_add_tags_form_view</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_row']" position="after">
+                <field name="tag_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                <field name="standard_price" widget="monetary"/>
+                <field name="note"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="stock_scrap_add_tags_tree_view">
+        <field name="name">stock_scrap_add_tags_tree_view</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']" position="after">
+                <field name="tag_id" options="{'no_create': True, 'no_create_edit': True}" />
+                <field name="standard_price" sum="Cost"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

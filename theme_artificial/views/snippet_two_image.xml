@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template name="Two Images" id="snippet_two_images">
+		
+			<section class="two_banner-center mt32 mb32">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-sms-12 mb8">
+									<div class="box box1">
+										<a href="#">
+											<img class="img-responsive" alt=""
+												src="/theme_artificial/static/image/two_image_1.jpg" />
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6 col-sms-12">
+									<div class="box box2">
+										<a href="#">
+											<img class="img-responsive" alt=""
+												src="/theme_artificial/static/image/two_image_2.jpg" />
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+		
+		
+		</template>
+</odoo>

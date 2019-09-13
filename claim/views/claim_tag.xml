@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="claim_tag_search_view">
+        <field name="name">Claim Tag Search</field>
+        <field name="model">claim.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="filter_archive" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="claim_tag_open_tree_view">
+        <field name="name">Claim Tags</field>
+        <field name="res_model">claim.tag</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="claim.claim_tag" parent="claim.config_menu" name="Claim Tags" action="claim_tag_open_tree_view"
+             sequence="1"/>
+</odoo>

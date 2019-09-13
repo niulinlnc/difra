@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_price_history_tree" model="ir.ui.view">
+            <field name="name">view_product_price_history_tree</field>
+            <field name="model">product.price.history</field>
+            <field name="arch" type="xml">
+                <tree string="Product Price History">
+                    <field name="product_id"/>
+                    <field name="datetime"/>
+                    <field name="cost"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

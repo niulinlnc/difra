@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_calendar_event_form_suspended">
+            <field name="name">view_calendar_event_form_suspended</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="(//field[@name='recurrency'])" position="after">
+                    <field name="event_suspended"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_calendar_event_search_suspended">
+            <field name="name">view_calendar_event_search_suspended</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="(//filter)" position="before">
+                    <filter string="Suspended events" domain="[('event_suspended','=',True)]" help="Suspended events"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

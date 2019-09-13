@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="stock_inventory_add_csv_parser">
+        <field name="name">Stock Inventory Add CSV Parser</field>
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='filter']" position="after">
+                <field name="csv_inventory"/>
+                <button type="object" name="action_parse_csv" string="Parse CSV" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

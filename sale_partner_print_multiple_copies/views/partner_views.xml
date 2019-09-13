@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_form_with_copy_numbers">
+            <field name="name">partner_form_with_copy_numbers</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <page name="copy_numbers" string="Printing">
+                            <group col="4">
+                                <field name="sale_order_copy_number" attrs="{'invisible': [('customer', '=', False)]}"/>
+                                <field name="purchase_order_copy_number" attrs="{'invisible': [('supplier', '=', False)]}"/>
+                                <field name="invoice_copy_number"/>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

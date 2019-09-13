@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<template name="Home Banner" id="snippet_home_bannner">
+			<div id="myCarousel1454476124746" class="carousel slide s_banner oe_custom_bg"
+						data-interval="10000" style=" overflow: hidden;">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel1454476124746" data-slide-to="0"
+								class="active"></li>
+							<li data-target="#myCarousel1454476124746" data-slide-to="1"
+								class=""></li>
+
+						</ol>
+
+
+						<div class="carousel-inner">
+							<div class="item oe_img_bg oe_custom_bg active"
+								>
+								
+								<img class="img img-responsive" src="theme_artificial/static/image/banner2.jpg" style="position:relative;width:100%;" />
+								<div class="container">
+									<div class="row content hidden-xs">
+
+										<div class="nivo-caption">
+											<div class="timethai"
+												style=" 
+									position:absolute;
+									top:0;
+									left:0;
+									background-color:rgba(152, 122, 116, 0.82);
+									height:5px;
+									-webkit-animation: myfirst 5000ms ease-in-out;
+									-moz-animation: myfirst 5000ms ease-in-out;
+									-ms-animation: myfirst 5000ms ease-in-out;
+									animation: myfirst 5000ms ease-in-out;">
+											</div>
+											<div class="banner7-content slider-2">
+												<div class="bannerslideshow ">
+													<h1 class="title1">
+														<span>Samsung Smart TV</span>
+													</h1>
+													<h2 class="title2">
+														<span>48" Full HD Curve TV</span>
+													</h2>
+													<div class="banner7-readmore">
+														<a href="#" title="Read more">Read more</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<br />
+									</div>
+								</div>
+							</div>
+
+
+							<div class="item oe_img_bg oe_custom_bg">
+								
+								<img class="img img-responsive" src="theme_artificial/static/image/banner1.jpg" style="position:relative;width:100%;" />
+							
+								<div class="container">
+									<div class="row content hidden-xs">
+
+										<div class="nivo-caption">
+											<div class="timethai"
+												style=" 
+													position:absolute;
+													top:0;
+													left:0;
+													background-color:rgba(152, 122, 116, 0.82);
+													height:5px;
+													-webkit-animation: myfirst 5000ms ease-in-out;
+													-moz-animation: myfirst 5000ms ease-in-out;
+													-ms-animation: myfirst 5000ms ease-in-out;
+													animation: myfirst 5000ms ease-in-out;">
+											</div>
+											<div class="banner7-content slider-2">
+												<div class="bannerslideshow ">
+													<h1 class="title1">
+														<span>Camera Digital</span>
+													</h1>
+													<h2 class="title2">
+														<span>NIKON D5500</span>
+													</h2>
+													<div class="banner7-readmore">
+														<a href="#" title="Read more">Read more</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<br />
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+		
+		</template>
+</odoo>

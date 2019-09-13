@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="invoice_report_with_copy_number" inherit_id="account.report_invoice">
+            <!-- Here, go take the number defined on the partner and export the correct number of copies -->
+            <xpath expr="//t//t//t//t" position="replace">
+                <t t-set="number_of_copy" t-value="o.partner_id.invoice_copy_number"/>
+                <t t-foreach="number_of_copy" t-as="copy">
+                    <t t-call="account.report_invoice_document" t-lang="o.partner_id.lang"/>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</openerp>

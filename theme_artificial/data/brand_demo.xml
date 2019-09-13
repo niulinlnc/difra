@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+   <data noupdate="1">
+    	
+    	<record id="product_brand_1" model="product.brand">
+            <field name="name">Cinaabon</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand1.jpg"/>
+        </record>
+        
+         <record id="product_brand_2" model="product.brand">
+            <field name="name">BrickFire</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand2.jpg"/>
+        </record>
+         
+         <record id="product_brand_3" model="product.brand">
+            <field name="name">Prairie City</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand3.jpg"/>
+        </record>
+        
+         <record id="product_brand_4" model="product.brand">
+            <field name="name">Oakrum farm</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand4.jpg"/>
+        </record>
+        
+        <record id="product_brand_5" model="product.brand">
+            <field name="name">Hotmax Pro</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand5.jpg"/>
+        </record>
+        
+          <record id="product_brand_6" model="product.brand">
+            <field name="name">Steviva</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand6.jpg"/>
+        </record>
+          <record id="product_brand_7" model="product.brand">
+            <field name="name">Steviva1</field>
+            <field name="brand_image" type="base64" file="theme_artificial/static/image/brand4.jpg"/>
+        </record>
+        
+      <!--    <record id="product_brand_7" model="product.brand">
+            <field name="name">Lee</field>
+            <field name="brand_image" type="base64" file="theme_ruby/static/img/brand-logo-1.jpg"/>
+        </record>
+        
+        <record id="product_brand_8" model="product.brand">
+            <field name="name">Fastrack</field>
+            <field name="brand_image" type="base64" file="theme_pinkleaf/static/img/fastrack-logo.png"/>
+        </record>
+        
+         <record id="product_brand_9" model="product.brand">
+            <field name="name">Lotto</field>
+            <field name="brand_image" type="base64" file="theme_pinkleaf/static/img/lotto-logo.png"/>
+        </record>
+        
+        <record id="product_brand_10" model="product.brand">
+            <field name="name">Puma</field>
+            <field name="brand_image" type="base64" file="theme_pinkleaf/static/img/puma_logo.png"/>
+        </record>
+         -->
+       
+        
+      
+        
+    </data>
+</odoo>

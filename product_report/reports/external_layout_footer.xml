@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Hide default footer for lack of space -->
+    <!--<template id="external_layout_footer_product_report" inherit_id="report.external_layout_footer">
+        <xpath expr="//div[@class='footer']" position="replace">
+            <div class="footer">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <t t-set="company" t-value="company.sudo()"/>
+                    <ul class="list-inline" style="text-align: left; height:12px;">
+                        <li>
+                            <span t-field="company.name"/>
+                        </li>
+                    </ul>
+                    <ul class="list-inline" style="text-align: left; height:12px;">
+                        <li>
+                            <span t-esc="company.partner_id.contact_address.replace(company.name, '', 1)"/>
+                            - Phone: <span t-field="company.phone"/>
+                            - Fax: <span t-field="company.fax"/>
+                        </li>
+                    </ul>
+                    <ul class="list-inline" style="text-align: left; height:12px;">
+                        <li>
+                            Email: <span t-field="company.email"/>
+                            - Web: <span t-field="company.website"/>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li>Page:</li>
+                        <li><span class="page"/></li>
+                        <li>/</li>
+                        <li><span class="topage"/></li>
+                    </ul>
+                </div>
+            </div>
+        </xpath>
+    </template>
+-->
+</odoo>

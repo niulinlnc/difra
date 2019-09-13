@@ -1,0 +1,79 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_texts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-05 10:46+0000\n"
+"PO-Revision-Date: 2019-06-05 12:46+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl_BE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: sale_order_texts
+#: selection:sale.order.line,display_position:0
+msgid "After line"
+msgstr "After line"
+
+#. module: sale_order_texts
+#: selection:sale.order.line,display_position:0
+msgid "Before line"
+msgstr "Before line"
+
+#. module: sale_order_texts
+#: model:ir.ui.view,arch_db:sale_order_texts.sale_order_form_texts
+msgid "Comment for this line"
+msgstr "Comment for this line"
+
+#. module: sale_order_texts
+#: model:ir.model.fields,field_description:sale_order_texts.field_sale_order_line_display_position
+msgid "Display comment text"
+msgstr "Display comment text"
+
+#. module: sale_order_texts
+#: model:ir.model.fields,field_description:sale_order_texts.field_sale_order_line_comment_text
+msgid "Optional comment text"
+msgstr "Optional comment text"
+
+#. module: sale_order_texts
+#: model:ir.model.fields,field_description:sale_order_texts.field_sale_order_footer_text
+msgid "Optional footer text"
+msgstr "Optional footer text"
+
+#. module: sale_order_texts
+#: model:ir.model.fields,field_description:sale_order_texts.field_sale_order_header_text
+msgid "Optional header text"
+msgstr "Optional header text"
+
+#. module: sale_order_texts
+#: code:addons/sale_order_texts/models/sale_order.py:7
+#, python-format
+msgid "Our user manuals are delivered in english. Your acceptance of this quotation expresses your agreement."
+msgstr "Onze handleidingen zijn in het engels geleverd. Uw aanvaarding van deze prijsofferte drukt uw instemming uit."
+
+#. module: sale_order_texts
+#: model:ir.model,name:sale_order_texts.model_sale_order
+msgid "Quotation"
+msgstr "Quotation"
+
+#. module: sale_order_texts
+#: model:ir.model,name:sale_order_texts.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Verkooporderlijn"
+
+#. module: sale_order_texts
+#: model:ir.ui.view,arch_db:sale_order_texts.sale_order_form_texts
+msgid "Type here a footer text ..."
+msgstr "Type here a footer text ..."
+
+#. module: sale_order_texts
+#: model:ir.ui.view,arch_db:sale_order_texts.sale_order_form_texts
+msgid "Type here a header text ..."
+msgstr "Type here a header text ..."

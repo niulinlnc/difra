@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="sale_order_report_texts" inherit_id="sale.report_saleorder_document">
+        <!-- Header Text -->
+        <xpath expr="//t[@t-foreach='doc.order_lines_layouted()']" position="before">
+            <t t-if="doc.header_text">
+                <p t-raw="doc.header_text" />
+            </t>
+        </xpath>
+
+        <!-- Comment line before the product line -->
+        <xpath expr="//tbody[@class='sale_tbody']//t[@t-as='l']//tr//span[@t-field='l.name']" position="before">
+            <t t-if="l.comment_text != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;' and l.display_position=='before'">
+                <span t-field="l.display_position" style="display: none;"/>
+                <hr />
+                <span t-raw="l.comment_text" class="before_product_line"/>
+            </t>
+        </xpath>
+
+        <!-- Display after name the comment -->
+        <xpath expr="//span[@t-field='l.name']" position="after">
+            <t t-if="l.comment_text != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;' and l.display_position=='after'">
+                <br/>
+                <span t-field="l.display_position" style="display: none;"/>
+                <span t-raw="l.comment_text" class="after_product_line"/>
+                <hr />
+            </t>
+        </xpath>
+
+        <!-- Footer Text -->
+        <xpath expr="//t[@t-foreach='doc.order_lines_layouted()']" position="after">
+            <t t-if="doc.footer_text">
+                <p t-raw="doc.footer_text" />
+            </t>
+        </xpath>
+    </template>
+</odoo>

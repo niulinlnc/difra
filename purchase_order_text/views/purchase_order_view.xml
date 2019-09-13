@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="purchase_order_form_texts">
+        <field name="name">purchase_order_form_texts</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Add header text -->
+            <xpath expr="//field[@name='order_line']" position="before">
+                <group colspan="4">
+                    <field name="header_text" nolabel="1" widget="html" placeholder="Type here a header text ..."/>
+                </group>
+            </xpath>
+            <!-- Add footer text -->
+            <xpath expr="//field[@name='order_line']" position="after">
+                <group colspan="4">
+                    <field name="footer_text" nolabel="1" widget="html" placeholder="Type here a footer text ..."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

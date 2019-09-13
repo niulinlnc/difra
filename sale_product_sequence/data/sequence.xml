@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Sequences for product.product -->
+        <record id="seq_product_product" model="ir.sequence">
+            <field name="name">Product Product</field>
+            <field name="code">product_sequenced_field</field>
+            <field name="prefix">PROD_</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>

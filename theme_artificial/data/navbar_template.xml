@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Menu 1 -->
+
+
+        <record id="menu_men" model="website.menu">
+            <field name="name">Electronics</field>
+            <field name="url">#</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="sequence" type="int">12</field>
+            <field name="is_mega_menu">True</field>
+            <field name="submenu_view"><![CDATA[ 
+                   <div class="row">
+                            <div class="col-md-12 mt16">
+                                <div class="col-md-4 col-sm-3 mt8">
+                                    <div class="oe_structure">
+                                        <img class="img img-responsive" src="/theme_artificial/static/image/menu1.jpg"></img>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-8 col-sm-9">
+                                    <div class="col-md-3 col-sm-4">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Computers </span>
+                                                </a>
+                                                <ul class="list-unstyled bullets">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Dell Computers</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Lenovo Computers</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Acer Computers</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- HP Computers</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- View All</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 ">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Laptops</span>
+                                                </a>
+                                                <ul class="list-unstyled bullets">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Apple Macbook</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Lenovo Laptops</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Dell Laptops</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Asus Laptops</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- View All</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Mobile</span>
+                                                </a>
+                                                <ul class="list-unstyled bullets">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- HTC Mobiles</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Sony Mobiles</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Samsung Moblies</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Apple Iphone</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Moto G3</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="col-md-3 col-sm-4">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#">
+                                                    <span>Accessory</span>
+                                                </a>
+                                                <ul class="list-unstyled bullets">
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- EarPhones</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Headphones</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Graphic cards</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- Memory cards</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <span>- View All</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-md-12 mt16" style="padding: 0px;">
+                                        <div class="col-md-3 col-sm-4">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="#">
+                                                        <span>Memory card</span>
+                                                    </a>
+                                                    <ul class="list-unstyled bullets">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Samsung</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Scan disk</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- King ston</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- View All</span>
+                                                            </a>
+                                                        </li>
+                                                       
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb16 hidden-sm">
+                                            <img class="img img-responsive" src="/theme_artificial/static/image/menu2.jpg"></img>
+                                        </div>
+                                        
+                                         <div class="col-md-3 col-sm-4">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="#">
+                                                        <span>Ipad</span>
+                                                    </a>
+                                                    <ul class="list-unstyled bullets">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Apple Ipad</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Samsung</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Asus Tab</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- Apple Ipad Air</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span>- View All</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    ]]>
+            </field>
+        </record>
+
+
+      
+        
+    </data>
+</odoo>

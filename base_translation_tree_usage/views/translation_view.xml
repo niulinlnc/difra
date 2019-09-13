@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_translation_dialog_tree_usage">
+            <field name="name">view.translation.dialog.tree.usage</field>
+            <field name="model">ir.translation</field>
+            <field name="inherit_id" ref="base.view_translation_dialog_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree string="Translations" editable="top" create="true">
+                        <field name="source" />
+                        <field name="value" />
+                        <field name="name" />
+                        <field name="lang" />
+                        <field name="type" />
+                        <field name="state" />
+                        <field name="res_id" />
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

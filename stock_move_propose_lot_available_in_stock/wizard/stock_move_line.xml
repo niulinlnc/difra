@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="stock_move_line_propose_only_lot_in_src_location" model="ir.ui.view">
+            <field name="Stock Move Line Propose Only Lot In Source Location"/>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lot_id']" position="replace">
+                    <field name="lot_id" attrs="{'readonly': [('in_entire_package', '=', True)]}"
+                           invisible="not context.get('show_lots_m2o')"
+                           domain="[('product_id', '=', parent.product_id), '|', ('product_id.tracking', '=', 'lot'), '|', ('quant_ids', '=', False), '&amp;', ('quant_ids.quantity', '&gt;', 0), ('quant_ids.location_id', '=', location_id)]"
+                           groups="stock.group_production_lot"
+                           context="{'default_product_id': parent.product_id, 'active_picking_id': picking_id}"
+                           string="Lot/Serial Number"
+                    />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

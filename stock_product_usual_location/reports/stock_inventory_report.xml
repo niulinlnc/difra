@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="stock_product_usual_location.report_inventory" inherit_id="stock.report_inventory">
+            <xpath expr="//span[@t-field='line.product_id']" position="after">
+                <t t-if="line.product_id.usual_stock_location_info">
+                    <br />
+                    (<span style="text-decoration: underline;" t-field="line.product_id.usual_stock_location_info" />)
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_order_line_tree_invoicing_shipping_address">
+        <field name="name">view_order_line_tree_invoicing_shipping_address</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_partner_id']" position="after">
+                <field name="partner_invoice_id" />
+                <field name="partner_shipping_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

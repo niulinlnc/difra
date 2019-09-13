@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<record model="ir.ui.view" id="partner_form_invoicing_method">
+	    	<field name="name">partner_form_invoicing_method</field>
+		    <field name="model">res.partner</field>
+		    <field name="inherit_id" ref="account.view_partner_property_form" />
+		    <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//group[@name='acc_sale']" position="inside">
+		    			<field name="invoicing_method" />
+		    		</xpath>
+				</data>
+		    </field>
+		</record>
+	</data>
+</odoo>
