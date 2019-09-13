@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="difra_delivery_slip_inherit" inherit_id="stock.report_delivery_document">
+        <!-- Replace table with information frame -->
+        <xpath expr="(//table[@class='table table-condensed'])[1]" position="replace">
+              <div class="row mt32 mb32" id="informations">
+                <div t-if="o.name" class="col-xs-3">
+                    <strong>Document No.:</strong>
+                    <p t-field="o.name"/>
+                </div>
+                <div t-if="o.sale_id" class="col-xs-3">
+                    <strong>Order (Origin)</strong>
+                    <p t-field="o.sale_id"/>
+                </div>
+                <div t-if="o.scheduled_date" class="col-xs-3">
+                    <strong>Scheduled Date:</strong>
+                    <p t-field="o.scheduled_date" t-field-options="{'format': 'dd/MM/yyyy'}"/>
+                </div>
+                <div t-if="o.date_done" class="col-xs-3">
+                    <strong>Date done:</strong>
+                    <p t-field="o.date_done" t-field-options="{'format': 'dd/MM/yyyy'}"/>
+                </div>
+                  <div t-if="o.customer_reference" class="col-xs-3">
+                      <strong>Customer Order Reference</strong>
+                      <p t-field="o.customer_reference"/>
+                  </div>
+          </div>
+            <div class="h5 col-xs-12" t-if="o.description">
+                <strong>Description:</strong>
+                <span t-field="o.description"/>
+            </div>
+            <div class="h5 col-xs-12" t-if="o.product_repaired">
+                <strong>Product Repaired:</strong>
+                <span t-field="o.product_repaired"/>
+            </div>
+            <div class="h5 col-xs-12" t-if="o.lot_id">
+                <strong>Lot Nr:</strong>
+                <span t-field="o.lot_id"/>
+            </div>
+        </xpath>
+
+        <!-- Change name -->
+        <xpath expr="//h2" position="replace">
+            <h2 t-if="not o.repair_id"><span>Delivery Note</span></h2>
+            <h2 t-if="o.repair_id"><span>Repair Delivery Note</span></h2>
+        </xpath>
+
+        <!--Display life_date and lot/serial number when needed-->
+        <xpath expr="(//table[@class='table table-condensed mt48'])[1]" position="replace">
+          <t t-set="display_serial_number" t-value="any([l.lot_id for l in o.move_line_ids])"/>
+          <t t-set="display_life_date" t-value="any([l.life_date for l in o.move_line_ids])"/>
+          <table class="table table-condensed mt48">
+            <thead>
+              <th><strong>Product</strong></th>
+              <th t-if="display_serial_number"><strong>Lot/Serial Number</strong></th>
+              <th t-if="display_life_date"><strong>End Life Date</strong></th>
+              <th><strong>Quantity</strong></th>
+            </thead>
+            <tbody>
+              <tr t-foreach="o.move_line_ids" t-as="line">
+                <td><span t-field="line.product_id.name"/> <span t-field="line.product_id.description_sale"/></td>
+                <td t-if="display_serial_number"><span t-field="line.lot_id"/></td>
+                <td t-if="display_life_date"><span t-field="line.life_date" t-field-options="{'format': 'dd/MM/yyyy'}"/></td>
+                <td class="text-right">
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 1 and (str(line.qty_done).split('.')[1]) == '0'">
+                        <span t-esc="int(line.qty_done)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 1 and (str(line.qty_done).split('.')[1]) != '0'">
+                        <span t-esc="round(line.qty_done, 1)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 2">
+                        <span t-esc="round(line.qty_done, 2)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 3">
+                        <span t-esc="round(line.qty_done, 3)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 4">
+                        <span t-esc="round(line.qty_done, 4)"/>  
+                    </t>
+                </td>
+              </tr>
+              <tr t-foreach="o.move_lines.filtered(lambda x: x.reserved_availability == 0 and x.quantity_done == 0)" t-as="line"><td><span t-field="line.product_id.name"/> <span t-field="line.product_id.description_sale"/></td>
+                <td t-if="display_serial_number"/>
+                <td t-if="display_life_date"/>
+                <td class="text-right">
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 1 and (str(line.qty_done).split('.')[1]) == '0'">
+                        <span t-esc="int(line.qty_done)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 1 and (str(line.qty_done).split('.')[1]) != '0'">
+                        <span t-esc="round(line.qty_done, 1)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 2">
+                        <span t-esc="round(line.qty_done, 2)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 3">
+                        <span t-esc="round(line.qty_done, 3)"/>  
+                    </t>
+                    <t t-if="len(str(line.qty_done).split('.')[1]) == 4">
+                        <span t-esc="round(line.qty_done, 4)"/>  
+                    </t>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </xpath>
+        <xpath expr="(//table[@class='table table-condensed mt48'])[last()]" position="replace"/>
+
+        <!--Display invoicing and shipping addresse like sale.order-->
+        <xpath expr="(//div[@class='row'])[1]" position="replace">
+            <div class="row">
+                <div class="col-xs-6">
+                   <div t-if="o.sale_id.partner_shipping_id != o.sale_id.partner_invoice_id">
+                        <strong>Shipping address:</strong>
+                        <div t-field="o.sale_id.partner_shipping_id" t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone'], 'no_marker': True, 'phone_icons': True}"/>
+                        <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_id.vat"/></p>
+                   </div>
+                </div>
+                <div class="col-xs-6">
+                    <t t-if="o.sale_id.partner_shipping_id == o.sale_id.partner_invoice_id and o.sale_id.partner_invoice_id != o.sale_id.partner_id or o.sale_id.partner_shipping_id != o.sale_id.partner_invoice_id">
+                        <strong t-if="o.sale_id.partner_shipping_id == o.sale_id.partner_invoice_id">Invoicing and shipping address:</strong>
+                        <strong t-if="o.sale_id.partner_shipping_id != o.sale_id.partner_invoice_id">Invoicing address:</strong>
+                        <div t-field="o.sale_id.partner_invoice_id" t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone'], 'no_marker': True, 'phone_icons': True}"/>
+                    </t>
+                    <t t-if="not o.sale_id and o.partner_id">
+                        <div t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone'], 'no_marker': True, 'phone_icons': True}"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

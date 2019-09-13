@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="view_product_supplierinfo_tree_difra_price" model="ir.ui.view">
+            <field name="name">view_product_supplierinfo_tree_difra_price</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='price']" position="attributes">
+                        <attribute name="string">Raw Purchase Price</attribute>
+                        <attribute name="widget">monetary</attribute>
+                        <attribute name="options">{'currency_field': 'currency_id', 'field_digits': True}</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='price']" position="after">
+                        <field name="company_currency_id" invisible="True" />
+                        <field name="purchase_discount" />
+                        <field name="currency_id" invisible="True" />
+                        <field name="purchase_net_price_company_currency" widget="monetary" options="{'currency_field': 'company_currency_id', 'field_digits': True}" />
+                        <field name="sale_net_price" widget="monetary" options="{'currency_field': 'company_currency_id', 'field_digits': True}" />
+                        <field name="product_code" />
+                        <field name="inherit_price_info_from_supplier" />
+                    </xpath>
+                    <xpath expr="//field[@name='min_qty']" position="attributes">
+                        <attribute name="invisible">True</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='date_start']" position="attributes">
+                        <attribute name="string">Valid From</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='date_end']" position="attributes">
+                        <attribute name="invisible">True</attribute>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_product_supplierinfo_form_difra_price" model="ir.ui.view">
+            <field name="name">view_product_supplierinfo_form_difra_price</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//group//group[2]" position="replace">
+                        <group name="validity" string="Validity">
+                            <label for="date_start" string="Validity"/>
+                            <div><field name="date_start" class="oe_inline"/> to <field name="date_end" class="oe_inline"/></div>
+                        </group>
+                        <group name="purchase" string="Purchase">
+                            <field name="company_currency_id" invisible="True" />
+                            <field name="product_tmpl_id" string="Product" invisible="context.get('visible_product_tmpl_id', True)"/>
+                            <label for="min_qty"/>
+                            <div>
+                                <field name="min_qty" class="oe_inline"/>
+                                <field name="product_uom" class="oe_inline" groups="product.group_uom"/>
+                                <field name="currency_id" class="oe_inline" groups="base.group_multi_currency"/>
+                            </div>
+
+                            <label for="price" string="Raw Price"/>
+                            <div id="purchase_price_raw" colspan="1">
+                                <field name="price"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" class="oe_inline" />
+                                =>
+                                <field name="purchase_raw_price_company_currency" string="Raw Price" widget="monetary" options="{'currency_field': 'company_currency_id', 'field_digits': True}" class="oe_inline" attrs="{'invisible': [('currency_id', '=', 'company_currency_id')]}" />
+                            </div>
+
+                            <field name="inherit_price_info_from_supplier" />
+                            <field name="purchase_discount" string="Discount (%)"/>
+
+                            <label for="purchase_net_price" />
+                            <div id="purchase_price_net" colspan="1">
+                                <field name="purchase_net_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" string="Net Price" />
+                                =>
+                                <field name="purchase_net_price_company_currency" string="Net Price" widget="monetary" options="{'currency_field': 'company_currency_id', 'field_digits': True}" class="oe_inline" attrs="{'invisible': [('currency_id', '=', 'company_currency_id')]}" />
+                            </div>
+                            <field name="write_date"/>
+                        </group>
+                        <group name="sale" string="Sale">
+                            <field name="supplier_sale_price_method" string="Method"/>
+                            <field name="supplier_sale_default_discount" string="Margin (%)"/>
+                            <field name="sale_net_price" widget="monetary" options="{'currency_field': 'company_currency_id', 'field_digits': True}" string="Net Price"/>
+                        </group>
+                        
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

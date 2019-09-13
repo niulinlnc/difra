@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* difra_delivery_slip_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-13 08:46+0000\n"
+"PO-Revision-Date: 2019-06-13 11:10+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl_BE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<span>Delivery Note</span>"
+msgstr "<span>Verzendnota</span>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Customer Reference:</strong>"
+msgstr "<strong>Klant referentie:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Date done:</strong>"
+msgstr "<strong>Verwerkdatum:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Document No.:</strong>"
+msgstr "<strong>Document Nr.:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>End Life Date</strong>"
+msgstr "<strong>Einde levensduur datum</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Lot/Serial Number</strong>"
+msgstr "<strong>Partij/Serie nummers</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Order (Origin)</strong>"
+msgstr "<strong>Oorsprong</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Product</strong>"
+msgstr "<strong>Omschrijving</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>HLVD</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Scheduled Date:</strong>"
+msgstr "<strong>Geplande datum:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Verzendadres:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Invoicing address:"
+msgstr "Factuuradres:"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Invoicing and shipping address:"
+msgstr "Factuur- en verzendadres:"
