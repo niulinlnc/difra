@@ -13,7 +13,7 @@
 
     'depends': [
         'account',
-        'claim'
+        'claim',
     ],
 
     'data': [

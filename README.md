@@ -1,2 +1,2 @@
-# website_sale
-Odoo modules related to ecommerce 
+# DIFRA
+Odoo for DIFRA Instrumentation

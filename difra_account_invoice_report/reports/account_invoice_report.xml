@@ -47,45 +47,82 @@
             </div>
         </xpath>
 
-        <!-- Print only a smart number of decimales for the QTy -->
-        <xpath expr="//span[@t-field='l.quantity']" position="replace">
-            <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) == '0'">
-                <span t-esc="int(l.quantity)"/>  
+        <!-- Rewrite the complete lines table -->
+        <xpath expr="//tr[@t-foreach='o.invoice_line_ids']" position="replace">
+            <!-- Replace the <tr> by a <t>, this way I can add as many <tr> as I want -->
+            <t t-foreach="o.invoice_line_ids" t-as="l">
+                <!-- Check for this invoice line, how many tax line I've to add -->
+                <t t-set="taxes_with_detail" t-value="[x for x in l.invoice_line_tax_ids if x.display_detailled_line]" />
+                <!-- Write down the invoice line -->
+                <tr>
+                    <td>
+                        <span t-field="l.name"/>
+                    </td>
+                    <td class="hidden">
+                        <span t-field="l.origin"/>
+                    </td>
+                    <td class="text-right">
+                        <!-- Print only a smart number of decimales for the QTy -->
+                        <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) == '0'">
+                            <span t-esc="int(l.quantity)"/>
+                        </t>
+                        <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) != '0'">
+                            <span t-esc="round(l.quantity, 1)"/>
+                        </t>
+                        <t t-if="len(str(l.quantity).split('.')[1]) == 2">
+                            <span t-esc="round(l.quantity, 2)"/>
+                        </t>
+                        <t t-if="len(str(l.quantity).split('.')[1]) == 3">
+                            <span t-esc="round(l.quantity, 3)"/>
+                        </t>
+                        <t t-if="len(str(l.quantity).split('.')[1]) == 4">
+                            <span t-esc="round(l.quantity, 4)"/>
+                        </t>
+                        <span t-field="l.uom_id" groups="product.group_uom"/>
+                    </td>
+                    <td class="text-right">
+                        <!-- Line Price unit -->
+                        <span t-field="l.price_unit" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+                    </td>
+                    <td t-if="display_discount" class="text-right">
+                        <span t-field="l.discount"/>
+                    </td>
+                    <td class="text-right">
+                        <span t-esc="', '.join(map(lambda x: (x.description or x.name), [x for x in l.invoice_line_tax_ids if x.display_detailled_line == False]))"/>
+                    </td>
+                    <td class="text-right" id="subtotal">
+                        <!-- Line Price subtotal -->
+                        <span t-field="l.price_subtotal" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+                    </td>
+                </tr>
+                <t t-foreach="taxes_with_detail" t-as="tax">
+                    <!-- Show detail for taxes -->
+                    <tr>
+                        <td>
+                            <span t-field="tax.name" />
+                        </td>
+                        <td class="hidden" />
+                        <td class="text-right">
+                            <!-- Qty -->
+                            <span t-esc="int(l.quantity)"/>
+                        </td>
+                        <td class="text-right">
+                            <!-- Price -->
+                            <span t-esc="tax.amount" />
+                        </td>
+                        <td class="text-right">
+                            <!-- Applied secondary taxes -->
+                            <span t-esc="', '.join(map(lambda x: (x.description or x.name), [x for x in l.invoice_line_tax_ids if x.include_base_amount == False]))"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-esc="tax.amount * int(l.quantity)" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+                        </td>
+                    </tr>
+                </t>
             </t>
-            <t t-if="len(str(l.quantity).split('.')[1]) == 1 and (str(l.quantity).split('.')[1]) != '0'">
-                <span t-esc="round(l.quantity, 1)"/>  
-            </t>
-            <t t-if="len(str(l.quantity).split('.')[1]) == 2">
-                <span t-esc="round(l.quantity, 2)"/>  
-            </t>
-            <t t-if="len(str(l.quantity).split('.')[1]) == 3">
-                <span t-esc="round(l.quantity, 3)"/>  
-            </t>
-            <t t-if="len(str(l.quantity).split('.')[1]) == 4">
-                <span t-esc="round(l.quantity, 4)"/>  
-            </t>
+
         </xpath>
 
-        <!-- Line Price unit -->
-        <xpath expr="//span[@t-field='l.price_unit']" position="replace">
-            <span t-field="l.price_unit" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
-        </xpath>
-
-        <!-- Line Price subtotal -->
-        <xpath expr="//span[@t-field='l.price_subtotal']" position="replace">
-            <span t-field="l.price_subtotal" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
-        </xpath>
-
-        <!-- Line tax, show detailled for taxes that are specified as it -->
-        <xpath expr="//td[@id='subtotal']" position="inside">
-            <t t-set="taxes_with_detail" t-value="[x for x in l.invoice_line_tax_ids if x.display_detailled_line]" />
-            <t t-if="len(taxes_with_detail) > 0">
-                <!-- Show detail for taxes -->
-            </t>
-        </xpath>
-        <!--<xpath expr="//span[@t-esc=`', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))`" position="replace">
-            hello world
-        </xpath>-->
 
         <!-- Remove empty lines -->
         <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']" position="replace" />
