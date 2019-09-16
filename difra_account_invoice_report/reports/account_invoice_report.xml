@@ -183,5 +183,29 @@
                 </div>
             </div>
         </xpath>
+
+        <xpath expr="//div[@name='invoice_address']" position="replace">
+            <!-- Delivery and Invoicing are different -->
+            <t t-if="o.partner_shipping_id != o.partner_id">
+                <div t-if="o.partner_shipping_id" class="col-xs-6">
+                    <strong>Shipping address:</strong>
+                    <h5 t-field="o.partner_shipping_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
+                </div>
+                <div class="col-xs-6">
+                    <strong>Invoicing address:</strong>
+                    <h5 t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
+                    <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_id.vat"/></p>
+                </div>
+            </t>
+
+            <!-- Delivery and Invoicing are equals -->
+            <t t-if="o.partner_shipping_id == o.partner_id">
+                <div class="col-xs-5 col-xs-offset-6">
+                    <strong>Invoicing and shipping address:</strong>
+                    <h5 t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
+                    <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_id.vat"/></p>
+                </div>
+            </t>
+        </xpath>
     </template>
 </odoo>

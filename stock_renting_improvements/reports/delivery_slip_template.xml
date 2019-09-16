@@ -51,14 +51,14 @@
             </xpath>
     </template>
 
-    <template id="stock_renting_improvements.difra_contact_in_header" inherit_id="difra_delivery_slip_report.difra_delivery_slip_inherit">
-        <xpath expr="//div[@id='informations']" position="inside">
-            <div t-if="o.date_done" class="col-xs-3">
-                <strong>Difra contact:</strong>
-                <p t-field="o.create_uid" />
-            </div>
-        </xpath>
-    </template>
+<!--    <template id="stock_renting_improvements.difra_contact_in_header" inherit_id="difra_delivery_slip_report.difra_delivery_slip_inherit">-->
+<!--        <xpath expr="//div[@id='informations']" position="inside">-->
+<!--            <div t-if="o.date_done" class="col-xs-3">-->
+<!--                <strong>Difra contact:</strong>-->
+<!--                <p t-field="o.create_uid" />-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--    </template>-->
 
     <template id="stock_renting_improvements.delivery_slip_banner_add_renting_information" inherit_id="difra_delivery_slip_report.difra_delivery_slip_inherit">
         <xpath expr="//div[@id='informations']" position="inside">
