@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e-20181109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-06 12:29+0000\n"
-"PO-Revision-Date: 2019-09-06 14:32+0200\n"
+"POT-Creation-Date: 2019-09-16 14:56+0000\n"
+"PO-Revision-Date: 2019-09-16 17:06+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -92,17 +92,22 @@ msgstr "${object.name}: Incident"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Customer reference:</strong>"
-msgstr "<strong>Customer reference:</strong>"
+msgstr "<strong>Référence client:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
-msgid "<strong>Date:</strong>"
-msgstr "<strong>Date :</strong>"
+msgid "<strong>Invoicing address:</strong>"
+msgstr "<strong>Adresse de facturation :</strong>"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "<strong>Invoicing and shipping address:</strong>"
+msgstr "<strong>Adresse de livraison et facturation :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Lot/Serial Number:</strong>"
-msgstr "<strong>Lot/Numéro de série:</strong>"
+msgstr "<strong/>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
@@ -116,8 +121,13 @@ msgstr "<strong>Réclamation liée :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Adresse de livraison :</strong>"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Warranty:</strong>"
-msgstr "<strong>Guarantie:</strong>"
+msgstr "<strong/>"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_team_id
@@ -235,8 +245,8 @@ msgstr "Autorités Compétentes"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
-msgid "Authority Notified Justification:"
-msgstr "Justification à l'Autorité Notifiée:"
+msgid "Authority Competent Justification:"
+msgstr "Authority Competent Justification:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -458,6 +468,12 @@ msgid "Customer"
 msgstr "Client"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_account_invoice_customer_order_reference
+#: model:ir.model.fields,field_description:claim.field_stock_picking_customer_reference
+msgid "Customer Order Reference"
+msgstr "Numéro Commande Client"
+
+#. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_customer_reference
 msgid "Customer Reference"
 msgstr "Numéro Commande Client"
@@ -489,9 +505,11 @@ msgid "Delivery Address"
 msgstr "Adresse de Livraison"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_account_invoice_description
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_description
 #: model:ir.model.fields,field_description:claim.field_claim_description
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_description
+#: model:ir.model.fields,field_description:claim.field_stock_picking_description
 msgid "Description"
 msgstr "Description"
 
@@ -544,7 +562,7 @@ msgstr "Date de fin"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "End Date:"
-msgstr "Date de Fin:"
+msgstr "Date de FIn:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_end_repair_date
@@ -640,6 +658,11 @@ msgid "Intervention Default Tests"
 msgstr "Tests d'Intervention par défaut"
 
 #. module: claim
+#: model:ir.model,name:claim.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_is_delivered
 msgid "Is Delivered"
 msgstr "Est livré"
@@ -716,6 +739,11 @@ msgstr "Nombre de Rendez-vous"
 #: model:ir.model.fields,field_description:claim.field_claim_lot_id
 msgid "Lot"
 msgstr "Lot"
+
+#. module: claim
+#: model:ir.model.fields,field_description:claim.field_stock_picking_lot_id
+msgid "Lot Repaired"
+msgstr "Lot Réparé"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -924,14 +952,29 @@ msgid "Product Received"
 msgstr "Article Reçu"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_account_invoice_product_id
+msgid "Product Repaired"
+msgstr "Product Repaired"
+
+#. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_send_article
 msgid "Product must be send ?"
 msgstr "Article doit être renvoyé ?"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_stock_picking_product_repaired
+msgid "Product to repair"
+msgstr "Product to repair"
+
+#. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Product:"
 msgstr "Article :"
+
+#. module: claim
+#: model:ir.model.fields,help:claim.field_stock_picking_lot_id
+msgid "Products repaired are all belonging to this lot"
+msgstr "Les produits réparés appartiennent tous à ce lot. "
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_quality_responsible_id
@@ -1004,10 +1047,10 @@ msgstr "Ordre de réparation"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_repair_type
 msgid "Repair Type"
-msgstr "Repair Type"
+msgstr "Type de réparation"
 
 #. module: claim
-#: code:addons/claim/models/mrp_repair.py:375
+#: code:addons/claim/models/mrp_repair.py:370
 #, python-format
 msgid "Repair must be under repair in order to end reparation."
 msgstr "La réparation doit être en cours pour être terminée."
@@ -1145,7 +1188,7 @@ msgstr "Tests"
 #: code:addons/claim/models/claim.py:164
 #, python-format
 msgid "The selected product is set to be tracked by lot/serial, you have to provide one to go further."
-msgstr "The selected product is set to be tracked by lot/serial, you have to provide one to go further."
+msgstr "L'article sélectionné est défini comme suivi grâce à unen uméro de série/de lot. Vous devez en fournir un pour continuer."
 
 #. module: claim
 #: selection:mrp_repair.test,state:0

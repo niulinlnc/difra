@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* stock_renting_improvements
+# 	* stock_renting_improvements
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e-20181109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 13:02+0000\n"
-"PO-Revision-Date: 2019-08-08 13:02+0000\n"
+"POT-Creation-Date: 2019-09-16 15:12+0000\n"
+"PO-Revision-Date: 2019-09-16 17:14+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. module: stock_renting_improvements
 #: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
@@ -39,11 +41,6 @@ msgstr "<strong>Livraison:</strong>"
 #: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_banner_add_renting_information
 msgid "<strong>Description</strong>"
 msgstr "<strong>Description</strong>"
-
-#. module: stock_renting_improvements
-#: model:ir.ui.view,arch_db:stock_renting_improvements.difra_contact_in_header
-msgid "<strong>Difra contact:</strong>"
-msgstr "<strong>Contact Difra :</strong>"
 
 #. module: stock_renting_improvements
 #: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
@@ -83,7 +80,7 @@ msgstr "Description"
 #. module: stock_renting_improvements
 #: model:ir.ui.view,arch_db:stock_renting_improvements.delivery_slip_add_renting_information
 msgid "Difra name and Signature:"
-msgstr "Difra name and Signature:"
+msgstr "Difra nom et Signature:"
 
 #. module: stock_renting_improvements
 #: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_is_renting
@@ -102,6 +99,11 @@ msgid "Notes"
 msgstr "Notes"
 
 #. module: stock_renting_improvements
+#: model:ir.model,name:stock_renting_improvements.model_stock_location_path
+msgid "Pushed Flow"
+msgstr "Flux poussé"
+
+#. module: stock_renting_improvements
 #: selection:stock.picking,rent_type:0
 msgid "Put on loan"
 msgstr "Mise en Prêt"
@@ -117,9 +119,24 @@ msgid "Renting Note"
 msgstr "Remarque pour Locations"
 
 #. module: stock_renting_improvements
+#: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_scheduled_date_only
+msgid "Scheduled Date Only"
+msgstr "Date planifiée uniquement"
+
+#. module: stock_renting_improvements
 #: model:ir.model,name:stock_renting_improvements.model_stock_picking_type
 msgid "The operation type determines the picking view"
-msgstr "The operation type determines the picking view"
+msgstr "Le type d'opération définis la vue d'approvisionnement"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.stock_picking_add_filter_search_view
+msgid "This Week"
+msgstr "Cette semaine"
+
+#. module: stock_renting_improvements
+#: model:ir.ui.view,arch_db:stock_renting_improvements.stock_picking_add_filter_search_view
+msgid "Today"
+msgstr "Aujourd'hui"
 
 #. module: stock_renting_improvements
 #: model:ir.model,name:stock_renting_improvements.model_stock_picking
@@ -130,4 +147,3 @@ msgstr "Transfert"
 #: model:ir.model.fields,field_description:stock_renting_improvements.field_stock_picking_rent_type
 msgid "Type"
 msgstr "Type"
-
