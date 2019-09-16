@@ -36,10 +36,10 @@
                     <strong>Warranty:</strong>
                     <p t-field="o.guarantee_limit"/>
                 </div>
-                <div class="col-xs-3">
-                    <strong>Date:</strong>
-                    <p t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}"/>
-                </div>
+<!--                <div class="col-xs-3">-->
+<!--                    <strong>Date:</strong>-->
+<!--                    <p t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}"/>-->
+<!--                </div>-->
                 <div t-if="o.claim_id" class="col-xs-3">
                     <strong>Related claim:</strong>
                     <p t-field="o.claim_id.name"/>
@@ -49,6 +49,10 @@
                     <p t-field="o.customer_reference"/>
                 </div>
             </div>
+        </xpath>
+
+        <xpath expr="//span[@t-field='line.price_unit']" position="replace">
+            <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.pricelist_id.currency_id}"/>
         </xpath>
 
         <xpath expr="//div[@class='row'][1]" position="replace">
@@ -67,7 +71,7 @@
 
             <!-- Delivery and Invoicing are equals -->
             <t t-if="o.delivery_address == o.partner_invoice_id">
-                <div class="col-xs-5 col-xs-offset-6">
+                <div class="col-xs-6 col-xs-offset-6">
                     <strong>Invoicing and shipping address:</strong>
                     <h5 t-field="o.partner_invoice_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
                     <p t-if="o.partner_invoice_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_invoice_id.vat"/></p>
