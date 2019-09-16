@@ -196,11 +196,16 @@
                                 <th name="lot_serial" t-if="has_serial_number">
                                     Lot/Serial Number
                                 </th>
-                                <th class="text-center"><strong>Ordered Qty</strong></th>
-                                <th class="text-center"><strong>Qty to do</strong></th>
-                                <th class="text-center"><strong>Qty done</strong></th>
-                                <th class="text-center"><strong>Left Qty</strong></th>
-                                <th class="text-center"><strong>Unit of Measure</strong></th>
+                                <t t-if="o.sale_id">
+                                    <th class="text-center"><strong>Ordered Qty</strong></th>
+                                    <th class="text-center"><strong>Qty to do</strong></th>
+                                    <th class="text-center"><strong>Qty done</strong></th>
+                                    <th class="text-center"><strong>Left Qty</strong></th>
+                                    <th class="text-center"><strong>Unit of Measure</strong></th>
+                                </t>
+                                <t t-else="">
+                                    <th class="text-center"><strong>Quantity</strong></th>
+                                </t>
                             </tr>
                         </thead>
                         <tbody>
@@ -233,27 +238,35 @@
                                         </table>
                                   </td>
                                 </t>
-                                <!--Ordered Qty = so.move_line.product_qty-->
-                                <t t-if="o.sale_id" t-set="ordered_qty" t-value="o.sale_id.order_line.search([('move_ids', 'in', move_line.move_id.id), ('product_id', '=', move_line.product_id.id)]).product_uom_qty"/>
-                                <td class="text-center">
-                                    <span t-esc="ordered_qty" t-options="{'widget': 'float', 'precision': 4}"/>
-                                </td>
-                                <!--Qty To do = move_line.ordered_qty-->
-                                <td class="text-center">
-                                    <span t-field="move_line.ordered_qty"/>
-                                </td>
-                                <!--Qty Done-->
-                                <td class="text-center">
-                                    <span t-field="move_line.qty_done"/>
-                                </td>
-                                <!--Left Qty = Qty to do - Qty done-->
-                                <td class="text-center">
-                                    <span t-esc="move_line.ordered_qty - move_line.qty_done" t-options="{'widget': 'float', 'precision': 4}"/>
-                                </td>
-                                <!--UoM-->
-                                <td class="text-center">
-                                    <span t-field="move_line.product_uom_id"/>
-                                </td>
+                                <t t-if="o.sale_id">
+                                    <!--Ordered Qty = so.move_line.product_qty-->
+                                    <t t-set="ordered_qty" t-value="o.sale_id.order_line.search([('move_ids', 'in', move_line.move_id.id), ('product_id', '=', move_line.product_id.id)]).product_uom_qty"/>
+                                    <td class="text-center">
+                                        <span t-esc="ordered_qty" t-options="{'widget': 'float', 'precision': 4}"/>
+                                    </td>
+                                    <!--Qty To do = move_line.ordered_qty-->
+                                    <td class="text-center">
+                                        <span t-field="move_line.ordered_qty"/>
+                                    </td>
+                                    <!--Qty Done-->
+                                    <td class="text-center">
+                                        <span t-field="move_line.qty_done"/>
+                                    </td>
+                                    <!--Left Qty = Qty to do - Qty done-->
+                                    <td class="text-center">
+                                        <span t-esc="move_line.ordered_qty - move_line.qty_done" t-options="{'widget': 'float', 'precision': 4}"/>
+                                    </td>
+                                    <!--UoM-->
+                                    <td class="text-center">
+                                        <span t-field="move_line.product_uom_id"/>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td class="text-center">
+                                        <span t-field="move_line.qty_done"/>
+                                        <span t-field="move_line.product_uom_id"/>
+                                    </td>
+                                </t>
                             </tr>
                         </tbody>
                     </table>
