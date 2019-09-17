@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="res_partner_add_related_stock_move">
+        <field name="name">res_partner_add_related_stock_move</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='toggle_active']" position="before">
+                <button string="Product Moves" type="object" name="action_view_stock_move_lines" class="oe_stat_button" icon="fa-arrows-v" groups="stock.group_stock_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

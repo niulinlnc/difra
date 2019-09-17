@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_find_stock_move
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-17 13:42+0000\n"
+"PO-Revision-Date: 2019-09-17 13:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_find_stock_move
+#: model:ir.model,name:partner_find_stock_move.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_find_stock_move
+#: model:ir.ui.view,arch_db:partner_find_stock_move.res_partner_add_related_stock_move
+msgid "Product Moves"
+msgstr "Mouvements de stock"
+
