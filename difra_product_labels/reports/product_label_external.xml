@@ -71,8 +71,8 @@
                             }
 
                             .cell_qty {
-                                background-color: gray;
-                                color: white;
+                                background-color: light-gray;
+                                color: black;
                                 width: 50%;
                             }
 
