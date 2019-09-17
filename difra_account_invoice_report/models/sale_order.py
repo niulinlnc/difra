@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, exceptions, _
-import datetime
+from datetime import datetime
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -24,11 +24,12 @@ class SaleOrder(models.Model):
                                 if move_line.product_id.tracking == 'lot':
                                     prefix = "Lot"
                                 if move_line.lot_id:
-                                    invoice_line_name = invoice_line_name + "\n%s: %s" % prefix, move_line.lot_id.name
+                                    invoice_line_name = invoice_line_name + "\n%s: %s" % (prefix, move_line.lot_id.name)
                                 elif move_line.lot_name:
-                                    invoice_line_name = invoice_line_name + "\n%s: %s" % prefix, move_line.lot_name
+                                    invoice_line_name = invoice_line_name + "\n%s: %s" % (prefix, move_line.lot_name)
                                 if move_line.life_date:
-                                    invoice_line_name = invoice_line_name + "\nDate: %s" % move_line.life_date
+                                    date = datetime.strptime(move_line.life_date, "%Y-%m-%d %H:%M:%S")
+                                    invoice_line_name = invoice_line_name + "\n%s/%s/%s" % (date.day, date.month, date.year)
                     invoice_line.write({'name': invoice_line_name})
             if self.client_order_ref:
                 invoice.write({'customer_order_reference': self.client_order_ref})
