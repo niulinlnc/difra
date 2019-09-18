@@ -7,7 +7,7 @@ _logger = logging.getLogger(__name__)
 class StockProductionLot(models.Model):
     _inherit = 'stock.production.lot'
 
-    name = fields.Char(compute="_compute_serial_number", store=True)
+    name = fields.Char(default="New", compute="_compute_serial_number", store=True)
 
     @api.multi
     @api.onchange('product_id')
