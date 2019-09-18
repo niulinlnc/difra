@@ -445,7 +445,8 @@ class MrpRepair(models.Model):
                     'partner_shipping_id': repair.delivery_address.id,
                     'customer_order_reference': repair.customer_reference,
                     'description': repair.description,
-                    'product_id': repair.product_id.id
+                    'product_id': repair.product_id.id,
+                    'repair_id': self.id
                 })
             return res
 

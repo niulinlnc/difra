@@ -6,6 +6,7 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="repair_id"/>
                     <field name="customer_order_reference"/>
                     <field name="product_id"/>
                     <field name="description"/>
