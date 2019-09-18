@@ -8,6 +8,6 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     repair_id = fields.Many2one('mrp.repair')
-    customer_order_reference = fields.Char(related='repair_id.customer_order_reference', string='Customer Order Reference')
+    customer_order_reference = fields.Char(related='repair_id.customer_reference', string="Customer Order Reference")
     description = fields.Text(related='repair_id.description', string="Description")
-    product_id = fields.Many2one('product.template', related='repair_id.product_id', string="Product Repaired")
+    product_id = fields.Many2one('product.product', related='repair_id.product_id', string="Product Repaired")

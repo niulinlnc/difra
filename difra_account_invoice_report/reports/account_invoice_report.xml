@@ -41,7 +41,7 @@
                     <p t-field="o.product_id"/>
                 </div>
                 <div name="lot_it" class="col-xs-2" t-if="o.repair_id and o.repair_id.lot_id">
-                    <strong>Lot/S.N.</strong>
+                    <strong>Lot/S.N.:</strong>
                     <p t-field="o.repair_id.lot_id"/>
                 </div>
             </div>
