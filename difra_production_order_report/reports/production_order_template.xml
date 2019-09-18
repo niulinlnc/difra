@@ -2,6 +2,8 @@
 <odoo>
     <template id="difra_production_order_inherit" inherit_id="mrp.report_mrporder">
         <xpath expr="//th[@class='text-right']" position="replace">
+            <t t-set="display_serial_number" t-value="any([l.lot_id for m in o.move_raw_ids for l in m.active_move_line_ids])"/>
+            <th t-if="display_serial_number">Lot/SN</th>
             <th>Usual stock location</th>
             <th>Qty Needed</th>
             <th>Qty Reserved</th>
@@ -11,7 +13,13 @@
         </xpath>
         <xpath expr="//tr[@t-as='line']" position="replace">
             <tr t-foreach="o.move_raw_ids" t-as="line">
+                    <t t-set="display_serial_number" t-value="any([l.lot_id for m in o.move_raw_ids for l in m.active_move_line_ids])"/>
                     <td><span t-field="line.product_id"/></td>
+                    <td t-if="display_serial_number">
+                      <t t-foreach="line.active_move_line_ids" t-as="move_line">
+                        <span t-esc="move_line.lot_id.id"/><br/>
+                      </t>
+                    </td>
                     <td><span t-if="line.product_id.usual_stock_location_info" t-field="line.product_id.usual_stock_location_info"/></td>
                     <td><span t-field="line.product_uom_qty"/></td>
                     <td><span t-field="line.reserved_availability"/></td>
