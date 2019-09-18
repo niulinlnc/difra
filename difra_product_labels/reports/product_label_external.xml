@@ -71,8 +71,8 @@
                             }
 
                             .cell_qty {
-                                background-color: gray;
-                                color: white;
+                                background-color: light-gray;
+                                color: black;
                                 width: 50%;
                             }
 
@@ -149,7 +149,7 @@
                                 <td colspan="2" width="50%" class="right_panel">
                                     <u>Dest:</u> <span t-esc="picking_id.partner_id.name" /><br />
                                     <u>Doc:</u> <span t-esc="picking_id.name" /><br />
-                                    <u>Origin:</u> <span t-esc="picking_id.origin" />
+                                    <u>Order #:</u> <span t-esc="picking_id.origin" />
                                 </td>
                             </tr>
                         </table>

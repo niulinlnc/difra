@@ -117,14 +117,7 @@
                                     </t>
                                 </td>
                             </tr>
-                            <!-- (Location) -->
-                            <t t-if="product_id.usual_stock_location_info">
-                                 <tr>
-                                    <td colspan="4">
-                                        <h5>Location: <span t-esc="product_id.usual_stock_location_info" /></h5>
-                                    </td>
-                                </tr>
-                            </t>
+
                             <tr>
                                 <!-- ref + ref QR (+ Lot + lot QR) -->
                                 <td colspan="4" width="50%" class="left_panel">
@@ -140,6 +133,12 @@
                                            <u>Serial/lot</u>: <br /><span t-esc="lot_id.name" /><br />
                                             <!-- Lot QR -->
                                             <img t-if="lot_id.name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', lot_id.name, 100, 100)" class="qr_code"/>
+                                        </div>
+                                    </t>
+                                    <!-- (Location) -->
+                                    <t t-if="product_id.usual_stock_location_info">
+                                        <div class="ref_lot_panel">
+                                            <u>Location: </u><br /><span t-esc="product_id.usual_stock_location_info" />
                                         </div>
                                     </t>
                                 </td>
