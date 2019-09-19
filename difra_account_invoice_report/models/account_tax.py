@@ -11,4 +11,5 @@ class AccountTax(models.Model):
     _inherit = 'account.tax'
 
     display_detailled_line = fields.Boolean(string="Display a detailled line for this tax on the invoice report")
+    show_base_line = fields.Boolean(string="Display a base line in the tax table before the line")
 
