@@ -21,32 +21,32 @@
         </xpath>
         <!-- Make product and Lot bigger, manage header with infos -->
         <xpath expr="//div[@class='row mt32 mb32']" position="replace">
-            <div class="row mt-32">
-                <div t-if="o.product_id" class="h5 col-xs-12">
-                    <strong>Product to Repair:</strong>
-                    <span t-field="o.product_id.name"/>
-                </div>
-                <div t-if="o.lot_id" class="h5 col-xs-12" groups="stock.group_production_lot">
-                    <strong>Lot/Serial Number:</strong>
-                    <span t-field="o.lot_id.name"/>
-                </div>
-            </div>
-            <div class="row mb32" id="informations">
+            <div class="row mt32 mb32" id="informations">
                 <div t-if="o.guarantee_limit" class="col-xs-3">
                     <strong>Warranty:</strong>
                     <p t-field="o.guarantee_limit"/>
                 </div>
-<!--                <div class="col-xs-3">-->
-<!--                    <strong>Date:</strong>-->
-<!--                    <p t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}"/>-->
-<!--                </div>-->
+                <div t-if="o.validation_date" class="col-xs-3">
+                    <strong>Date:</strong>
+                    <p t-field="o.validation_date" t-options="{'widget': 'date'}"/>
+                </div>
                 <div t-if="o.claim_id" class="col-xs-3">
                     <strong>Related claim:</strong>
                     <p t-field="o.claim_id.name"/>
                 </div>
                 <div t-if="o.customer_reference" class="col-xs-3">
-                    <strong>Customer reference:</strong>
+                    <strong>Your Customer Reference:</strong>
                     <p t-field="o.customer_reference"/>
+                </div>
+            </div>
+            <div class="row mb-32">
+                <div t-if="o.product_id" class="h5 col-xs-12">
+                    <strong>Product to Repair:</strong>
+                    <span t-field="o.product_id.name"/>
+                </div>
+                <div t-if="o.lot_id" class="h5 col-xs-12" groups="stock.group_production_lot">
+                    <strong>Serial Number:</strong>
+                    <span t-field="o.lot_id.name"/>
                 </div>
             </div>
         </xpath>
@@ -76,6 +76,13 @@
                         <strong>Invoicing and shipping address:</strong>
                         <h5 t-field="o.partner_invoice_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
                         <p t-if="o.partner_invoice_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_invoice_id.vat"/></p>
+                    </div>
+                </t>
+
+                <t t-if="o.partner_id != o.delivery_address and o.partner_id != o.partner_invoice_id">
+                    <div t-if="o.delivery_address" class="col-xs-6">
+                        <strong>Partner:</strong>
+                        <h5 t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
                     </div>
                 </t>
             </div>

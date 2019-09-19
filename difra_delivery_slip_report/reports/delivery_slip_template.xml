@@ -202,9 +202,9 @@
                                 </th>
                                 <t t-if="o.sale_id">
                                     <th class="text-center"><strong>Ordered Qty</strong></th>
-                                    <th class="text-center"><strong>Qty to do</strong></th>
-                                    <th class="text-center"><strong>Qty done</strong></th>
-                                    <th class="text-center"><strong>Left Qty</strong></th>
+                                    <th class="text-center"><strong>Qty to deliver</strong></th>
+                                    <th class="text-center"><strong>Qty delivered</strong></th>
+                                    <th class="text-center"><strong>Balance</strong></th>
                                     <th class="text-center"><strong>Unit of Measure</strong></th>
                                 </t>
                                 <t t-else="">
