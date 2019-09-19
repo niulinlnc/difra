@@ -8,10 +8,6 @@
                     <strong>Invoice number:</strong>
                     <p t-field="o.number"/>
                 </div>
-                <div class="col-xs-2" t-if="o.name">
-                    <strong>Description:</strong>
-                    <p t-field="o.name"/>
-                </div>
                 <div class="col-xs-2" t-if="o.date_invoice">
                     <strong>Invoice Date:</strong>
                     <p t-field="o.date_invoice"/>
@@ -33,21 +29,27 @@
                     <p t-field="o.reference"/>
                 </div>
                 <div name="customer_order_reference" class="col-xs-2" t-if="o.customer_order_reference">
-                    <strong>Customer Order Reference:</strong>
+                    <strong>Your Order Reference:</strong>
                     <p t-field="o.customer_order_reference"/>
                 </div>
-                <div name="product_id" class="col-xs-2" t-if="o.product_id">
-                    <strong>Repaired Product:</strong>
-                    <p t-field="o.product_id"/>
-                </div>
-                <div name="lot_it" class="col-xs-2" t-if="o.repair_id and o.repair_id.lot_id">
-                    <strong>Lot/S.N.:</strong>
-                    <p t-field="o.repair_id.lot_id"/>
+                <div name="name" class="col-xs-2" t-if="not o.customer_order_reference and o.name">
+                    <strong>Your Order Reference:</strong>
+                    <p t-field="o.name"/>
                 </div>
             </div>
-            <div name="description" t-if="o.description">
-                <strong>Description:</strong>
-                <p t-field="o.description"/>
+            <div class="row">
+                <div name="product_id" class="h5 col-xs-12" t-if="o.product_id">
+                    <strong>Repaired Product:</strong>
+                    <span t-field="o.product_id"/>
+                </div>
+                <div name="lot_it" class="h5 col-xs-12" t-if="o.repair_id and o.repair_id.lot_id">
+                    <strong>Serial Number:</strong>
+                    <span t-field="o.repair_id.lot_id"/>
+                </div>
+                <div class="h5 col-xs-12" name="description" t-if="o.description">
+                    <strong>Description:</strong>
+                    <p t-field="o.description"/>
+                </div>
             </div>
         </xpath>
 
