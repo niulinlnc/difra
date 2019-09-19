@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api
 import logging
-
 _logger = logging.getLogger(__name__)
 
 
 class AccountPaymentTerm(models.Model):
-    _inherit_id = 'account.payment.term'
+    _inherit = 'account.payment.term'
 
     payment_before_delivery = fields.Boolean("Payment Before Delivery", default=False)

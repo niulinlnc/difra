@@ -12,6 +12,7 @@ class StockPicking(models.Model):
     @api.one
     def _compute_state(self):
         super(StockPicking, self)._compute_state()
+        # TODO: partially available
         if self.state == "assigned" \
                 and self.sale_id \
                 and self.sale_id.payment_term_id.payment_before_delivery \
