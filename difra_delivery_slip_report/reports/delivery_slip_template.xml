@@ -9,7 +9,7 @@
                     <p t-field="o.name"/>
                 </div>
                 <div t-if="o.sale_id" class="col-xs-3">
-                    <strong>Order (Origin)</strong>
+                    <strong>Order (Origin):</strong>
                     <p t-field="o.sale_id"/>
                 </div>
                 <div t-if="o.date_done" class="col-xs-3">
@@ -17,7 +17,7 @@
                     <p t-field="o.date_done" t-field-options="{'format': 'dd/MM/yyyy'}"/>
                 </div>
                   <div t-if="o.customer_reference" class="col-xs-3">
-                      <strong>Customer Order Reference</strong>
+                      <strong>Customer Order Reference:</strong>
                       <p t-field="o.customer_reference"/>
                   </div>
                   <div t-if="o.sale_id.client_order_ref" class="col-xs-3">
@@ -25,6 +25,7 @@
                       <p t-field="o.sale_id.client_order_ref"/>
                   </div>
           </div>
+          <div class="row">
             <div class="h5 col-xs-12" t-if="o.description">
                 <strong>Description:</strong>
                 <span t-field="o.description"/>
@@ -34,9 +35,10 @@
                 <span t-field="o.product_repaired"/>
             </div>
             <div class="h5 col-xs-12" t-if="o.lot_id">
-                <strong>Lot Nr:</strong>
+                <strong>Serial Number:</strong>
                 <span t-field="o.lot_id"/>
             </div>
+          </div>
         </xpath>
 
         <!-- Change name -->
