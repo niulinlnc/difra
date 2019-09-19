@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="stock_renting_improvements.delivery_slip_add_renting_information" inherit_id="stock.report_delivery_document">
-            <xpath expr="//h2" position="replace">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h2>
-                            Delivery Slip
-
-                            <t t-if="o.is_renting">
-                                <span t-if="o.rent_type == 'loan'">&amp;nbsp;-&amp;nbsp;Loan</span>
-                                <span t-if="o.rent_type == 'demo'">&amp;nbsp;-&amp;nbsp;Demo</span>
-                            </t>
-                        </h2>
-                    </div>
-                </div>
+            <xpath expr="//h2" position="inside">
+                <span t-if="o.rent_type == 'loan'">&amp;nbsp;-&amp;nbsp;Loan</span>
+                <span t-if="o.rent_type == 'demo'">&amp;nbsp;-&amp;nbsp;Demo</span>
             </xpath>
 
             <xpath expr="//table[@class='table table-condensed mt48'][last()]" position="after">
