@@ -114,7 +114,7 @@
                         </td>
                         <td class="text-right">
                             <!-- Price -->
-                            <span t-esc="tax.amount" />
+                            <span t-esc="tax.amount" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
                         </td>
                         <td t-if="display_discount" class="text-right" />
                         <td class="text-right">
@@ -132,6 +132,8 @@
         <!-- Tax Table redefinition -->
         <xpath expr="//t[@t-foreach='o._get_tax_amount_by_group()']" position="replace">
             <t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+                <!-- Difra does not want to see taxes that are presented as lines -->
+                <t t-set="display_line" t-value="true" />
                 <t t-foreach="o.tax_line_ids" t-as="tax_line">
                     <t t-if="tax_line.tax_id.tax_group_id.name==amount_by_group[0] and tax_line.tax_id.show_base_line">
                         <tr style="border-bottom:1px solid #dddddd;">
@@ -139,41 +141,45 @@
                             <td class="text-right"><t t-esc="amount_by_group[4]"/></td>
                         </tr>
                     </t>
+                    <t t-if="tax_line.tax_id.tax_group_id.name==amount_by_group[0] and tax_line.tax_id.display_detailled_line">
+                        <t t-set="display_line" t-value="false" />
+                    </t>
                 </t>
-                <tr style="border-bottom:1px solid #dddddd;">
-                    <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
-                        <td>
-                            <span t-esc="amount_by_group[0]"/>
-                            <span>&amp;nbsp;<span>on</span>
-                                <t t-esc="amount_by_group[4]"/>
-                            </span>
-                        </td>
-                        <td class="text-right">
-                            <!--<span t-esc="amount_by_group[3]"/> -->
-                            <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
-                        </td>
-                    </t>
-                    <t t-else="">
-                        <td><span t-esc="amount_by_group[0]"/></td>
-                        <td class="text-right">
-                            <!-- <span t-esc="amount_by_group[3]"/> -->
-                            <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
-                            <!-- <span>&amp;nbsp;<span>on</span> -->
-                                <!-- <t t-esc="amount_by_group[4]"/> -->
-                                <!-- <t t-esc="amount_by_group[2]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/> -->
-                            <!-- </span> -->
-                        </td>
-                    </t>
-                </tr>
+                <t t-if="display_line">
+                    <tr style="border-bottom:1px solid #dddddd;">
+                        <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
+                            <td>
+                                <span t-esc="amount_by_group[0]"/>
+                                <span>&amp;nbsp;<span>on</span>
+                                    <t t-esc="amount_by_group[4]"/>
+                                </span>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+                            </td>
+                        </t>
+                        <t t-else="">
+                            <td><span t-esc="amount_by_group[0]"/></td>
+                            <td class="text-right">
+                                <!-- <span t-esc="amount_by_group[3]"/> -->
+                                <span t-esc="amount_by_group[1]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+                                <!-- <span>&amp;nbsp;<span>on</span> -->
+                                    <!-- <t t-esc="amount_by_group[4]"/> -->
+                                    <!-- <t t-esc="amount_by_group[2]" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/> -->
+                                <!-- </span> -->
+                            </td>
+                        </t>
+                    </tr>
+                </t>
             </t>
         </xpath>
 
         <!-- Remove empty lines -->
         <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']" position="replace" />
 
-        <!-- Doc Price total -->
-        <xpath expr="//span[@t-field='o.amount_untaxed']" position="replace">
-            <span t-field="o.amount_untaxed" t-options="{'widget': 'float', 'display_currency': o.currency_id, 'precision': 2}"/>&amp;nbsp;<span t-esc="o.currency_id.symbol"/>
+        <!-- Hide Doc Price total -->
+        <xpath expr="//div[@id='total']//div/table//tr[@class='border-black'][1]" position="attributes">
+            <attribute name="style">display: none;</attribute>
         </xpath>
 
         <!-- Doc total -->
