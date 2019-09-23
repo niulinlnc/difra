@@ -55,6 +55,7 @@ class MrpRepair(models.Model):
 
     header_text = fields.Text(string="Optional header text")
     footer_text = fields.Text(string="Optional footer text")
+    text_pro_forma = fields.Text(string="Pro-Forma Informations", store=True, default="Payment with BELFIUS BANK WELKENRAEDT\nSwift: GKCCBEBB\nAccount no. : 776-5993591-58\nIBAN BE95 7765 9935 9158\nAll bank costs to your charge")
 
     # Compute Method
     @api.multi

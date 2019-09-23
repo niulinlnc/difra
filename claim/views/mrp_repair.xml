@@ -63,6 +63,10 @@
                     <field name="footer_text" nolabel="1" widget="html" placeholder="Type here a footer text ..."/>
                 </group>
             </xpath>
+            <!-- Footer Text Pro-Forma -->
+            <xpath expr="//field[@name='internal_notes']" position="before">
+              <field name="text_pro_forma" placeholder="Text for Pro-Forma Invoice"/>
+            </xpath>
             <xpath expr="//notebook/page[3]" position="before"> <!-- Page Operations -->
                 <page string="Dates">
                     <group>

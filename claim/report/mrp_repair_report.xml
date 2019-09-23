@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="report_mrp_repairorder_claim" inherit_id="mrp_repair.report_mrprepairorder">
+        <!-- Title Pro Forma -->
+        <xpath expr="//h2" position="replace">
+           <h2>
+               <t t-if="is_pro_forma">
+                   <span>Pro-Forma Invoice: </span>
+               </t>
+               <t t-else="">
+                   <span t-if="o.state != 'draft'">Repair Order #: </span>
+                   <span t-if="o.state == 'draft'">Repair Quotation #: </span>
+               </t>
+                   <span t-field="o.name"/>
+            </h2>
+        </xpath>
         <!-- Related claim Name -->
         <xpath expr="//div[@class='row mt32 mb32']" position="inside">
         </xpath>
@@ -17,6 +30,9 @@
         <xpath expr="//table[@class='table table-condensed']" position="after">
             <t t-if="o.footer_text">
                 <p t-raw="o.footer_text" />
+            </t>
+            <t t-if="is_pro_forma">
+                <p t-field="o.text_pro_forma"/>
             </t>
         </xpath>
         <!-- Make product and Lot bigger, manage header with infos -->
@@ -101,7 +117,16 @@
             </div>
         </xpath>
     </template>
-    <template id="report_pro_forma_invoice">
+    <report
+        id="report_repairorder_pro_forma"
+        model="mrp.repair"
+        string="Pro-Forma Invoice"
+        report_type="qweb-pdf"
+        name="claim.report_repair_pro_forma_invoice"
+        file="claim.report_repair_pro_forma_invoice"
+        attachment_use="False"
+    />
+    <template id="report_repair_pro_forma_invoice">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-set="is_pro_forma" t-value="True"/>
@@ -109,13 +134,4 @@
             </t>
         </t>
     </template>
-    <report
-        id="report_repairorder_pro_forma"
-        model="mrp.repair"
-        string="Pro-Forma Invoice"
-        report_type="qweb-pdf"
-        name="mrp_repair.report_pro_forma_invoice"
-        file="mrp_repair.report_pro_forma_invoice"
-        attachment_use="False"
-    />
 </odoo>

@@ -4,17 +4,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-16 14:56+0000\n"
-"PO-Revision-Date: 2019-09-16 17:06+0200\n"
+"POT-Creation-Date: 2019-09-23 09:00+0000\n"
+"PO-Revision-Date: 2019-09-23 11:02+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: fr_BE\n"
+"Language: fr\n"
 "X-Generator: Poedit 2.2.3\n"
 
 #. module: claim
@@ -91,8 +91,13 @@ msgstr "${object.name}: Incident"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
-msgid "<strong>Customer reference:</strong>"
-msgstr "<strong>Référence client:</strong>"
+msgid "<span>Pro-Forma Invoice: </span>"
+msgstr "<span>Facture Pro-Forma: </span>"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Date :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
@@ -106,8 +111,8 @@ msgstr "<strong>Adresse de livraison et facturation :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
-msgid "<strong>Lot/Serial Number:</strong>"
-msgstr "<strong/>"
+msgid "<strong>Partner:</strong>"
+msgstr "<strong>Partner:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
@@ -121,6 +126,11 @@ msgstr "<strong>Réclamation liée :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "<strong>Serial Number:</strong>"
+msgstr "<strong>Lot/Numéro de série:</strong>"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Shipping address:</strong>"
 msgstr "<strong>Adresse de livraison :</strong>"
 
@@ -128,6 +138,11 @@ msgstr "<strong>Adresse de livraison :</strong>"
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Warranty:</strong>"
 msgstr "<strong/>"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "<strong>Your Customer Reference:</strong>"
+msgstr "<strong>Référence client:</strong>"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_team_id
@@ -695,7 +710,7 @@ msgstr "Date de Dernière Maintenance"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Last Maintenance Date:"
-msgstr "Date de Dernière Maintenance"
+msgstr "Date de Dernière Maintenance:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim___last_update
@@ -931,6 +946,16 @@ msgid "Print"
 msgstr "Imprimer"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_mrp_repair_text_pro_forma
+msgid "Pro-Forma Informations"
+msgstr "Informations Pro-Forma"
+
+#. module: claim
+#: model:ir.actions.report,name:claim.report_repairorder_pro_forma
+msgid "Pro-Forma Invoice"
+msgstr "Facture Pro-Forma"
+
+#. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_product_id
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Product"
@@ -1020,6 +1045,7 @@ msgid "Related Claims"
 msgstr "Réclamations liées"
 
 #. module: claim
+#: model:ir.model.fields,field_description:claim.field_account_invoice_repair_id
 #: model:ir.model.fields,field_description:claim.field_calendar_event_repair_id
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_repair_id
 #: model:ir.model.fields,field_description:claim.field_stock_picking_repair_id
@@ -1045,12 +1071,22 @@ msgid "Repair Order"
 msgstr "Ordre de réparation"
 
 #. module: claim
-#: model:ir.model.fields,field_description:claim.field_mrp_repair_repair_type
-msgid "Repair Type"
-msgstr "Type de réparation"
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "Repair Order #:"
+msgstr "N° de l'ordre de réparation:"
 
 #. module: claim
-#: code:addons/claim/models/mrp_repair.py:370
+#: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
+msgid "Repair Quotation #:"
+msgstr "N° Devis de réparation:"
+
+#. module: claim
+#: model:ir.model.fields,field_description:claim.field_mrp_repair_repair_type
+msgid "Repair Type"
+msgstr "Repair Type"
+
+#. module: claim
+#: code:addons/claim/models/mrp_repair.py:371
 #, python-format
 msgid "Repair must be under repair in order to end reparation."
 msgstr "La réparation doit être en cours pour être terminée."
@@ -1185,10 +1221,15 @@ msgid "Tests"
 msgstr "Tests"
 
 #. module: claim
+#: model:ir.ui.view,arch_db:claim.repair_form_view
+msgid "Text for Pro-Forma Invoice"
+msgstr "Text for Pro-Forma Invoice"
+
+#. module: claim
 #: code:addons/claim/models/claim.py:164
 #, python-format
 msgid "The selected product is set to be tracked by lot/serial, you have to provide one to go further."
-msgstr "L'article sélectionné est défini comme suivi grâce à unen uméro de série/de lot. Vous devez en fournir un pour continuer."
+msgstr "The selected product is set to be tracked by lot/serial, you have to provide one to go further."
 
 #. module: claim
 #: selection:mrp_repair.test,state:0
