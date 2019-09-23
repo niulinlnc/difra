@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_picking_waiting_if_unpaid
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-23 15:24+0000\n"
+"PO-Revision-Date: 2019-09-23 17:25+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.ui.view,arch_db:stock_picking_waiting_if_unpaid.sale_order_add_force_invoice_button
+msgid "Force Invoice"
+msgstr "Forcer la facturation"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model,name:stock_picking_waiting_if_unpaid.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model.fields,field_description:stock_picking_waiting_if_unpaid.field_account_payment_term_payment_before_delivery
+#: model:ir.model.fields,field_description:stock_picking_waiting_if_unpaid.field_sale_order_payment_before_delivery
+msgid "Payment Before Delivery"
+msgstr "Paiement avant livraison"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model,name:stock_picking_waiting_if_unpaid.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Conditions de Paiement"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model,name:stock_picking_waiting_if_unpaid.model_sale_order
+msgid "Quotation"
+msgstr "Offre"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model,name:stock_picking_waiting_if_unpaid.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+
+#. module: stock_picking_waiting_if_unpaid
+#: model:ir.model,name:stock_picking_waiting_if_unpaid.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
