@@ -15,7 +15,8 @@
     ],
 
     'data': [
-        'views/account_payment_term.xml'
+        'views/account_payment_term.xml',
+        'views/sale_order.xml'
     ],
 
     'installable': True
