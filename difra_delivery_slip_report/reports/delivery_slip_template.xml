@@ -197,9 +197,6 @@
                         <thead>
                             <tr>
                                 <th><strong>Product</strong></th>
-                                <th name="lot_serial" t-if="has_serial_number">
-                                    Lot/Serial Number
-                                </th>
                                 <t t-if="o.sale_id">
                                     <th class="text-center"><strong>Ordered Qty</strong></th>
                                     <th class="text-center"><strong>Qty to deliver</strong></th>
@@ -216,6 +213,14 @@
                             <tr t-foreach="o.move_line_ids" t-as="move_line">
                                 <td>
                                     <span t-field="move_line.product_id"/>
+                                    <t t-if="move_line.lot_id">
+                                        <br/>
+                                        <span>Serial Number: </span><span t-field="move_line.lot_id"/>
+                                    </t>
+                                    <t t-if="move_line.life_date">
+                                        <br/>
+                                        <span t-field="move_line.life_date" t-options="{'format': 'dd/MM/yyyy'}"/>
+                                    </t>
                                     <p t-if="o.picking_type_code == 'outgoing'">
                                         <span t-field="move_line.product_id.sudo().description_pickingout"/>
                                     </p>
@@ -223,25 +228,25 @@
                                         <span t-field="move_line.product_id.sudo().description_pickingin"/>
                                     </p>
                                 </td>
-                                <t t-if="has_serial_number">
-                                   <td>
-                                        <table width="100%">
-                                            <tr>
-                                                <td>
-                                                     <span t-field="move_line.lot_id"/>
-                                                     <t t-if="not move_line.lot_id">
-                                                         <span t-field="move_line.lot_name"/>
-                                                     </t>
-                                                 </td>
-                                                 <td name="lot_qty">
-                                                     <t t-if="move_line.product_qty">
-                                                        <span t-field="move_line.product_qty"/>
-                                                    </t>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                  </td>
-                                </t>
+<!--                                <t t-if="has_serial_number">-->
+<!--                                   <td>-->
+<!--                                        <table width="100%">-->
+<!--                                            <tr>-->
+<!--                                                <td>-->
+<!--                                                     <span t-field="move_line.lot_id"/>-->
+<!--                                                     <t t-if="not move_line.lot_id">-->
+<!--                                                         <span t-field="move_line.lot_name"/>-->
+<!--                                                     </t>-->
+<!--                                                 </td>-->
+<!--                                                 <td name="lot_qty">-->
+<!--                                                     <t t-if="move_line.product_qty">-->
+<!--                                                        <span t-field="move_line.product_qty"/>-->
+<!--                                                    </t>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                        </table>-->
+<!--                                  </td>-->
+<!--                                </t>-->
                                 <t t-if="o.sale_id">
                                     <!--Ordered Qty = so.move_line.product_qty-->
                                     <t t-set="ordered_qty" t-value="o.sale_id.order_line.search([('move_ids', 'in', move_line.move_id.id), ('product_id', '=', move_line.product_id.id)]).product_uom_qty"/>
@@ -258,7 +263,12 @@
                                     </td>
                                     <!--Left Qty = Qty to do - Qty done-->
                                     <td class="text-center">
-                                        <span t-esc="move_line.ordered_qty - move_line.qty_done" t-options="{'widget': 'float', 'precision': 4}"/>
+                                        <t t-if="move_line.ordered_qty == 0">
+                                            <span>0.0000</span>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="move_line.ordered_qty - move_line.qty_done" t-options="{'widget': 'float', 'precision': 4}"/>
+                                        </t>
                                     </td>
                                     <!--UoM-->
                                     <td class="text-center">

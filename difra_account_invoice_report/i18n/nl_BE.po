@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 14:30+0000\n"
-"PO-Revision-Date: 2019-06-13 16:32+0200\n"
+"POT-Creation-Date: 2019-09-24 09:01+0000\n"
+"PO-Revision-Date: 2019-09-24 11:05+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: nl_BE\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -40,7 +40,7 @@ msgstr "<strong>Vervaldatum:</strong>"
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "<strong>Invoice Date:</strong>"
-msgstr "<strong>Factuurdatum:</strong>"
+msgstr "<strong>Facturatiedatum:</strong>"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -49,13 +49,43 @@ msgstr "<strong>Factuur nr.</strong>"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Invoicing address:</strong>"
+msgstr "<strong>Facturatieadres:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Invoicing and shipping address:</strong>"
+msgstr "<strong>Facturatie- en leveringsadres:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "<strong>Reference:</strong>"
 msgstr "<strong>Referentie:</strong>"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Repaired Product:</strong>"
+msgstr "<strong>Herstelde toestel:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Serial Number:</strong>"
+msgstr "<strong>Serie Nummer:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Leveringsadres:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "<strong>Source:</strong>"
-msgstr "<strong>Bron:</strong>"
+msgstr "<strong>Oorsprong:</strong>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Your Order Reference:</strong>"
+msgstr "<strong>Uw bestelnummer:</strong>"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -73,9 +103,24 @@ msgid "Delivery deadline: the delivery deadlines are given for information purpo
 msgstr "Leveringstermijn : de opgegeven leveringstermijnen zijn louter indicatief, zonder verplichting van onzentwege."
 
 #. module: difra_account_invoice_report
+#: model:ir.model.fields,field_description:difra_account_invoice_report.field_account_tax_display_detailled_line
+msgid "Display a detailled line for this tax on the invoice report"
+msgstr "Display a detailled line for this tax on the invoice report"
+
+#. module: difra_account_invoice_report
+#: model:ir.model.fields,field_description:difra_account_invoice_report.field_stock_move_has_been_invoiced
+msgid "Has been invoiced"
+msgstr "Has been invoiced"
+
+#. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "In case of contesting, the courts of the district of the seller will be only competent."
 msgstr "Voor alle betwistingen zijn alleen bevoegd de rechtbanken van het district van de verkoper."
+
+#. module: difra_account_invoice_report
+#: model:ir.model,name:difra_account_invoice_report.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Factuurlijn"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -83,9 +128,24 @@ msgid "Our invoices are payable at the address of the seller, clear, in cash, wi
 msgstr "Onze facturen zijn betaalbaar aan het adres van de verkoper, netto, kontant, zonder korting, behoudens andersluidende overeenkomst bij de bestelling. Onze wissels of kwitanties brengen noch schuldvordering, noch afwijking mede aan deze clausule."
 
 #. module: difra_account_invoice_report
+#: model:ir.model,name:difra_account_invoice_report.model_sale_order
+msgid "Quotation"
+msgstr "Offerte"
+
+#. module: difra_account_invoice_report
+#: model:ir.model,name:difra_account_invoice_report.model_stock_move
+msgid "Stock Move"
+msgstr "Voorraadbeweging"
+
+#. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "TERMS OF SALES"
 msgstr "ALGEMENE VERKOOPSVOORWAARDEN"
+
+#. module: difra_account_invoice_report
+#: model:ir.model,name:difra_account_invoice_report.model_account_tax
+msgid "Tax"
+msgstr "Btw"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit

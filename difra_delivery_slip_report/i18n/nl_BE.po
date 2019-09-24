@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-13 08:46+0000\n"
-"PO-Revision-Date: 2019-06-13 11:10+0200\n"
+"POT-Creation-Date: 2019-09-24 08:21+0000\n"
+"PO-Revision-Date: 2019-09-24 10:38+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,22 +15,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: nl_BE\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<span>Delivery Note</span>"
-msgstr "<span>Verzendnota</span>"
+msgid ""
+"<br/>\n"
+"                                        <span>Serial Number: </span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>Serie Nummer: </span>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Customer Reference:</strong>"
+msgid "<span>0.0000</span>"
+msgstr "<span>0.0000</span>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Balance</strong>"
+msgstr "<strong>saldo</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Customer Order Reference:</strong>"
 msgstr "<strong>Klant referentie:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Date done:</strong>"
-msgstr "<strong>Verwerkdatum:</strong>"
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Datum:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Omschrijving:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -44,40 +63,125 @@ msgstr "<strong>Einde levensduur datum</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Invoicing and shipping address:</strong>"
+msgstr "<strong>Facturatie- en leveringsadres:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Lot/Serial Number</strong>"
 msgstr "<strong>Partij/Serie nummers</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Order (Origin)</strong>"
-msgstr "<strong>Oorsprong</strong>"
+msgid "<strong>Order (Origin):</strong>"
+msgstr "<strong>Oorsprong:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Ordered Qty</strong>"
+msgstr "<strong>Bestelde HVLD</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Product Repaired:</strong>"
+msgstr "<strong>Herstelde toestel:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Product</strong>"
-msgstr "<strong>Omschrijving</strong>"
+msgstr "<strong>Toestel</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Qty delivered</strong>"
+msgstr "<strong>Geleverde HVLD</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Qty to deliver</strong>"
+msgstr "<strong>HVLD te leveren</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Quantity</strong>"
-msgstr "<strong>HLVD</strong>"
+msgstr "<strong>Hoeveelheid</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Scheduled Date:</strong>"
-msgstr "<strong>Geplande datum:</strong>"
+msgid "<strong>Serial Number:</strong>"
+msgstr "<strong>Serie Nummer:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Shipping address:</strong>"
-msgstr "<strong>Verzendadres:</strong>"
+msgstr "<strong>Leveringsadres:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Unit of Measure</strong>"
+msgstr "<strong>Maateenheid</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Your reference:</strong>"
+msgstr "<strong>Uw bestelnummer:</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Any complaint, to be valid, has to be made by letter in writing, within eight days of delivery."
+msgstr "Om geldig te zijn moeten alle klachten ons schrijftelijk bereiken binnen de acht dagen na levering."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Any unpaid invoice when due, will by rights and without warning nor instructed carry a 8 % interest and will be increased by a fixed compensation equal to 12 % of the amount due, with a 50,00-€ minimum."
+msgstr "Iedere op haar vervaldag ontbetaald gebleven factuur zal van rechtswege en zonder aanmaning of ingebrekestelling een intrest van 8% opleveren, en wordt verhoogd met een forfaitaire vergoeding gelijk aan 12% van het verschuldigd bedrag, met een minimum van 50,00 €."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Delivery Note"
+msgstr "Verzendnota"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Delivery deadline: the delivery deadlines are given for information purposes, without commitment from us."
+msgstr "Leveringstermijn : de opgegeven leveringstermijnen zijn louter indicatief, zonder verplichting van onzentwege."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "In case of contesting, the courts of the district of the seller will be only competent."
+msgstr "Voor alle betwistingen zijn alleen bevoegd de rechtbanken van het district van de verkoper."
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Invoicing address:"
-msgstr "Factuuradres:"
+msgstr "Facturatieadres:"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Invoicing and shipping address:"
-msgstr "Factuur- en verzendadres:"
+msgstr "Facturatie- en leveringsadres:"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Our invoices are payable at the address of the seller, clear, in cash, without reduction, unless otherwise specified at the time of order form. Our drafts or receipts do not bring either novation or dispensation to this clause."
+msgstr "Onze facturen zijn betaalbaar aan het adres van de verkoper, netto, kontant, zonder korting, behoudens andersluidende overeenkomst bij de bestelling. Onze wissels of kwitanties brengen noch schuldvordering, noch afwijking mede aan deze clausule."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Repair Delivery Note"
+msgstr "Herstelling verzendnota"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "TERMS OF SALES"
+msgstr "ALGEMENE VERKOOPSVOORWAARDEN"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "The delivered goods remain the exclusive property of the seller until the full payment of all the debts which result from the agreement(convention) of sale for the buyer, in case of not payment in their term, the goods can be taken back by the seller."
+msgstr "Tot aan de volledige voldoening van alle vorderingen, welke voor de koper uit de verkoopsovereenkomst voortvloeien, blijven de geleverde goederen het uitsluitend eigendom van de verkoper en kunnen deze in geval van niet-tijdige betaling door de verkoper worden teruggevorderd."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "The goods, even sent free, travel at the risks and the dangers of the addressee."
+msgstr "De goederen, zelfs verzonden, reizen op risico van de geadresseerde. Om geldig te zijn, dient elke klacht schriftelijk gedaan binnen de acht dagen van de aflevering."

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
+"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-16 15:06+0000\n"
-"PO-Revision-Date: 2019-09-16 17:09+0200\n"
+"POT-Creation-Date: 2019-09-24 08:38+0000\n"
+"PO-Revision-Date: 2019-09-24 10:50+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,18 +19,27 @@ msgstr ""
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<span>Delivery Note</span>"
-msgstr "<span>Note d'envoi</span>"
+msgid ""
+"<br/>\n"
+"                                        <span>Serial Number: </span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>Numéro de Série: </span>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<span>Repair Delivery Note</span>"
-msgstr "<span>Note d'Envoi de Réparation</span>"
+msgid "<span>0.0000</span>"
+msgstr "<span>0.0000</span>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Customer Order Reference</strong>"
-msgstr "<strong>Référence Commande Client</strong>"
+msgid "<strong>Balance</strong>"
+msgstr "<strong>Solde</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Customer Order Reference:</strong>"
+msgstr "<strong>Votre Numéro de Commande</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -55,17 +64,7 @@ msgstr "<strong>Date de péremption</strong>"
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Invoicing and shipping address:</strong>"
-msgstr "<strong>Adresse de livraison et facturation :</strong>"
-
-#. module: difra_delivery_slip_report
-#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Left Qty</strong>"
-msgstr "<strong>Qté Restante</strong>"
-
-#. module: difra_delivery_slip_report
-#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Lot Nr:</strong>"
-msgstr "<strong>Lot N°:</strong>"
+msgstr "<strong>Adresse de facturation et de livraison:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -74,7 +73,7 @@ msgstr "<strong>Lot/numéros de série</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Order (Origin)</strong>"
+msgid "<strong>Order (Origin):</strong>"
 msgstr "<strong>Commande (origine)</strong>"
 
 #. module: difra_delivery_slip_report
@@ -94,18 +93,23 @@ msgstr "<strong>Article</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Qty done</strong>"
-msgstr "<strong>Qté Faite</strong>"
+msgid "<strong>Qty delivered</strong>"
+msgstr "<strong>Qty livrée</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "<strong>Qty to do</strong>"
-msgstr "<strong>Qté à faire</strong>"
+msgid "<strong>Qty to deliver</strong>"
+msgstr "<strong>Qty à livrer</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Quantité</strong>"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "<strong>Serial Number:</strong>"
+msgstr "<strong>Lot/Numéro de série:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -134,6 +138,11 @@ msgstr "Toute facture non payée à l'échéance, portera de plein droit et sans
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Delivery Note"
+msgstr "Note d'Envoi"
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Delivery deadline: the delivery deadlines are given for information purposes, without commitment from us."
 msgstr "Délai de livraison : les délais de livraison sont donnés à titre indicatif, sans engagement de notre part."
 
@@ -150,17 +159,17 @@ msgstr "Adresse de facturation :"
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Invoicing and shipping address:"
-msgstr "Adresse de facturation et livraison:"
-
-#. module: difra_delivery_slip_report
-#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
-msgid "Lot/Serial Number"
-msgstr "Lot/numéro de série"
+msgstr "Adresse de facturation et de livraison:"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Our invoices are payable at the address of the seller, clear, in cash, without reduction, unless otherwise specified at the time of order form. Our drafts or receipts do not bring either novation or dispensation to this clause."
 msgstr "Nos factures sont payables à l'adresse du vendeur, nette, au comptant, sans escompte, sauf indication contraire au moment de la commande. Nos traîtes ou quittances n'apportent ni novation ni dérogation à cette clause."
+
+#. module: difra_delivery_slip_report
+#: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
+msgid "Repair Delivery Note"
+msgstr "Note d'Envoi de Réparation"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit

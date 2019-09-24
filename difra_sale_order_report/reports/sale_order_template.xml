@@ -269,5 +269,22 @@
                 </div>
             </div>
         </xpath>
+        <xpath expr="//span[@t-field='l.name']/parent::td" position="replace">
+            <td>
+                <span t-field="l.name"/>
+                <t t-foreach="l.move_ids" t-as="move">
+                    <t t-foreach="move.move_line_ids" t-as="line">
+                        <t t-if="line.lot_id">
+                            <br/>
+                            <span>Serial Number: </span><span t-field="line.lot_id"/>
+                        </t>
+                        <t t-if="line.life_date">
+                            <br/>
+                            <span t-field="line.life_date" t-options="{'format': 'dd/MM/yyyy'}"/>
+                        </t>
+                    </t>
+                </t>
+            </td>
+        </xpath>
     </template>
 </odoo>

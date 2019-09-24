@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 09:34+0000\n"
-"PO-Revision-Date: 2019-09-24 11:39+0200\n"
+"POT-Creation-Date: 2019-09-24 09:39+0000\n"
+"PO-Revision-Date: 2019-09-24 11:45+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: fr_BE\n"
+"Language: nl_BE\n"
 "X-Generator: Poedit 2.2.3\n"
 
 #. module: claim
@@ -30,12 +30,12 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                <p>Cher  ${(object.as_responsible.name or '')},</p>\n"
-"                <p>La réclamation <strong>${object.name}</strong> a été complétée par ${object.create_uid.name}.</p>\n"
+"                <p>Dear ${(object.as_responsible.name or '')},</p>\n"
+"                <p>The claim <strong>${object.name}</strong> has been completed by ${object.create_uid.name}.</p>\n"
 "\n"
-"                Voir la réclamation <a href=\"${object.generate_url()[0]}\">ici</a>.\n"
+"                View claim <a href=\"${object.generate_url()[0]}\">here</a>.\n"
 "\n"
-"                <p style=\"font-size: 11px;\">Message envoyé automatiquement par Odoo.</p>\n"
+"                <p style=\"font-size: 11px;\">Message automatically sent by Odoo</p>\n"
 "            "
 
 #. module: claim
@@ -51,12 +51,12 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                <p>Cher  ${(object.quality_responsible.name or '')},</p>\n"
-"                <p>La réclamation <strong>${object.name}</strong> a été validée par ${object.create_uid.name}.</p>\n"
+"                <p>Dear ${(object.quality_responsible.name or '')},</p>\n"
+"                <p>The claim <strong>${object.name}</strong> has been validated by ${object.as_responsible.name}.</p>\n"
 "\n"
-"                Voir la réclamation <a href=\"${object.generate_url()[0]}\">ici</a>.\n"
+"                View claim <a href=\"${object.generate_url()[0]}\">here</a>.\n"
 "\n"
-"                <p style=\"font-size: 11px;\">Message envoyé automatiquement par Odoo.</p>\n"
+"                <p style=\"font-size: 11px;\">Message automatically sent by Odoo</p>\n"
 "            "
 
 #. module: claim
@@ -74,14 +74,14 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                <p>Cher,</p>\n"
+"                <p>Dear,</p>\n"
 "                <br />\n"
-"                <p>Un incident a été notifié par ${object.create_uid.name} sur la réclamation <strong>${object.name}</strong></p>\n"
+"                <p>An incident has been notified by ${object.create_uid.name} on claim <strong>${object.name}</strong></p>\n"
 "                <br />\n"
-"                <p>L'article concerné est: <strong>${object.product_id.name}</strong></p>\n"
-"                <p>Vendu à: <strong>${object.contact_id.name}</strong></p>\n"
+"                <p>The concerned product is: <strong>${object.product_id.name}</strong></p>\n"
+"                <p>Sold to: <strong>${object.contact_id.name}</strong></p>\n"
 "\n"
-"                <p style=\"font-size: 11px;\">Message envoyé automatiquement par Odoo.</p>\n"
+"                <p style=\"font-size: 11px;\">Message automatically sent by Odoo</p>\n"
 "            "
 
 #. module: claim
@@ -92,47 +92,47 @@ msgstr "${object.name}: Incident"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<span>Pro-Forma Invoice: </span>"
-msgstr "<span>Facture Pro-Forma : </span>"
+msgstr "<span>Pro-Forma Factuur: </span>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Date:</strong>"
-msgstr "<strong>Date :</strong>"
+msgstr "<strong>Datum:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Invoicing address:</strong>"
-msgstr "<strong>Adresse de facturation :</strong>"
+msgstr "<strong>Facturatieadres:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Invoicing and shipping address:</strong>"
-msgstr "<strong>Adresse de facturation et de livraison :</strong>"
+msgstr "<strong>Facturatie- en leveringsadres:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Partner:</strong>"
-msgstr "<strong>Partenaire:</strong>"
+msgstr "<strong>Contactpersoon:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Product to Repair:</strong>"
-msgstr "<strong>Article à réparer:</strong>"
+msgstr "<strong>Product om te repareren:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Related claim:</strong>"
-msgstr "<strong>Réclamation liée :</strong>"
+msgstr "<strong>Related claim:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Serial Number:</strong>"
-msgstr "<strong>Lot/Numéro de série:</strong>"
+msgstr "<strong>Serie Nummer:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Shipping address:</strong>"
-msgstr "<strong>Adresse de livraison :</strong>"
+msgstr "<strong>Leveringsadres:</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
@@ -142,93 +142,93 @@ msgstr "<strong>Garantie:</strong>"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Your Customer Reference:</strong>"
-msgstr "<strong>Votre Numéro de Commande:</strong>"
+msgstr "<strong>Uw bestelnummer:</strong>"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_team_id
 msgid "AAS Team"
-msgstr "Équipe SAV"
+msgstr "AAS Team"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_responsible
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_as_responsible_id
 #: model:res.groups,name:claim.claim_as_responsible
 msgid "AS Responsible"
-msgstr "Responsable SAV"
+msgstr "AS Responsible"
 
 #. module: claim
 #: code:addons/claim/models/claim.py:104
 #, python-format
 msgid "AS Responsible and Quality Responsible must have an email address!"
-msgstr "Le responsable SAV et le responsable qualité doivent avoir une adresse email!"
+msgstr "AS Responsible and Quality Responsible must have an email address!"
 
 #. module: claim
 #: code:addons/claim/models/claim.py:93 code:addons/claim/models/claim.py:172
 #, python-format
 msgid "AS Responsible must have an email address!"
-msgstr "Le responsable SAV doit avoir une adresse email!"
+msgstr "AS Responsible must have an email address!"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "AS Responsible:"
-msgstr "Responsable SAV:"
+msgstr "AS Responsible:"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.claim_open_as_team_tree_action
 msgid "AS Team"
-msgstr "Équipe SAV"
+msgstr "AS Team"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_as_team_form_view
 msgid "AS Team Form View"
-msgstr "Vue formulaire de l'équipe SAV"
+msgstr "AS Team Form View"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.as_team
 msgid "AS Teams"
-msgstr "Équipes SAV"
+msgstr "AS Teams"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_realized_actions
 msgid "Actions Realized"
-msgstr "Actions Entreprises"
+msgstr "Actions Realized"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_active
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_active
 #: model:ir.model.fields,field_description:claim.field_claim_tag_active
 msgid "Active"
-msgstr "Actif"
+msgstr "Actief"
 
 #. module: claim
 #: model:ir.model.fields,help:claim.field_claim_site_address
 msgid "Address to go where repair is on site"
-msgstr "Adresse où se rendre lorsque l'intervention se fait sur site."
+msgstr "Address to go where repair is on site"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Address:"
-msgstr "Adresse:"
+msgstr "Adres:"
 
 #. module: claim
 #: selection:claim,breakdown_when:0
 msgid "After Use"
-msgstr "Après utilisation"
+msgstr "After Use"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.claim_all_menu
 msgid "All"
-msgstr "Toutes"
+msgstr "All"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.claim_open_all_action
 msgid "All Claims"
-msgstr "Toutes les Réclamations"
+msgstr "All Claims"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_all_action
 msgid "All Repairs"
-msgstr "Toutes les réparations"
+msgstr "All Repairs"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_appointment_ids
@@ -240,23 +240,23 @@ msgstr "Appointment"
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Appointments"
-msgstr "Rendez-vous"
+msgstr "Appointments"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 #: model:ir.ui.view,arch_db:claim.claim_tag_search_view
 msgid "Archived"
-msgstr "Archivé"
+msgstr "Gearchiveerd"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_assigned_to
 msgid "Assigned To"
-msgstr "Assigné à"
+msgstr "Toegewezen aan"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Authority Competent"
-msgstr "Autorités Compétentes"
+msgstr "Authority Competent"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -266,17 +266,17 @@ msgstr "Authority Competent Justification:"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Authority Notified:"
-msgstr "Autorité Notifiée:"
+msgstr "Authority Notified:"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
 msgid "Bad"
-msgstr "Mauvais"
+msgstr "Bad"
 
 #. module: claim
 #: selection:claim,breakdown_when:0
 msgid "Before Use"
-msgstr "Avant utilisation"
+msgstr "Before Use"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown
@@ -284,50 +284,50 @@ msgstr "Avant utilisation"
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Breakdown"
-msgstr "Panne"
+msgstr "Breakdown"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Breakdown Cause:"
-msgstr "Cause de le Panne:"
+msgstr "Breakdown Cause:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_when
 msgid "Breakdown When"
-msgstr "Moment de la Panne"
+msgstr "Breakdown When"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Breakdown When:"
-msgstr "Moment de la Panne:"
+msgstr "Breakdown When:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Breakdown:"
-msgstr "Panne:"
+msgstr "Breakdown:"
 
 #. module: claim
 #: selection:claim,state:0 model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Annuleren"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Cancelled"
-msgstr "Annulé"
+msgstr "Cancelled"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_case
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_case
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Case"
-msgstr "Cas"
+msgstr "Schap"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Case:"
-msgstr "Cas:"
+msgstr "Case:"
 
 #. module: claim
 #: model:ir.actions.report,name:claim.claim_pdf_report
@@ -335,65 +335,65 @@ msgstr "Cas:"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_claim_id
 #: model:ir.ui.menu,name:claim.main_menu
 msgid "Claim"
-msgstr "Réclamation"
+msgstr "Klacht"
 
 #. module: claim
 #: model:mail.template,subject:claim.notify_claim_ready
 msgid "Claim ${object.name} is ready"
-msgstr "Réclamation ${object.name} est prête"
+msgstr "Claim ${object.name} is ready"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Claim Description:"
-msgstr "Description de la Réclamation:"
+msgstr "Claim Description:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Claim Form"
-msgstr "Formulaire de Réclamation"
+msgstr "Claim Form"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Claim Nr."
-msgstr "Numéro de Réclamation"
+msgstr "Claim Nr."
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_name
 msgid "Claim Reference"
-msgstr "Référence de Réclamation"
+msgstr "Claim Reference"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.claim_tag_open_tree_view
 #: model:ir.model.fields,field_description:claim.field_claim_tag_ids
 #: model:ir.ui.menu,name:claim.claim_tag
 msgid "Claim Tags"
-msgstr "Tags de Réclamations"
+msgstr "Claim Tags"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.claim_menu
 #: model:ir.ui.view,arch_db:claim.claim_tree_view
 msgid "Claims"
-msgstr "Réclamations"
+msgstr "Klachten"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_tag_color
 msgid "Color"
-msgstr "Couleur"
+msgstr "Kleur"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_commissioning_year
 msgid "Commissioning Year"
-msgstr "Année de mise en service"
+msgstr "Commissioning Year"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Commissioning Year:"
-msgstr "Année de mise en service:"
+msgstr "Commissioning Year:"
 
 #. module: claim
 #: selection:claim,case:0 model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Company"
-msgstr "En atelier"
+msgstr "Bedrijf"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_complaint
@@ -401,43 +401,43 @@ msgstr "En atelier"
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Complaint"
-msgstr "Plainte DM"
+msgstr "Complaint"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_complaint_justification
 msgid "Complaint Justification"
-msgstr "Justification de la Plainte"
+msgstr "Complaint Justification"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Complaint Justification:"
-msgstr "Justification de la Plainte:"
+msgstr "Complaint Justification:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Complaint:"
-msgstr "Plainte DM :"
+msgstr "Complaint:"
 
 #. module: claim
 #: model:mail.template,subject:claim.notify_as_responsible_mail_template
 msgid "Complete ${object.name}"
-msgstr "${object.name} complète"
+msgstr "Complete ${object.name}"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.config_menu
 msgid "Configuration"
-msgstr "Configuration"
+msgstr "Instellingen"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Confirmed"
-msgstr "Confirmé"
+msgstr "Bevestigd"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_contact_id
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Contact"
-msgstr "Contact"
+msgstr "Contactpersoon"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -447,17 +447,17 @@ msgstr "Contact:"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Create By:"
-msgstr "Créé par:"
+msgstr "Create By:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Create Date:"
-msgstr "Date de création:"
+msgstr "Create Date:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Create Repair"
-msgstr "Créer une Réparation"
+msgstr "Create Repair"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_create_uid
@@ -466,7 +466,7 @@ msgstr "Créer une Réparation"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_create_uid
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr "Gemaakt door"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_create_date
@@ -475,49 +475,49 @@ msgstr "Créé par"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_create_date
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr "Gemaakt op"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Customer"
-msgstr "Client"
+msgstr "Klant"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_account_invoice_customer_order_reference
 #: model:ir.model.fields,field_description:claim.field_stock_picking_customer_reference
 msgid "Customer Order Reference"
-msgstr "Numéro Commande Client"
+msgstr "Customer Order Reference"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_customer_reference
 msgid "Customer Reference"
-msgstr "Numéro Commande Client"
+msgstr "Referentie klant"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_customer_satisfaction
 msgid "Customer Satisfaction"
-msgstr "Satisfaction du Client"
+msgstr "Customer Satisfaction"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Customer Satisfaction:"
-msgstr "Satisfaction du Client:"
+msgstr "Customer Satisfaction:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_send_article_date
 msgid "Date to send product"
-msgstr "Date de renvoi de l'article"
+msgstr "Date to send product"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Dates"
-msgstr "Dates"
+msgstr "Datums"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_delivery_address
 #: model:ir.model.fields,field_description:claim.field_stock_picking_delivery_address
 msgid "Delivery Address"
-msgstr "Adresse de Livraison"
+msgstr "Afleveradres"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_account_invoice_description
@@ -526,12 +526,12 @@ msgstr "Adresse de Livraison"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_description
 #: model:ir.model.fields,field_description:claim.field_stock_picking_description
 msgid "Description"
-msgstr "Description"
+msgstr "Omschrijving"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Description:"
-msgstr "Description :"
+msgstr "Omschrijving:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_display_name
@@ -540,75 +540,75 @@ msgstr "Description :"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_display_name
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Schermnaam"
 
 #. module: claim
 #: selection:claim,state:0 model:ir.ui.menu,name:claim.claim_done_menu
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 #: selection:mrp_repair.test,state:0
 msgid "Done"
-msgstr "Terminée"
+msgstr "Gereed"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.claim_open_done_action
 msgid "Done Claims"
-msgstr "Réclamations terminées"
+msgstr "Done Claims"
 
 #. module: claim
 #: selection:claim,breakdown_when:0
 msgid "During Use"
-msgstr "Pendant l'utilisation"
+msgstr "During Use"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_email
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Email:"
-msgstr "Courriel :"
+msgstr "E-mail:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_end_date
 msgid "End Date"
-msgstr "Date de fin"
+msgstr "Einddatum"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "End Date:"
-msgstr "Date de FIn:"
+msgstr "End Date:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_end_repair_date
 msgid "End Repair Date"
-msgstr "Date de Fin de réparation"
+msgstr "End Repair Date"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_end_repair_user_id
 msgid "End Repair User"
-msgstr "Utilisateur de Fin de réparation"
+msgstr "End Repair User"
 
 #. module: claim
 #: model:ir.model,name:claim.model_calendar_event
 msgid "Event"
-msgstr "Evènement"
+msgstr "Evenement"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_fall
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Fall"
-msgstr "Chute"
+msgstr "Fall"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Future Activities"
-msgstr "Activités futures"
+msgstr "Toekomstige activiteiten"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
 msgid "Good"
-msgstr "Bien"
+msgstr "Good"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_id
@@ -622,17 +622,17 @@ msgstr "ID"
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_company_action
 msgid "In Company Repairs"
-msgstr "Réparations en Atelier"
+msgstr "In Company Repairs"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.claim_in_progress_menu
 msgid "In Progress"
-msgstr "En cours"
+msgstr "In Progress"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.claim_open_in_progress_action
 msgid "In Progress Claims"
-msgstr "Réclamations en cours"
+msgstr "In Progress Claims"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_display_incident
@@ -645,72 +645,72 @@ msgstr "Incident grave"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_incident_justification
 msgid "Incident Justification"
-msgstr "Justification de l'Incident"
+msgstr "Incident Justification"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Incident Justification:"
-msgstr "Justification de l'Incident:"
+msgstr "Incident Justification:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_incident_notified
 msgid "Incident Notified"
-msgstr "Incident Notifié"
+msgstr "Incident Notified"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Incident:"
-msgstr "Incident grave :"
+msgstr "Incident:"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.mrp_repair_default_test
 msgid "Intervention Default Test"
-msgstr "Test d'Intervention par défaut"
+msgstr "Intervention Default Test"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.mrp_repair_default_test_open_action
 msgid "Intervention Default Tests"
-msgstr "Tests d'Intervention par défaut"
+msgstr "Intervention Default Tests"
 
 #. module: claim
 #: model:ir.model,name:claim.model_account_invoice
 msgid "Invoice"
-msgstr "Facture"
+msgstr "Factuur"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_is_delivered
 msgid "Is Delivered"
-msgstr "Est livré"
+msgstr "Is Delivered"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_is_shipped
 msgid "Is Shipped"
-msgstr "Est reçu"
+msgstr "Is Shipped"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_complaint_non_investigated_justification
 msgid "Justification if Complaint is not investigated"
-msgstr "Justification si la plainte n'est pas investiguée"
+msgstr "Justification if Complaint is not investigated"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_authority_competent_justification
 msgid "Justification if no report"
-msgstr "Justification si pas de signalement"
+msgstr "Justification if no report"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Justifications are missing !"
-msgstr "Les justifications sont manquantes !"
+msgstr "Justifications are missing !"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_last_maintenance
 msgid "Last Maintenance Date"
-msgstr "Date de Dernière Maintenance"
+msgstr "Last Maintenance Date"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Last Maintenance Date:"
-msgstr "Date de Dernière Maintenance"
+msgstr "Last Maintenance Date:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim___last_update
@@ -719,7 +719,7 @@ msgstr "Date de Dernière Maintenance"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test___last_update
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test___last_update
 msgid "Last Modified on"
-msgstr "Dernière Modification le"
+msgstr "Laatst Aangepast op"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_write_uid
@@ -728,7 +728,7 @@ msgstr "Dernière Modification le"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_write_uid
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr "Laatst bijgewerkt door"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_write_date
@@ -737,28 +737,28 @@ msgstr "Dernière mise à jour par"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_write_date
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_write_date
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr "Laatst bijgewerkt op"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Late Activities"
-msgstr "Activités en retard"
+msgstr "Te late activiteiten"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_len_appointment_ids
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_len_appointment_ids
 msgid "Len Appointment"
-msgstr "Nombre de Rendez-vous"
+msgstr "Len Appointment"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_lot_id
 msgid "Lot"
-msgstr "Lot"
+msgstr "Partij"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_stock_picking_lot_id
 msgid "Lot Repaired"
-msgstr "Lot Réparé"
+msgstr "Lot Repaired"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -769,34 +769,34 @@ msgstr "Lot:"
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Make Appointment"
-msgstr "Prendre un rendez-vous"
+msgstr "Make Appointment"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_member_ids
 #: model:ir.ui.view,arch_db:claim.claim_as_team_form_view
 msgid "Members"
-msgstr "Membres"
+msgstr "Leden"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_miss_maintenance
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Miss maintenance"
-msgstr "Manque d'entretien"
+msgstr "Miss maintenance"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_mobile
 msgid "Mobile"
-msgstr "Téléphone mobile"
+msgstr "Gsm"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Mobile:"
-msgstr "Mobile:"
+msgstr "Mobiel:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Month"
-msgstr "Mois"
+msgstr "Maand"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_name
@@ -804,7 +804,7 @@ msgstr "Mois"
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_default_test_name
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_test_name
 msgid "Name"
-msgstr "Description"
+msgstr "Naam"
 
 #. module: claim
 #: code:addons/claim/models/claim.py:15 code:addons/claim/models/claim.py:222
@@ -812,18 +812,18 @@ msgstr "Description"
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 #, python-format
 msgid "New"
-msgstr "Nouveau"
+msgstr "Nieuw"
 
 #. module: claim
 #: selection:claim,trauma:0
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "No"
-msgstr "Non"
+msgstr "No"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
 msgid "None"
-msgstr "Aucun"
+msgstr "None"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
@@ -833,17 +833,17 @@ msgstr "Normal"
 #. module: claim
 #: selection:mrp_repair.test,state:0
 msgid "Not to Do"
-msgstr "Pas à faire"
+msgstr "Not to Do"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_note
 msgid "Note"
-msgstr "Note"
+msgstr "Opmerking"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Notes"
-msgstr "Notes"
+msgstr "Opmerkingen"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -853,196 +853,196 @@ msgstr "Notes:"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Notify Incident"
-msgstr "Notifier l'incident"
+msgstr "Notify Incident"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Notify Responsible"
-msgstr "Notifier le Responsable"
+msgstr "Notify Responsible"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "On Company"
-msgstr "En Atelier"
+msgstr "On Company"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "On Phone"
-msgstr "Au Téléphone"
+msgstr "On Phone"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_phone_action
 msgid "On Phone Repairs"
-msgstr "Réparations au téléphone"
+msgstr "On Phone Repairs"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "On Site"
-msgstr "Sur Site"
+msgstr "On Site"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_site_action
 msgid "On Site Repairs"
-msgstr "Réparations sur Site"
+msgstr "On Site Repairs"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_footer_text
 msgid "Optional footer text"
-msgstr "Texte optionnel du bas de page"
+msgstr "Optional footer text"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_header_text
 msgid "Optional header text"
-msgstr "Texte optionnel du haut de page"
+msgstr "Optional header text"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_other
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Other"
-msgstr "Autre"
+msgstr "Other"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_other_description
 msgid "Other Description"
-msgstr "Description de Autre"
+msgstr "Other Description"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Other Description:"
-msgstr "Description de Autre:"
+msgstr "Other Description:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_overvoltage
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Overvoltage"
-msgstr "Surtension"
+msgstr "Overvoltage"
 
 #. module: claim
 #: selection:claim,state:0 model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Pending"
-msgstr "En attente"
+msgstr "Wachtend"
 
 #. module: claim
 #: selection:claim,case:0
 #: model:ir.model.fields,field_description:claim.field_claim_phone
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Phone"
-msgstr "Téléphone"
+msgstr "Tel."
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Phone:"
-msgstr "Téléphone:"
+msgstr "Telefoon:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_picking_in_created
 msgid "Picking In Created"
-msgstr "Bon de réception créé"
+msgstr "Picking In Created"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Print"
-msgstr "Imprimer"
+msgstr "Afdrukken"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_text_pro_forma
 msgid "Pro-Forma Informations"
-msgstr "Informations Facture Pro-Forma"
+msgstr "Pro-Forma Informations"
 
 #. module: claim
 #: model:ir.actions.report,name:claim.report_repairorder_pro_forma
 msgid "Pro-Forma Invoice"
-msgstr "Facture Pro-Forma"
+msgstr "Pro-Forma Invoice"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_product_id
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Product"
-msgstr "Article"
+msgstr "Product"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_product_qty
 msgid "Product Quantity"
-msgstr "Quantité d'articles"
+msgstr "Hoeveelheid product"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Product Quantity:"
-msgstr "Quantité d'Article:"
+msgstr "Product Quantity:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_product_received
 msgid "Product Received"
-msgstr "Article Reçu"
+msgstr "Product Received"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_account_invoice_product_id
 msgid "Product Repaired"
-msgstr "Article réparé"
+msgstr "Product Repaired"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_send_article
 msgid "Product must be send ?"
-msgstr "Article doit être renvoyé ?"
+msgstr "Product must be send ?"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_stock_picking_product_repaired
 msgid "Product to repair"
-msgstr "Article à réparer"
+msgstr "Product to repair"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Product:"
-msgstr "Article :"
+msgstr "Product:"
 
 #. module: claim
 #: model:ir.model.fields,help:claim.field_stock_picking_lot_id
 msgid "Products repaired are all belonging to this lot"
-msgstr "Les produits réparés appartiennent tous à ce lot. "
+msgstr "Producten gerepareerd behoren allemaal tot deze partij"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_quality_responsible_id
 #: model:ir.model.fields,field_description:claim.field_claim_quality_responsible
 #: model:res.groups,name:claim.claim_quality_responsible
 msgid "Quality Responsible"
-msgstr "Responsable Qualité"
+msgstr "Quality Responsible"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Quality Responsible:"
-msgstr "Responsable Qualité:"
+msgstr "Quality Responsible:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Quotation"
-msgstr "Devis"
+msgstr "Offerte"
 
 #. module: claim
 #: selection:claim,state:0 model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Ready"
-msgstr "Prêt"
+msgstr "Gereed"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Ready to Repair"
-msgstr "Prêt à Réparer"
+msgstr "Ready to Repair"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Receive Product"
-msgstr "Réception par article"
+msgstr "Receive Product"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_picking_count
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_picking_ids
 msgid "Receptions"
-msgstr "Réceptions"
+msgstr "Ontvangsten"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_as_team_claim_ids
 msgid "Related Claims"
-msgstr "Réclamations liées"
+msgstr "Related Claims"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_account_invoice_repair_id
@@ -1053,106 +1053,106 @@ msgstr "Réclamations liées"
 #: selection:mrp.repair,repair_type:0
 #: model:stock.location,name:claim.stock_location_repair
 msgid "Repair"
-msgstr "Réparation"
+msgstr "Repareer"
 
 #. module: claim
 #: model:stock.picking.type,name:claim.stock_picking_type_repair_IN
 msgid "Repair IN"
-msgstr "Réparation Entrée"
+msgstr "Repair IN"
 
 #. module: claim
 #: model:stock.picking.type,name:claim.stock_picking_type_repair_OUT
 msgid "Repair OUT"
-msgstr "Réparation Sortie"
+msgstr "Repair OUT"
 
 #. module: claim
 #: model:ir.model,name:claim.model_mrp_repair
 msgid "Repair Order"
-msgstr "Ordre de réparation"
+msgstr "Reparatie order"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "Repair Order #:"
-msgstr "N° de l'ordre de réparation:"
+msgstr "Reparatieorder nummer:"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "Repair Quotation #:"
-msgstr "N° Devis de réparation:"
+msgstr "Reparatie offerte nummer:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_repair_type
 msgid "Repair Type"
-msgstr "Type de réparation"
+msgstr "Repair Type"
 
 #. module: claim
 #: code:addons/claim/models/mrp_repair.py:371
 #, python-format
 msgid "Repair must be under repair in order to end reparation."
-msgstr "La réparation doit être en cours pour être terminée."
+msgstr "Repair must be under repair in order to end reparation."
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_template
 msgid "Repair templates"
-msgstr "Templates de réparation"
+msgstr "Repair templates"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Repaired"
-msgstr "Réparé"
+msgstr "Repaired"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.repair_menu
 #: model:ir.ui.menu,name:claim.repair_menu_repair
 #: model:ir.ui.view,arch_db:claim.repair_tree_view
 msgid "Repairs"
-msgstr "Réparations"
+msgstr "Reparaties"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_to_validate_action
 msgid "Repairs to validate"
-msgstr "Réparations à valider"
+msgstr "Repairs to validate"
 
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_open_validated_action
 msgid "Repairs validated"
-msgstr "Réparations validées"
+msgstr "Repairs validated"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_authority_competent_reporting
 msgid "Reporting"
-msgstr "Signalement"
+msgstr "Reporting"
 
 #. module: claim
 #: model:ir.model,name:claim.model_claim
 msgid "Represent the model of a claim expressed by a customer"
-msgstr "Répresente le modèle d'une réclamation exprimée par un client"
+msgstr "Represent the model of a claim expressed by a customer"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_responsible_notified
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Responsible Notified"
-msgstr "Responsable Notifié"
+msgstr "Responsible Notified"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Return Product"
-msgstr "Faire revenir les articles"
+msgstr "Return Product"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Set to New"
-msgstr "Mettre en Nouveau"
+msgstr "Set to New"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Shipment/Delivery"
-msgstr "Réception/Livraison"
+msgstr "Shipment/Delivery"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Show all records which has next action date is before today"
-msgstr "Montrez toutes les enregistrements pour lesquelles la date des prochaines actions est pour aujourd'hui ou avant. "
+msgstr "Toon alle records welke een actiedatum voor vandaag hebben"
 
 #. module: claim
 #: selection:claim,case:0
@@ -1162,32 +1162,32 @@ msgstr "Site"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_site_address
 msgid "Site Address"
-msgstr "Adresse du Site"
+msgstr "Site Address"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Site Address:"
-msgstr "Adresse du Site:"
+msgstr "Site Address:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_stock_picking_origin_claim
 msgid "Source Claim"
-msgstr "Réclamation Source"
+msgstr "Source Claim"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Start Repair"
-msgstr "Commencer la Réparation"
+msgstr "Start reparatie"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_start_repair_date
 msgid "Start Repair Date"
-msgstr "Date de Début de réparation"
+msgstr "Start Repair Date"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_start_repair_user_id
 msgid "Start Repair User"
-msgstr "Utilisateur de Début de Réparation"
+msgstr "Start Repair User"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_state
@@ -1195,19 +1195,19 @@ msgstr "Utilisateur de Début de Réparation"
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "State"
-msgstr "État"
+msgstr "Status"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_template_id
 #: selection:mrp.repair,repair_type:0
 msgid "Template"
-msgstr "Modèle"
+msgstr "Sjabloon"
 
 #. module: claim
 #: model:ir.ui.menu,name:claim.repair_menu_template
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Templates"
-msgstr "Modèles"
+msgstr "Sjablonen"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
@@ -1234,116 +1234,116 @@ msgstr "The selected product is set to be tracked by lot/serial, you have to pro
 #. module: claim
 #: selection:mrp_repair.test,state:0
 msgid "To Do"
-msgstr "À faire"
+msgstr "To Do"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "To be invoiced"
-msgstr "À facturer"
+msgstr "To be invoiced"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Today Activities"
-msgstr "Activités du Jour"
+msgstr "Activiteiten van vandaag"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_tracking
 msgid "Tracking"
-msgstr "Suivi"
+msgstr "Volgen"
 
 #. module: claim
 #: model:ir.model,name:claim.model_stock_picking
 msgid "Transfer"
-msgstr "Transfert"
+msgstr "Verplaatsing"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_trauma
 msgid "Trauma"
-msgstr "Traumatisme"
+msgstr "Trauma"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_trauma_explanation
 msgid "Trauma Explanation"
-msgstr "Explication du Traumatisme"
+msgstr "Trauma Explanation"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Type here a footer text ..."
-msgstr "Ecrivez ici un texte de bas de page ..."
+msgstr "Type here a footer text ..."
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Type here a header text ..."
-msgstr "Ecrivez ici un texte de haut de page ..."
+msgstr "Type here a header text ..."
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 msgid "Under Repair"
-msgstr "Sous réparation"
+msgstr "Under Repair"
 
 #. module: claim
 #: model:res.groups,name:claim.claim_user
 msgid "User"
-msgstr "Utilisateur"
+msgstr "Gebruiker"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Validate"
-msgstr "Valider"
+msgstr "Goedkeuren"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
 #: selection:mrp_repair.test,state:0
 msgid "Validated"
-msgstr "Validé"
+msgstr "Goedgekeurd"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_validation_date
 msgid "Validation Repair Date"
-msgstr "Date de Validation de Réparation"
+msgstr "Validation Repair Date"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_validation_user_id
 msgid "Validation Repair User"
-msgstr "Utilisateur de Début de réparation"
+msgstr "Validation Repair User"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
 msgid "Very Bad"
-msgstr "Très mauvais"
+msgstr "Very Bad"
 
 #. module: claim
 #: selection:claim,customer_satisfaction:0
 msgid "Very Good"
-msgstr "Très Bon"
+msgstr "Very Good"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Wait Products"
-msgstr "Attendre les Articles"
+msgstr "Wait Products"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Week"
-msgstr "Semaine"
+msgstr "Week"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_breakdown_wrong_usage
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Wrong Usage"
-msgstr "Mauvaise Utilisation"
+msgstr "Wrong Usage"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_search_view
 msgid "Year"
-msgstr "Année"
+msgstr "Jaar"
 
 #. module: claim
 #: selection:claim,trauma:0
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Yes"
-msgstr "Oui"
+msgstr "Ja"
 
 #. module: claim
 #: model:ir.model,name:claim.model_claim_as_team
@@ -1353,12 +1353,12 @@ msgstr "claim.as_team"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.stock_picking_origin_claim_form_view
 msgid "e.g. PO0032"
-msgstr "par ex. PO0032"
+msgstr "Bijv. PO0032"
 
 #. module: claim
 #: model:ir.model,name:claim.model_claim_tag
 msgid "key words to sort and classify claims"
-msgstr "Mots clés pour trier et classer des réclamations"
+msgstr "key words to sort and classify claims"
 
 #. module: claim
 #: model:ir.model,name:claim.model_mrp_repair_default_test
@@ -1373,4 +1373,4 @@ msgstr "mrp_repair.test"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_repair_id
 msgid "repair"
-msgstr "réparation"
+msgstr "repair"
