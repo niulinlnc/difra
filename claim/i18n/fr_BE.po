@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e-20190808\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 09:34+0000\n"
-"PO-Revision-Date: 2019-09-24 11:39+0200\n"
+"POT-Creation-Date: 2019-09-25 08:53+0000\n"
+"PO-Revision-Date: 2019-09-25 10:56+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,6 +60,29 @@ msgstr ""
 "            "
 
 #. module: claim
+#: model:mail.template,body_html:claim.mrp_repair_send_pro_forma_invoice
+msgid ""
+"\n"
+"                <p>Dear ${object.partner_id.name}</p>\n"
+"\n"
+"                <p>Here is your Pro-Forma Invoice ${doc_name} ${object.name} % if object.invoice_method != 'none': amounting in ${format_amount(object.amount_total, object.pricelist_id.currency_id)}. % endif</p>\n"
+"\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"\n"
+"                <p>Thank you,</p>\n"
+"            "
+msgstr ""
+"\n"
+"                <p>Cher ${object.partner_id.name}</p>\n"
+"\n"
+"                <p>En annexe votre facture Pro-Forma ${doc_name} ${object.name} % if object.invoice_method != 'none': d'un montant de ${format_amount(object.amount_total, object.pricelist_id.currency_id)}. % endif</p>\n"
+"\n"
+"                <p>Pour toute information complémentaire, vous pouvez répondre à cet email.</p>\n"
+"\n"
+"                <p>Cordialement,</p>\n"
+"            "
+
+#. module: claim
 #: model:mail.template,body_html:claim.notify_incident_mail_template
 msgid ""
 "\n"
@@ -90,6 +113,11 @@ msgid "${object.name}: Incident"
 msgstr "${object.name}: Incident"
 
 #. module: claim
+#: model:mail.template,subject:claim.mrp_repair_send_pro_forma_invoice
+msgid "${object.partner_id.name}: Pro-Forma Invoice (Ref ${object.name or 'n/a' })"
+msgstr "${object.partner_id.name}: Facture Pro-Forma (Ref ${object.name or 'n/a' })"
+
+#. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<span>Pro-Forma Invoice: </span>"
 msgstr "<span>Facture Pro-Forma : </span>"
@@ -107,7 +135,7 @@ msgstr "<strong>Adresse de facturation :</strong>"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Invoicing and shipping address:</strong>"
-msgstr "<strong>Adresse de facturation et de livraison :</strong>"
+msgstr "<strong>Adresse de livraison et facturation :</strong>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
@@ -137,12 +165,12 @@ msgstr "<strong>Adresse de livraison :</strong>"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Warranty:</strong>"
-msgstr "<strong>Garantie:</strong>"
+msgstr "<strong/>"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.report_mrp_repairorder_claim
 msgid "<strong>Your Customer Reference:</strong>"
-msgstr "<strong>Votre Numéro de Commande:</strong>"
+msgstr "<strong>Référence client:</strong>"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_claim_team_id
@@ -933,7 +961,7 @@ msgstr "Téléphone"
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
 msgid "Phone:"
-msgstr "Téléphone:"
+msgstr "Phone:"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_picking_in_created
@@ -944,6 +972,11 @@ msgstr "Bon de réception créé"
 #: model:ir.ui.view,arch_db:claim.claim_form_view
 msgid "Print"
 msgstr "Imprimer"
+
+#. module: claim
+#: model:mail.template,report_name:claim.mrp_repair_send_pro_forma_invoice
+msgid "Pro-Forma ${(object.name or '').replace('/','_')}"
+msgstr "Pro-Forma ${(object.name or '').replace('/','_')}"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_text_pro_forma
@@ -979,7 +1012,7 @@ msgstr "Article Reçu"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_account_invoice_product_id
 msgid "Product Repaired"
-msgstr "Article réparé"
+msgstr "Product Repaired"
 
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_send_article
@@ -989,7 +1022,7 @@ msgstr "Article doit être renvoyé ?"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_stock_picking_product_repaired
 msgid "Product to repair"
-msgstr "Article à réparer"
+msgstr "Product to repair"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.pdf_report_claim_document
@@ -1083,7 +1116,7 @@ msgstr "N° Devis de réparation:"
 #. module: claim
 #: model:ir.model.fields,field_description:claim.field_mrp_repair_repair_type
 msgid "Repair Type"
-msgstr "Type de réparation"
+msgstr "Repair Type"
 
 #. module: claim
 #: code:addons/claim/models/mrp_repair.py:371
@@ -1094,7 +1127,7 @@ msgstr "La réparation doit être en cours pour être terminée."
 #. module: claim
 #: model:ir.actions.act_window,name:claim.repair_template
 msgid "Repair templates"
-msgstr "Templates de réparation"
+msgstr "Repair templates"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.repair_search_view
@@ -1138,6 +1171,11 @@ msgstr "Responsable Notifié"
 #: model:ir.ui.view,arch_db:claim.repair_form_view
 msgid "Return Product"
 msgstr "Faire revenir les articles"
+
+#. module: claim
+#: model:ir.ui.view,arch_db:claim.repair_form_view
+msgid "Send Pro-Forma Invoice"
+msgstr "Send Pro-Forma Invoice"
 
 #. module: claim
 #: model:ir.ui.view,arch_db:claim.claim_form_view

@@ -126,6 +126,7 @@
                         type="object" context="{'active_id': active_id}" states="draft,confirmed,ready"/>
                 <button name="action_make_products_back" string="Return Product" type="object"
                         attrs="{'invisible': ['|', '|', ('case', '=', 'company'), ('picking_in_created', '=', True), ('state', 'in', ['validated', '2binvoiced'])]}"/>
+                <button name="action_send_mail" string="Send Pro-Forma Invoice" states="draft" type="object" context="{'proforma': True}"/>
             </xpath>
             <xpath expr="//field[@name='location_id']" position="replace">
                 <field name="location_id" invisible="1"/>

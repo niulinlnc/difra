@@ -465,3 +465,19 @@ class MrpRepair(models.Model):
                 repair.claim_id.action_set_new()
             else:
                 super(MrpRepair, self).action_repair_cancel_draft()
+
+    @api.multi
+    def action_send_mail(self):
+        res = super(MrpRepair, self).action_send_mail()
+        if self.env.context.get('proforma', False):
+            template_id = self.env.ref('claim.mrp_repair_send_pro_forma_invoice').id
+            ctx = {
+                'default_model': 'mrp.repair',
+                'default_res_id': self.id,
+                'default_use_template': bool(template_id),
+                'default_template_id': template_id,
+                'default_composition_mode': 'comment'
+            }
+            res['context'] = ctx
+            _logger.debug("\n\nres: %s" % res)
+        return res

@@ -47,4 +47,25 @@
                 <p style="font-size: 11px;">Message automatically sent by Odoo</p>
             ]]></field>
     </record>
+    <record id="mrp_repair_send_pro_forma_invoice" model="mail.template">
+        <field name="name">Mrp Repair Send Pro Forma Invoice</field>
+        <field name="model_id" ref="mrp_repair.model_mrp_repair" />
+        <field name="email_from">${(object.create_uid.email and '%s &lt;%s&gt;' % (object.create_uid.name, object.create_uid.email) or '')|safe}</field>
+        <field name="email_to">${object.partner_id.id}</field>
+        <field name="email_cc">${object.partner_id.id}</field>
+        <field name="subject">${object.partner_id.name}: Pro-Forma Invoice (Ref ${object.name or 'n/a' })</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete">1</field>
+        <field name="report_template" ref="claim.report_repairorder_pro_forma"/>
+        <field name="report_name">Pro-Forma ${(object.name or '').replace('/','_')}</field>
+        <field name="body_html"><![CDATA[
+                <p>Dear ${object.partner_id.name}</p>
+
+                <p>Here is your Pro-Forma Invoice ${doc_name} ${object.name} % if object.invoice_method != 'none': amounting in ${format_amount(object.amount_total, object.pricelist_id.currency_id)}. % endif</p>
+
+                <p>You can reply to this email if you have any questions.</p>
+
+                <p>Thank you,</p>
+            ]]></field>
+    </record>
 </odoo>
