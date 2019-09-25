@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-24 08:21+0000\n"
-"PO-Revision-Date: 2019-09-24 10:38+0200\n"
+"POT-Creation-Date: 2019-09-25 11:47+0000\n"
+"PO-Revision-Date: 2019-09-25 13:47+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "<strong>Einde levensduur datum</strong>"
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Invoicing and shipping address:</strong>"
-msgstr "<strong>Facturatie- en leveringsadres:</strong>"
+msgstr "<strong>Factuur- en verzendadres:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -89,7 +89,7 @@ msgstr "<strong>Herstelde toestel:</strong>"
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Product</strong>"
-msgstr "<strong>Toestel</strong>"
+msgstr "<strong>Product</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -114,7 +114,7 @@ msgstr "<strong>Serie Nummer:</strong>"
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "<strong>Shipping address:</strong>"
-msgstr "<strong>Leveringsadres:</strong>"
+msgstr "<strong>Verzendadres:</strong>"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
@@ -154,12 +154,12 @@ msgstr "Voor alle betwistingen zijn alleen bevoegd de rechtbanken van het distri
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Invoicing address:"
-msgstr "Facturatieadres:"
+msgstr "Factuuradres:"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
 msgid "Invoicing and shipping address:"
-msgstr "Facturatie- en leveringsadres:"
+msgstr "Factuur- en verzendadres:"
 
 #. module: difra_delivery_slip_report
 #: model:ir.ui.view,arch_db:difra_delivery_slip_report.difra_delivery_slip_inherit
