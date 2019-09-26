@@ -18,7 +18,7 @@
 
     'data': [
         'views/res_company_form.xml',
-
+        'views/sale_order.xml',
         'reports/sale_order_template.xml',
     ],
 }

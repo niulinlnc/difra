@@ -235,6 +235,7 @@
 
         <!-- General sales conditions -->
         <xpath expr="(//div[@class='row'])[last()]" position="after">
+            <p t-if="is_pro_forma and doc.pro_forma_description" t-field="doc.pro_forma_description"/>
             <p style="page-break-after:always;"></p>
             <div class="row">
                 <div id="difra_special conditions" style="margin: 5px;">
