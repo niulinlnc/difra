@@ -50,6 +50,17 @@
                     <strong>Description:</strong>
                     <p t-field="o.description"/>
                 </div>
+                <div class="h5 col-xs-12" name="linked_delivery_orders" t-if="o.delivery_order_ids">
+                    <strong>Delivery Orders: </strong>
+                    <span>
+                        <t t-set="i" t-value="0"/>
+                        <t t-foreach="o.delivery_order_ids" t-as="picking">
+                            <span t-esc="picking.name"/>
+                            <span t-if="i &lt; len(o.delivery_order_ids) - 1">, </span>
+                            <t t-set="i" t-value="i+1"/>
+                        </t>
+                    </span>
+                </div>
             </div>
         </xpath>
 
