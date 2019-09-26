@@ -47,7 +47,7 @@
             <form string="Claim Form" attrs="{'edit': [('state', '!=', 'done')]}"><header>
                     <!--Butons-->
                     <button name="action_make_appointment" string="Make Appointment" class="oe_highlight" type="object" context="{'active_id': active_id}" states="new,ready,pending"/>
-                    <button type="object" name="action_create_repair" string="Create Repair" states="new,ready,pending,done" class="oe_highlight" groups="claim.claim_quality_responsible,claim.claim_as_responsible"/>
+                    <button type="object" name="action_create_repair" string="Create Repair" states="new,ready,pending,done" attrs="{'invisible': ['|', ('repair_id', '!=', False)]}" class="oe_highlight" groups="claim.claim_quality_responsible,claim.claim_as_responsible"/>
                     <button type="object" name="action_notify_responsible" attrs="{'invisible': ['|', ('responsible_notified', '=', True)]}" string="Notify Responsible" states="new" class="oe_highlight" groups="claim.claim_user"/>
                     <button type="object" name="action_notify_incident" string="Notify Incident" class="oe_highlight" attrs="{'invisible': ['|', ('incident', '=', False), ('incident_notified', '=', True)]}" groups="claim.claim_user"/>
                     <button type="object" name="action_validate_as" class="oe_highlight" string="Validate" states="new" groups="claim.claim_as_responsible"/>
