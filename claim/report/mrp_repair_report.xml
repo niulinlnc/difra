@@ -42,9 +42,9 @@
                     <strong>Warranty:</strong>
                     <p t-field="o.guarantee_limit"/>
                 </div>
-                <div t-if="o.claim_id" class="col-xs-3">
+                <div t-if="o.create_date" class="col-xs-3">
                     <strong>Date:</strong>
-                    <p t-field="o.claim_id.create_date" t-options="{'widget': 'date'}"/>
+                    <p t-field="o.create_date" t-options="{'widget': 'date'}"/>
                 </div>
                 <div t-if="o.claim_id" class="col-xs-3">
                     <strong>Related claim:</strong>

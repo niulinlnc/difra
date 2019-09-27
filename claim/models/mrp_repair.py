@@ -234,7 +234,7 @@ class MrpRepair(models.Model):
                 'partner_id': self.partner_id.id,
                 'date': self.create_date,
                 'origin': self.name,
-                'location_dest_id': self.env.ref('stock.stock.stock_location_scrapped').id,
+                'location_dest_id': self.env.ref('stock.stock_location_scrapped').id,
                 'location_id': self.env.ref('claim.stock_picking_type_repair_IN').default_location_src_id.id,
                 'company_id': self.company_id.id,
                 'repair_id': self.id
