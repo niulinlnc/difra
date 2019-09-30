@@ -1,29 +1,28 @@
 <odoo>
-  
-  <!-- Field distributor and distributor_id are added to the sale group and a new page in the notebook is created that contain
+      <!-- Field distributor and distributor_id are added to the sale group and a new page in the notebook is created that contain
   all the final customers of the distributor -->
-  <record model="ir.ui.view" id="partner_distributor_form_view">
-            <field name="name">partner_distributor_form_view</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-              <xpath expr="//group[@name='sale']" position="inside">
-                <field name="distributor" attrs="{'invisible':[('customer', '=', False)]}"/>
-                <field name="distributor_id" domain="[('distributor', '=', True)]"
-                attrs="{'invisible':['|', '|', ('customer', '=', True), ('distributor', '=', True), '&amp;', ('customer', '=', True), ('distributor', '=', True)]}"/>
-              </xpath>
-              <xpath expr="//notebook" position="inside">
-                <page string="Customers" attrs="{'invisible':[('distributor', '=', False)]}">
-                  <group>
-                    <field name="final_customer_ids"/>
-                  </group>
-                </page>
-              </xpath>
-            </field>
-  </record>
+    <record model="ir.ui.view" id="partner_distributor_form_view">
+        <field name="name">partner_distributor_form_view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//group[@name='sale']" position="inside">
+            <field name="distributor" attrs="{'invisible':[('customer', '=', False)]}"/>
+            <field name="distributor_id" domain="[('distributor', '=', True)]"
+            attrs="{'invisible':['|', '|', ('customer', '=', True), ('distributor', '=', True), '&amp;', ('customer', '=', True), ('distributor', '=', True)]}"/>
+          </xpath>
+          <xpath expr="//notebook" position="inside">
+            <page string="Customers" attrs="{'invisible':[('distributor', '=', False)]}">
+              <group>
+                <field name="final_customer_ids"/>
+              </group>
+            </page>
+          </xpath>
+        </field>
+    </record>
 
-  <!-- A little pop-up is shown when the customer who we sell to is a distributor. -->
-  <record model="ir.ui.view" id="sale_order_partner_is_distributor">
+      <!-- A little pop-up is shown when the customer who we sell to is a distributor. -->
+      <record model="ir.ui.view" id="sale_order_partner_is_distributor">
         <field name="name">sale_order_partner_is_distributor</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
@@ -43,6 +42,5 @@
             </xpath>
         </data>
         </field>
-  </record>
-
+      </record>
 </odoo>
