@@ -1,0 +1,48 @@
+<odoo>
+  
+  <!-- Field distributor and distributor_id are added to the sale group and a new page in the notebook is created that contain
+  all the final customers of the distributor -->
+  <record model="ir.ui.view" id="partner_distributor_form_view">
+            <field name="name">partner_distributor_form_view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//group[@name='sale']" position="inside">
+                <field name="distributor" attrs="{'invisible':[('customer', '=', False)]}"/>
+                <field name="distributor_id" domain="[('distributor', '=', True)]"
+                attrs="{'invisible':['|', '|', ('customer', '=', True), ('distributor', '=', True), '&amp;', ('customer', '=', True), ('distributor', '=', True)]}"/>
+              </xpath>
+              <xpath expr="//notebook" position="inside">
+                <page string="Customers" attrs="{'invisible':[('distributor', '=', False)]}">
+                  <group>
+                    <field name="final_customer_ids"/>
+                  </group>
+                </page>
+              </xpath>
+            </field>
+  </record>
+
+  <!-- A little pop-up is shown when the customer who we sell to is a distributor. -->
+  <record model="ir.ui.view" id="sale_order_partner_is_distributor">
+        <field name="name">sale_order_partner_is_distributor</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+          <data>
+            <xpath expr="//field[@name='partner_id']" position="after">
+              <div style="
+                          background-color: #FA8072;
+                          padding: 5px;
+                          text-align: center;
+                          font-weight: 600;
+                          color: white;
+                          border-radius: 50px;" attrs="{'invisible':[('is_partner_distributor', '!=', True)]}" colspan="2">
+                <field name="is_partner_distributor" nolabel="1" invisible="1"/>
+                <label string="Is a Distributor" />
+              </div>
+            </xpath>
+        </data>
+        </field>
+  </record>
+
+</odoo>

@@ -1,35 +1,37 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "sale_partner_distributor",
+    'name': "Distributor to Customer management",
 
     'summary': """
-        Distributor and final client stock transfert management """,
+        Distributors and final clients stock transfers management """,
 
     'description': """
-        This module allow to set a customer as a distributor or to add a distributor to a partner making the partner a client of the
+        This module allows to set a customer as a distributor or to add a distributor to a partner, making the partner a customer of the
         distributor chosen.
 
-        It creates a new type of operations that will contain the stock transferts between the distributor and his client.
+        It creates a new type of operation that will contain the stock transfers between the distributor and his customers.
 
-        This module has been developed by Arbi AMPUKAJEV, intern @ AbAKUS it-solutions, under the control of Valentin Thirion.
+        This module has been developed by Arbi AMPUKAJEV, intern @ ABAKUS IT-SOLUTIONS.
     """,
 
-    'author': "Arbi AMPUKAJEV, AbAKUS it-solutions SARL",
+    'author': "ABAKUS IT-SOLUTIONS",
     'website': "https://www.abakusitsolutions.eu",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Inventory',
-    'version': '0.1',
+    'version': '11.0.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale'],
+    'depends': [
+        'sale'
+        ],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/partner.xml',
-        'views/stock-picking.xml',
+        'data/data.xml',
+        'views/res_partner_view.xml',
+        'views/stock_picking_view.xml',
     ],
 }
