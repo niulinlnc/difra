@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e-20190808\n"
+"Project-Id-Version: Odoo Server 11.0+e-20181109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-26 08:18+0000\n"
-"PO-Revision-Date: 2019-09-26 10:19+0200\n"
+"POT-Creation-Date: 2019-09-30 08:58+0000\n"
+"PO-Revision-Date: 2019-09-30 11:07+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,12 +15,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: fr_BE\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
 msgid "&amp;nbsp;"
 msgstr "&amp;nbsp;"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "&amp;nbsp;<span>on</span>"
+msgstr "&amp;nbsp;<span>sur</span>"
+
+#. module: difra_account_invoice_report
+#: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
+msgid "<strong>Base</strong>"
+msgstr "<strong>Base</strong>"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -108,9 +118,14 @@ msgid "Delivery deadline: the delivery deadlines are given for information purpo
 msgstr "Délai de livraison : les délais de livraison sont donnés à titre indicatif, sans engagement de notre part."
 
 #. module: difra_account_invoice_report
+#: model:ir.model.fields,field_description:difra_account_invoice_report.field_account_tax_show_base_line
+msgid "Display a base line in the tax table before the line"
+msgstr "Présenter une ligne de base avant le tableau des taxes"
+
+#. module: difra_account_invoice_report
 #: model:ir.model.fields,field_description:difra_account_invoice_report.field_account_tax_display_detailled_line
-msgid "Display a detailled line for this tax on the invoice report"
-msgstr "Affiche une ligne de détail pour cette taxe sur le Template de facture"
+msgid "Display a detailled line for this tax on the invoice report and hide it in the tax table"
+msgstr "Présenter une ligne de facture détaillée pour cette taxe et la cacher dans le tableau des taxes"
 
 #. module: difra_account_invoice_report
 #: model:ir.model.fields,field_description:difra_account_invoice_report.field_stock_move_has_been_invoiced
@@ -135,7 +150,7 @@ msgstr "Ligne de facturation"
 #. module: difra_account_invoice_report
 #: model:ir.model.fields,field_description:difra_account_invoice_report.field_account_invoice_delivery_order_ids
 msgid "Linked Delivery Orders"
-msgstr "Linked Delivery Orders"
+msgstr "Bons de livraison liés"
 
 #. module: difra_account_invoice_report
 #: model:ir.ui.view,arch_db:difra_account_invoice_report.difra_invoice_inherit
@@ -145,7 +160,7 @@ msgstr "Nos factures sont payables à l'adresse du vendeur, nette, au comptant, 
 #. module: difra_account_invoice_report
 #: model:ir.model,name:difra_account_invoice_report.model_sale_order
 msgid "Quotation"
-msgstr "Quotation"
+msgstr "Offre"
 
 #. module: difra_account_invoice_report
 #: model:ir.model,name:difra_account_invoice_report.model_stock_move
