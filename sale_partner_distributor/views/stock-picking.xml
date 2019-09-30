@@ -1,0 +1,33 @@
+<odoo>
+
+    <record model="ir.sequence" id="dist_to_client">
+        <field name="name">dist to client</field>
+        <field name="implementation">standard</field>
+        <field name="prefix">DIST%(y)s_</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+        <field name="number_next_actual">9</field>
+    </record>
+
+    <record model="stock.picking.type" id="distributor_to_finalclient">
+        <field name="name">distributor_to_finalclient</field>
+        <field name="code">outgoing</field>
+        <field name="sequence_id" ref="sale_partner_distributor.dist_to_client"></field>
+    </record>
+
+    <record model="ir.ui.view" id="stock_picking_distributor_form_view">
+            <field name="name">picking.distributor</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position='before'>
+                    <field name="partner_source" domain="[('distributor', '=', True)]"
+                    string="Partner source" attrs="{'invisible': [('picking_type_id', '!=', %(sale_partner_distributor.distributor_to_finalclient)d )]}"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">[('distributor_id', '=', partner_source)]</attribute>
+                </xpath>
+            </field>
+    </record>
+
+</odoo>
